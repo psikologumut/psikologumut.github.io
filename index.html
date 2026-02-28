@@ -4,285 +4,489 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Psikolog Umut Göveçliklioğlu | Online Terapi (Bakü – İstanbul)</title>
-  <meta name="description" content="Psikolog Umut Göveçliklioğlu — Bakü–İstanbul | Online Terapi. BDT temelli, yapılandırılmış psikoterapi süreci. Randevu ve iletişim için WhatsApp veya e-posta üzerinden ulaşabilirsiniz." />
+  <meta name="description" content="Psikolog Umut Göveçliklioğlu — Bakü–İstanbul | Online Terapi. BDT temelli terapi süreci. MMPI değerlendirmesi. Randevu için WhatsApp veya e-posta ile iletişime geçin." />
   <meta name="robots" content="index,follow" />
 
   <style>
     :root{
       /* Krem tema */
-      --bg:#f6f0e6;          /* ana krem arka plan */
-      --bg2:#fbf7f1;         /* daha açık krem */
-      --card:#ffffff;        /* kart zemini */
-      --text:#111827;        /* ana yazı */
-      --muted:#4b5563;       /* ikincil yazı */
+      --bg:#f6f0e6;
+      --bg2:#fbf7f1;
+      --card:#ffffff;
+      --text:#111827;
+      --muted:#4b5563;
       --line:rgba(17,24,39,.10);
-      --radius:18px;
       --shadow:0 18px 45px rgba(17,24,39,.10);
-      --max:980px;
+      --radius:18px;
+      --max:1080px;
 
-      --btn:#111827;         /* ana buton */
-      --btnText:#ffffff;
-      --btn2:#ffffff;
-      --btn2Text:#111827;
+      --accent:#111827;        /* buton/başlık */
+      --accent2:#f4efe6;       /* soft vurgu */
     }
 
     *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
     body{
       margin:0;
-      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
       background:
         radial-gradient(1100px 520px at 25% -10%, rgba(17,24,39,.06), transparent 60%),
         radial-gradient(900px 420px at 90% 0%, rgba(17,24,39,.04), transparent 55%),
         var(--bg);
       color:var(--text);
     }
-
     a{color:inherit}
-    .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 70px;}
+    .wrap{max-width:var(--max); margin:0 auto; padding:18px 18px 80px;}
 
-    .nav{
-      display:flex; align-items:center; justify-content:space-between; gap:14px;
+    /* Top bar */
+    .topbar{
+      display:flex; align-items:center; justify-content:space-between; gap:12px;
       padding:14px 16px;
       border:1px solid var(--line);
       border-radius:999px;
-      background:rgba(255,255,255,.55);
+      background:rgba(255,255,255,.60);
       backdrop-filter: blur(10px);
       box-shadow: var(--shadow);
+      position: sticky;
+      top: 12px;
+      z-index: 10;
     }
-
     .brand{display:flex; flex-direction:column; line-height:1.15}
     .brand b{font-size:14px; letter-spacing:.2px}
     .brand span{font-size:12px; color:var(--muted)}
-
-    .menu{display:flex; gap:10px; flex-wrap:wrap; font-size:13px; color:var(--muted)}
-    .menu a{
+    .nav{
+      display:flex; gap:10px; flex-wrap:wrap;
+      font-size:13px; color:var(--muted);
+    }
+    .nav a{
       text-decoration:none;
       padding:8px 10px;
       border-radius:999px;
       border:1px solid transparent;
     }
-    .menu a:hover{
+    .nav a:hover{
       background:rgba(17,24,39,.04);
       border-color:rgba(17,24,39,.08);
       color:var(--text);
     }
 
+    /* Hero */
     .hero{
-      padding:46px 6px 22px;
+      padding:34px 6px 12px;
       display:grid;
-      grid-template-columns:1.2fr .8fr;
+      grid-template-columns: 1.15fr .85fr;
       gap:18px;
-      align-items:start;
+      align-items:stretch;
     }
-    @media (max-width: 860px){ .hero{grid-template-columns:1fr} }
+    @media (max-width: 920px){ .hero{grid-template-columns:1fr} }
+
+    .heroCard{
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      background:rgba(255,255,255,.70);
+      box-shadow: var(--shadow);
+      padding:22px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      min-height: 320px;
+    }
 
     .badge{
-      display:inline-flex; gap:8px; align-items:center;
+      display:inline-flex; align-items:center; gap:8px;
       padding:8px 12px;
       border:1px solid var(--line);
       border-radius:999px;
+      background:rgba(255,255,255,.75);
       color:var(--muted);
-      background:rgba(255,255,255,.7);
+      width: fit-content;
     }
-    .dot{width:8px;height:8px;border-radius:999px;background:rgba(17,24,39,.55)}
-
+    .dot{width:8px; height:8px; border-radius:999px; background:rgba(17,24,39,.55)}
     h1{
       margin:14px 0 10px;
-      font-size:46px;
+      font-size:44px;
       line-height:1.06;
-      letter-spacing:-.6px
+      letter-spacing:-.6px;
     }
-    @media (max-width: 520px){ h1{font-size:38px} }
-
+    @media (max-width: 520px){ h1{font-size:36px} }
     .lead{
       margin:0;
-      font-size:18px;
-      line-height:1.65;
-      color:var(--muted)
+      font-size:17px;
+      line-height:1.7;
+      color:var(--muted);
     }
 
-    .cta{display:flex; gap:10px; flex-wrap:wrap; margin-top:18px}
-
+    .ctaRow{
+      display:flex; gap:10px; flex-wrap:wrap;
+      margin-top:16px;
+    }
     .btn{
-      display:inline-block;
-      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
       padding:12px 14px;
       border-radius:14px;
       border:1px solid var(--line);
-      font-weight:650;
+      text-decoration:none;
+      font-weight:700;
       font-size:14px;
       transition: transform .12s ease, opacity .12s ease;
+      background: white;
     }
     .btn.primary{
-      background:var(--btn);
-      color:var(--btnText);
-      border-color:transparent;
+      background: var(--accent);
+      color:#fff;
+      border-color: transparent;
     }
-    .btn.ghost{
-      background:var(--btn2);
-      color:var(--btn2Text);
+    .btn.soft{
+      background: var(--accent2);
+      color: var(--text);
     }
-    .btn:hover{transform: translateY(-1px); opacity:.95}
+    .btn:hover{transform: translateY(-1px); opacity:.96}
+
+    /* Right Hero: Photo + quick box */
+    .side{
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      background:rgba(255,255,255,.70);
+      box-shadow: var(--shadow);
+      padding:18px;
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+      min-height: 320px;
+    }
+    .photo{
+      border:1px solid var(--line);
+      border-radius:16px;
+      background: linear-gradient(180deg, rgba(17,24,39,.06), rgba(17,24,39,.02));
+      overflow:hidden;
+      height: 210px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color: rgba(17,24,39,.55);
+      font-weight: 700;
+      position: relative;
+    }
+    .photo img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+    .quick{
+      border:1px solid var(--line);
+      border-radius:16px;
+      background: rgba(17,24,39,.02);
+      padding:14px;
+    }
+    .quick b{display:block; font-size:13px; color:var(--muted); margin-bottom:8px}
+    .quick .mini{
+      display:flex; gap:8px; flex-wrap:wrap;
+    }
+    .mini a{
+      font-size:13px;
+      padding:10px 12px;
+      border-radius:12px;
+    }
+
+    /* Sections */
+    .section{
+      margin-top:22px;
+      padding: 0 6px;
+    }
+    .sectionTitle{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:12px;
+      margin: 0 0 10px;
+    }
+    .sectionTitle h2{
+      margin:0;
+      font-size:16px;
+      letter-spacing:.2px;
+    }
+    .sectionTitle p{
+      margin:0;
+      color:var(--muted);
+      font-size:13px;
+    }
 
     .grid{
       display:grid;
-      grid-template-columns:repeat(3, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap:12px;
-      margin-top:18px;
     }
-    @media (max-width: 860px){ .grid{grid-template-columns:1fr} }
+    @media (max-width: 920px){ .grid{grid-template-columns:1fr} }
 
     .card{
       border:1px solid var(--line);
       border-radius:var(--radius);
-      padding:18px;
-      background:var(--card);
-      box-shadow:var(--shadow)
-    }
-    .card h2{margin:0 0 8px; font-size:16px}
-    .card p{margin:0; color:var(--muted); line-height:1.65; font-size:14px}
-
-    .section{margin-top:22px}
-    .section h2{font-size:16px; margin:0 0 10px}
-
-    .side{
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      background:rgba(255,255,255,.72);
-      box-shadow:var(--shadow);
+      background: var(--card);
+      box-shadow: var(--shadow);
       padding:18px;
     }
-    .side h3{margin:0 0 8px; font-size:14px; color:var(--muted); font-weight:700}
+    .card h3{margin:0 0 8px; font-size:15px}
+    .card p{margin:0; color:var(--muted); font-size:14px; line-height:1.7}
 
-    .kpi{display:grid; gap:10px; margin-top:12px}
-    .kpi div{
+    .tagRow{margin-top:10px; display:flex; gap:8px; flex-wrap:wrap}
+    .tag{
+      font-size:12px;
+      padding:7px 10px;
+      border-radius:999px;
       border:1px solid var(--line);
-      border-radius:14px;
-      padding:12px;
-      background:rgba(17,24,39,.02)
+      background: rgba(17,24,39,.02);
+      color: var(--muted);
     }
-    .kpi b{display:block; font-size:14px}
-    .kpi span{font-size:12px; color:var(--muted)}
 
-    .fine{color:rgba(75,85,99,.95); font-size:12.5px; line-height:1.6}
+    /* About */
+    .about{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:12px;
+    }
+    @media (max-width: 920px){ .about{grid-template-columns:1fr} }
 
+    /* Blog */
+    .blogGrid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:12px;
+    }
+    @media (max-width: 920px){ .blogGrid{grid-template-columns:1fr} }
+    .postMeta{color:var(--muted); font-size:12.5px; margin-bottom:8px}
+    .postTitle{font-weight:800; margin:0 0 8px}
+    .postLink{display:inline-block; margin-top:10px; color:var(--text); font-weight:800; text-decoration:none}
+    .postLink:hover{text-decoration:underline}
+
+    /* Footer */
     .footer{
-      margin-top:30px;
-      padding-top:18px;
+      margin-top:28px;
+      padding:18px 6px 0;
       border-top:1px solid var(--line);
-      color:rgba(75,85,99,.9);
-      font-size:12.5px;
       display:flex;
       justify-content:space-between;
-      gap:10px;
-      flex-wrap:wrap
+      gap:12px;
+      flex-wrap:wrap;
+      color: rgba(75,85,99,.92);
+      font-size:12.5px;
     }
+    .footer a{color:inherit}
   </style>
 </head>
 
 <body>
   <div class="wrap">
-    <div class="nav">
+
+    <div class="topbar">
       <div class="brand">
         <b>Psikolog Umut Göveçliklioğlu</b>
         <span>Bakü – İstanbul • Sadece Online Terapi</span>
       </div>
-      <div class="menu">
-        <a href="#online">Online Terapi</a>
-        <a href="#alanlar">Çalışma Alanları</a>
+      <div class="nav">
+        <a href="#calisma">Çalışma Alanlarım</a>
+        <a href="#hakkimda">Hakkımda</a>
         <a href="#mmpi">MMPI</a>
+        <a href="#blog">Blog</a>
         <a href="#iletisim">İletişim</a>
       </div>
     </div>
 
+    <!-- HERO -->
     <div class="hero">
-      <div>
-        <div class="badge"><span class="dot"></span> Randevu ile online görüşme • Gizlilik & etik çerçeve</div>
-
-        <h1>Online terapi sürecini yapılandırılmış ve bilimsel temelli yürütürüm.</h1>
-
+      <div class="heroCard">
+        <div class="badge"><span class="dot"></span> Online görüşme • Gizlilik & etik çerçeve</div>
+        <h1>Hayatınızı değiştirmek için bir adım atmaya her zaman gücünüz vardır.</h1>
         <p class="lead">
-          Yetişkinlerle çalışıyorum. Süreçte ağırlıklı olarak <b>BDT</b> yaklaşımından yararlanır;
-          hedefleri birlikte netleştirip somut bir ilerleme planı ile adım adım ilerleriz.
+          Yetişkinlerle çalışıyorum. Süreçte ağırlıklı olarak <b>Bilişsel Davranışçı Terapi (BDT)</b> yaklaşımını kullanır,
+          hedefleri birlikte netleştirip yapılandırılmış bir planla ilerleriz.
         </p>
 
-        <div class="cta">
-          <a class="btn primary" href="#iletisim">Randevu / İletişim</a>
-          <a class="btn ghost" href="#online">Online Terapi Nasıl?</a>
-          <a class="btn ghost" href="#mmpi">MMPI Bilgilendirme</a>
+        <div class="ctaRow">
+          <a class="btn primary" href="#iletisim">Hızlı Randevu / İletişim</a>
+          <a class="btn soft" href="#calisma">Çalışma Alanlarım</a>
+          <a class="btn" href="#mmpi">MMPI Bilgilendirme</a>
         </div>
 
-        <div class="grid">
-          <div class="card" id="online">
-            <h2>Online terapi nasıl ilerler?</h2>
-            <p>
-              İlk görüşmede hedefleri netleştiririz. Seanslar yapılandırılmış ilerler;
-              ihtiyaç oldukça pratikler ve ev ödevleri eklenir.
-            </p>
-          </div>
-
-          <div class="card" id="alanlar">
-            <h2>Çalışma alanlarım</h2>
-            <p>
-              Kaygı • Özgüven • İlişki sorunları • Duygusal zorlanmalar •
-              İlişki travması & manipülasyon dinamikleri
-            </p>
-          </div>
-
-          <div class="card">
-            <h2>Bakü – İstanbul</h2>
-            <p>
-              Şu an yalnızca online çalışıyorum. Görüşmeleri güvenli bir platform üzerinden planlıyoruz.
-            </p>
-          </div>
-        </div>
-
-        <div class="section" id="mmpi">
-          <h2>MMPI Değerlendirmesi</h2>
-          <div class="card">
-            <p>
-              MMPI, klinik değerlendirme sürecinde kullanılan kapsamlı bir envanterdir.
-              Uygulama ve yorumlama, <b>klinik görüşme</b> ve <b>geri bildirim</b> süreciyle birlikte yürütülür.
-              <br><br>
-              <span class="fine">Not: Uygunluk, amaç ve etik çerçeve ilk görüşmede değerlendirilir.</span>
-            </p>
-          </div>
-        </div>
-
-        <div class="section" id="iletisim">
-          <h2>İletişim / Randevu</h2>
-          <div class="card">
-            <p class="fine">Randevu ve bilgi için WhatsApp’tan yazabilir veya e-posta gönderebilirsin:</p>
-
-            <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px;">
-              <a class="btn primary" href="https://wa.me/905467114426" target="_blank" rel="noopener">WhatsApp ile yaz</a>
-              <a class="btn ghost" href="mailto:pskumutgovecliklioglu@gmail.com">E-posta ile yaz</a>
-            </div>
-
-            <p class="fine" style="margin-top:12px;">
-              <b>Gizlilik:</b> Görüşmeler etik ilkeler ve gizlilik kapsamında yürütülür.
-            </p>
-          </div>
+        <div class="tagRow">
+          <span class="tag">Online terapi</span>
+          <span class="tag">BDT temelli</span>
+          <span class="tag">İlişki sorunları</span>
+          <span class="tag">Kaygı & stres</span>
         </div>
       </div>
 
       <div class="side">
-        <h3>Hızlı Bilgi</h3>
-        <div class="kpi">
-          <div><b>Çalışma Şekli</b><span>Sadece online terapi</span></div>
-          <div><b>Konum</b><span>Bakü – İstanbul</span></div>
-          <div><b>Odak</b><span>BDT temelli, yapılandırılmış süreç</span></div>
+        <div class="photo">
+          <!-- profile.jpg yüklersen otomatik gösterir -->
+          <img src="profile.jpg" alt="Psikolog Umut Göveçliklioğlu" onerror="this.remove(); this.parentElement.textContent='(İstersen profile.jpg yükle)';" />
         </div>
 
-        <div class="fine" style="margin-top:14px;">
-          <b>Not:</b> Meslek & Kişilik Analizi uygulaması ayrı bir sitede olacak. Buraya sadece link eklenecek.
+        <div class="quick">
+          <b>Hızlı İletişim</b>
+          <div class="mini">
+            <a class="btn primary" href="https://wa.me/905467114426?text=Merhaba%20Psikolog%20Umut%20G%C3%B6ve%C3%A7liklio%C4%9Flu%2C%20online%20terapi%20i%C3%A7in%20randevu%20almak%20istiyorum." target="_blank" rel="noopener">WhatsApp</a>
+            <a class="btn" href="mailto:pskumutgovecliklioglu@gmail.com?subject=Online%20Terapi%20Randevu%20Talebi">E-posta</a>
+          </div>
+          <p style="margin:10px 0 0; color:var(--muted); font-size:13px; line-height:1.6;">
+            Şu an yüz yüze hizmet vermiyorum. Tüm görüşmeler online yürütülür.
+          </p>
         </div>
+      </div>
+    </div>
+
+    <!-- ÇALIŞMA ALANLARI -->
+    <div class="section" id="calisma">
+      <div class="sectionTitle">
+        <h2>Çalışma Alanlarım</h2>
+        <p>Odak alanlarını net ve anlaşılır şekilde</p>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Bireysel Terapi</h3>
+          <p>Kaygı, stres, özgüven, duygu düzenleme ve yaşam doyumu gibi alanlarda yapılandırılmış terapi süreci.</p>
+        </div>
+        <div class="card">
+          <h3>İlişki Sorunları</h3>
+          <p>Romantik ilişkilerde iletişim, sınırlar, manipülasyon döngüleri ve ilişki travmaları üzerine çalışma.</p>
+        </div>
+        <div class="card">
+          <h3>Online Terapi</h3>
+          <p>Güvenli ve planlı şekilde online görüşmeler. Hedef belirleme, seans gündemi ve ev ödevleriyle ilerleme.</p>
+        </div>
+        <div class="card">
+          <h3>Kaygı / Anksiyete</h3>
+          <p>Aşırı düşünme, bedensel belirtiler, kaçınma davranışları ve tetikleyicilerle baş etme becerileri.</p>
+        </div>
+        <div class="card">
+          <h3>Stres & Duygusal Zorlanmalar</h3>
+          <p>Günlük yaşam stresi, tükenmişlik hissi, duygusal dalgalanmalar ve baş etme stratejileri.</p>
+        </div>
+        <div class="card">
+          <h3>Özgüven & Benlik</h3>
+          <p>Olumsuz inançlar, kendilik algısı, “yetersizlik” teması ve daha dengeli düşünme alışkanlıkları.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- HAKKIMDA + UYGULAMA -->
+    <div class="section" id="hakkimda">
+      <div class="sectionTitle">
+        <h2>Hakkımda</h2>
+        <p>Kısa, temiz, güven veren anlatım</p>
+      </div>
+
+      <div class="about">
+        <div class="card">
+          <h3>Psikolog Umut Göveçliklioğlu</h3>
+          <p>
+            Yetişkinlerle çalışıyorum. Seanslarımda ağırlıklı olarak <b>BDT</b> yaklaşımından yararlanır,
+            terapi sürecini güvenli, etik ve yapılandırılmış şekilde yürütürüm. Amacımız yalnızca konuşmak değil;
+            birlikte çalışarak somut ve kalıcı değişim sağlamaktır.
+          </p>
+          <p style="margin-top:10px; color:var(--muted); font-size:14px; line-height:1.7;">
+            <b>Not:</b> Şu an yalnızca online terapi hizmeti veriyorum (Bakü – İstanbul).
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Meslek & Kişilik Analizi Uygulaması</h3>
+          <p>
+            Kişiliğinize, mesleğe yatkınlığınıza ve bilişsel profilinize göre meslek önerileri sunan bir uygulama projem var.
+            (Ödeme altyapısı ve ayrı site yakında.)
+          </p>
+          <div class="ctaRow" style="margin-top:12px;">
+            <!-- Uygulama sitesi hazır olunca buraya link koyacağız -->
+            <a class="btn soft" href="#" onclick="alert('Uygulama sitesi yakında eklenecek.'); return false;">Uygulamayı İncele</a>
+            <a class="btn" href="#iletisim">Bilgi Al</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MMPI -->
+    <div class="section" id="mmpi">
+      <div class="sectionTitle">
+        <h2>MMPI Değerlendirmesi</h2>
+        <p>Net, kısa, profesyonel bilgilendirme</p>
+      </div>
+
+      <div class="card">
+        <p>
+          <b>MMPI</b>, klinik değerlendirme sürecinde kullanılan kapsamlı bir envanterdir.
+          Uygulama ve yorumlama, <b>klinik görüşme</b> ve <b>geri bildirim</b> süreciyle birlikte yürütülür.
+          <br><br>
+          <span style="color:var(--muted); font-size:13px;">
+            Not: Uygunluk, amaç ve etik çerçeve ilk görüşmede değerlendirilir.
+          </span>
+        </p>
+      </div>
+    </div>
+
+    <!-- BLOG -->
+    <div class="section" id="blog">
+      <div class="sectionTitle">
+        <h2>Blog</h2>
+        <p>İstersen sonra yazıları ekleriz</p>
+      </div>
+
+      <div class="blogGrid">
+        <div class="card">
+          <div class="postMeta">Nisan 2026 • İlişkiler</div>
+          <h3 class="postTitle">İlişkide sınırlar: “Hayır” demek neden zor?</h3>
+          <p>İlişki dinamiklerinde sınır koyma, suçluluk ve onay ihtiyacı üzerine kısa bir çerçeve.</p>
+          <a class="postLink" href="#" onclick="alert('Blog yazıları yakında eklenecek.'); return false;">Devamını oku →</a>
+        </div>
+
+        <div class="card">
+          <div class="postMeta">Nisan 2026 • Kaygı</div>
+          <h3 class="postTitle">Aşırı düşünme döngüsü nasıl kırılır?</h3>
+          <p>BDT perspektifinden tetikleyici-düşünce-duygu-davranış zinciri ve küçük müdahaleler.</p>
+          <a class="postLink" href="#" onclick="alert('Blog yazıları yakında eklenecek.'); return false;">Devamını oku →</a>
+        </div>
+
+        <div class="card">
+          <div class="postMeta">Nisan 2026 • İyi oluş</div>
+          <h3 class="postTitle">Duygu düzenleme: zor duygularla kalabilmek</h3>
+          <p>Duyguları bastırmadan yönetebilmek için pratik bir mini rehber.</p>
+          <a class="postLink" href="#" onclick="alert('Blog yazıları yakında eklenecek.'); return false;">Devamını oku →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- İLETİŞİM -->
+    <div class="section" id="iletisim">
+      <div class="sectionTitle">
+        <h2>İletişim</h2>
+        <p>Randevu & bilgi için</p>
+      </div>
+
+      <div class="card">
+        <p style="margin:0; color:var(--muted); line-height:1.7;">
+          Randevu ve bilgi için WhatsApp’tan yazabilir veya e-posta gönderebilirsiniz.
+        </p>
+
+        <div class="ctaRow" style="margin-top:12px;">
+          <a class="btn primary" href="https://wa.me/905467114426?text=Merhaba%20Psikolog%20Umut%20G%C3%B6ve%C3%A7liklio%C4%9Flu%2C%20online%20terapi%20i%C3%A7in%20randevu%20almak%20istiyorum." target="_blank" rel="noopener">WhatsApp ile Yaz</a>
+          <a class="btn" href="mailto:pskumutgovecliklioglu@gmail.com?subject=Online%20Terapi%20Randevu%20Talebi">E-posta ile Yaz</a>
+        </div>
+
+        <p style="margin:12px 0 0; color:var(--muted); font-size:13px; line-height:1.6;">
+          <b>Not:</b> Şu an yüz yüze terapi vermiyorum. Tüm görüşmeler online olarak yürütülür.
+        </p>
       </div>
     </div>
 
     <div class="footer">
       <span>© 2026 Psikolog Umut Göveçliklioğlu</span>
-      <span>Online Terapi • MMPI • İletişim</span>
+      <span>
+        <a href="https://wa.me/905467114426" target="_blank" rel="noopener">WhatsApp</a> •
+        <a href="mailto:pskumutgovecliklioglu@gmail.com">E-posta</a>
+      </span>
     </div>
   </div>
 </body>
