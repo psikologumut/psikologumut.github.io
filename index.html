@@ -9,38 +9,64 @@
 
   <style>
     :root{
-      --bg:#0b1220;
-      --card:#101a2b;
-      --muted:#b8c4d8;
-      --text:#eef2ff;
-      --line:rgba(255,255,255,.10);
+      /* Krem tema */
+      --bg:#f6f0e6;          /* ana krem arka plan */
+      --bg2:#fbf7f1;         /* daha açık krem */
+      --card:#ffffff;        /* kart zemini */
+      --text:#111827;        /* ana yazı */
+      --muted:#4b5563;       /* ikincil yazı */
+      --line:rgba(17,24,39,.10);
       --radius:18px;
-      --shadow:0 20px 60px rgba(0,0,0,.35);
+      --shadow:0 18px 45px rgba(17,24,39,.10);
       --max:980px;
+
+      --btn:#111827;         /* ana buton */
+      --btnText:#ffffff;
+      --btn2:#ffffff;
+      --btn2Text:#111827;
     }
+
     *{box-sizing:border-box}
     body{
       margin:0;
       font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
-      background:radial-gradient(1200px 600px at 30% -10%, rgba(238,242,255,.10), transparent 60%), var(--bg);
+      background:
+        radial-gradient(1100px 520px at 25% -10%, rgba(17,24,39,.06), transparent 60%),
+        radial-gradient(900px 420px at 90% 0%, rgba(17,24,39,.04), transparent 55%),
+        var(--bg);
       color:var(--text);
     }
+
     a{color:inherit}
     .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 70px;}
+
     .nav{
       display:flex; align-items:center; justify-content:space-between; gap:14px;
       padding:14px 16px;
       border:1px solid var(--line);
       border-radius:999px;
-      background:rgba(16,26,43,.55);
+      background:rgba(255,255,255,.55);
       backdrop-filter: blur(10px);
+      box-shadow: var(--shadow);
     }
-    .brand{display:flex; flex-direction:column; line-height:1.1}
+
+    .brand{display:flex; flex-direction:column; line-height:1.15}
     .brand b{font-size:14px; letter-spacing:.2px}
     .brand span{font-size:12px; color:var(--muted)}
-    .menu{display:flex; gap:12px; flex-wrap:wrap; font-size:13px; color:var(--muted)}
-    .menu a{ text-decoration:none; padding:8px 10px; border-radius:999px;}
-    .menu a:hover{background:rgba(255,255,255,.06); color:var(--text)}
+
+    .menu{display:flex; gap:10px; flex-wrap:wrap; font-size:13px; color:var(--muted)}
+    .menu a{
+      text-decoration:none;
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid transparent;
+    }
+    .menu a:hover{
+      background:rgba(17,24,39,.04);
+      border-color:rgba(17,24,39,.08);
+      color:var(--text);
+    }
+
     .hero{
       padding:46px 6px 22px;
       display:grid;
@@ -49,29 +75,34 @@
       align-items:start;
     }
     @media (max-width: 860px){ .hero{grid-template-columns:1fr} }
+
     .badge{
       display:inline-flex; gap:8px; align-items:center;
       padding:8px 12px;
       border:1px solid var(--line);
       border-radius:999px;
       color:var(--muted);
-      background:rgba(16,26,43,.5)
+      background:rgba(255,255,255,.7);
     }
-    .dot{width:8px;height:8px;border-radius:999px;background:rgba(238,242,255,.8)}
+    .dot{width:8px;height:8px;border-radius:999px;background:rgba(17,24,39,.55)}
+
     h1{
-      margin:14px 0 8px;
+      margin:14px 0 10px;
       font-size:46px;
-      line-height:1.05;
+      line-height:1.06;
       letter-spacing:-.6px
     }
     @media (max-width: 520px){ h1{font-size:38px} }
+
     .lead{
       margin:0;
       font-size:18px;
-      line-height:1.6;
+      line-height:1.65;
       color:var(--muted)
     }
+
     .cta{display:flex; gap:10px; flex-wrap:wrap; margin-top:18px}
+
     .btn{
       display:inline-block;
       text-decoration:none;
@@ -79,52 +110,67 @@
       border-radius:14px;
       border:1px solid var(--line);
       font-weight:650;
-      font-size:14px
+      font-size:14px;
+      transition: transform .12s ease, opacity .12s ease;
     }
-    .btn.primary{background:#eef2ff; color:#0b1220; border-color:transparent}
-    .btn.ghost{background:transparent; color:var(--text)}
-    .btn:hover{transform: translateY(-1px)}
+    .btn.primary{
+      background:var(--btn);
+      color:var(--btnText);
+      border-color:transparent;
+    }
+    .btn.ghost{
+      background:var(--btn2);
+      color:var(--btn2Text);
+    }
+    .btn:hover{transform: translateY(-1px); opacity:.95}
+
     .grid{
       display:grid;
       grid-template-columns:repeat(3, 1fr);
       gap:12px;
-      margin-top:18px
+      margin-top:18px;
     }
     @media (max-width: 860px){ .grid{grid-template-columns:1fr} }
+
     .card{
       border:1px solid var(--line);
       border-radius:var(--radius);
       padding:18px;
-      background:rgba(16,26,43,.55);
+      background:var(--card);
       box-shadow:var(--shadow)
     }
     .card h2{margin:0 0 8px; font-size:16px}
-    .card p{margin:0; color:var(--muted); line-height:1.6; font-size:14px}
+    .card p{margin:0; color:var(--muted); line-height:1.65; font-size:14px}
+
     .section{margin-top:22px}
     .section h2{font-size:16px; margin:0 0 10px}
+
     .side{
       border:1px solid var(--line);
       border-radius:var(--radius);
-      background:rgba(16,26,43,.55);
+      background:rgba(255,255,255,.72);
       box-shadow:var(--shadow);
-      padding:18px
+      padding:18px;
     }
-    .side h3{margin:0 0 8px; font-size:14px; color:var(--muted); font-weight:600}
+    .side h3{margin:0 0 8px; font-size:14px; color:var(--muted); font-weight:700}
+
     .kpi{display:grid; gap:10px; margin-top:12px}
     .kpi div{
       border:1px solid var(--line);
       border-radius:14px;
       padding:12px;
-      background:rgba(255,255,255,.03)
+      background:rgba(17,24,39,.02)
     }
     .kpi b{display:block; font-size:14px}
     .kpi span{font-size:12px; color:var(--muted)}
-    .fine{color:rgba(184,196,216,.85); font-size:12.5px; line-height:1.6}
+
+    .fine{color:rgba(75,85,99,.95); font-size:12.5px; line-height:1.6}
+
     .footer{
       margin-top:30px;
       padding-top:18px;
       border-top:1px solid var(--line);
-      color:rgba(184,196,216,.8);
+      color:rgba(75,85,99,.9);
       font-size:12.5px;
       display:flex;
       justify-content:space-between;
