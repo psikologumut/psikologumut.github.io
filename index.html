@@ -38,6 +38,7 @@
     a{color:inherit}
     .wrap{max-width:var(--max); margin:0 auto; padding:18px 18px 90px;}
 
+    /* Topbar */
     .topbar{
       display:flex; align-items:center; justify-content:space-between; gap:12px;
       padding:14px 16px;
@@ -70,6 +71,7 @@
       color:var(--text);
     }
 
+    /* Layout */
     .hero{
       padding:34px 6px 12px;
       display:grid;
@@ -85,8 +87,17 @@
       background:rgba(255,255,255,.72);
       box-shadow: var(--shadow);
     }
-    .heroCard{ padding:22px; min-height: 360px; display:flex; flex-direction:column; justify-content:center; }
-    .side{ padding:18px; min-height: 360px; display:flex; flex-direction:column; gap:12px; }
+
+    /* ✅ TAŞMA FIX: heroCard artık üstten başlar ve daha yüksek */
+    .heroCard{
+      padding:28px;
+      min-height: 420px;
+      display:flex;
+      flex-direction:column;
+      justify-content:flex-start;
+    }
+
+    .side{ padding:18px; min-height: 420px; display:flex; flex-direction:column; gap:12px; }
 
     .badge{
       display:inline-flex; align-items:center; gap:8px;
@@ -99,6 +110,7 @@
     }
     .dot{width:8px; height:8px; border-radius:999px; background:rgba(17,24,39,.55)}
 
+    /* Slider */
     .sliderRow{
       display:flex;
       align-items:center;
@@ -115,19 +127,27 @@
       color:var(--text);
       box-shadow: 0 10px 25px rgba(17,24,39,.08);
       transition: transform .12s ease, box-shadow .12s ease;
+      flex: 0 0 auto;
     }
     .sliderBtn:hover{transform: translateY(-1px)}
     .sliderBtn:active{transform: translateY(0)}
     .sliderBtn:focus{outline: 2px solid var(--focus); outline-offset: 2px;}
 
+    /* ✅ TAŞMA FIX: sliderWrap daha yüksek + üstten hizalı */
     .sliderWrap{
       position:relative;
       flex:1;
       display:flex;
-      align-items:center;
-      min-height: 140px;
+      align-items:flex-start;
+      padding-top:10px;
+      min-height: 210px;
     }
-    @media (max-width: 520px){ .sliderWrap{min-height: 150px;} }
+    @media (max-width: 920px){
+      .sliderWrap{ min-height: 240px; }
+    }
+    @media (max-width: 520px){
+      .sliderWrap{ min-height: 260px; }
+    }
 
     .slide{
       position:absolute;
@@ -136,13 +156,14 @@
       transform: translateY(6px);
       transition: opacity .35s ease, transform .35s ease;
       display:flex;
-      align-items:center;
+      align-items:flex-start;
     }
     .slide.active{
       opacity:1;
       transform: translateY(0);
     }
 
+    /* Premium başlık: responsive + taşma engeli */
     .heroTitle{
       margin:0;
       font-weight:900;
@@ -154,7 +175,7 @@
     }
 
     .lead{
-      margin:14px 0 0;
+      margin:12px 0 0;
       font-size:16.5px;
       line-height:1.75;
       color:var(--muted);
@@ -202,6 +223,7 @@
     .btn:active{transform: translateY(0)}
     .btn:focus{outline: 2px solid var(--focus); outline-offset: 2px;}
 
+    /* Slider dots */
     .dots{
       display:flex;
       gap:8px;
@@ -225,6 +247,7 @@
       transform: scale(1.12);
     }
 
+    /* Side */
     .photo{
       border:1px solid var(--line);
       border-radius:16px;
@@ -251,13 +274,7 @@
     .quick .mini{display:flex; gap:8px; flex-wrap:wrap}
     .quick p{margin:10px 0 0; color:var(--muted); font-size:13px; line-height:1.6}
 
-    .divider{
-      margin: 22px 6px 0;
-      height:1px;
-      background: rgba(17,24,39,.08);
-      border-radius:999px;
-    }
-
+    /* Sections */
     .section{margin-top:26px; padding: 0 6px;}
     .sectionTitle{
       display:flex; align-items:flex-end; justify-content:space-between; gap:12px;
@@ -306,6 +323,7 @@
       width: fit-content;
     }
 
+    /* Blog */
     .blogGrid{
       display:grid;
       grid-template-columns: repeat(3, 1fr);
@@ -317,6 +335,14 @@
     .postLink{display:inline-block; margin-top:10px; color:var(--text); font-weight:900; text-decoration:none}
     .postLink:hover{text-decoration:underline}
 
+    .divider{
+      margin: 22px 6px 0;
+      height:1px;
+      background: rgba(17,24,39,.08);
+      border-radius:999px;
+    }
+
+    /* Footer */
     .footer{
       margin-top:30px;
       padding:18px 6px 0;
@@ -349,6 +375,7 @@
       </div>
     </div>
 
+    <!-- HERO -->
     <div class="hero">
       <div class="panel heroCard">
         <div class="badge"><span class="dot"></span> Online görüşme • Gizlilik & etik çerçeve</div>
@@ -364,7 +391,7 @@
               <h1 class="heroTitle">Yıllardır “idare ettiğiniz” şey, artık yorucu hale geldiyse…</h1>
             </div>
             <div class="slide">
-              <h1 class="heroTitle">İyileşmek, sadece idare etmekten farklıdır.</h1>
+              <h1 class="heroTitle">Görmezden geldiğiniz yer, en çok konuşulması gereken yer olabilir.</h1>
             </div>
           </div>
 
@@ -383,7 +410,7 @@
         </p>
 
         <div class="microLine">
-          İlk görüşmede çerçeveyi kurar, neyin işe yarayacağını birlikte belirleriz.
+          Seanslar yapılandırılmıştır. Gizlilik ve etik ilkeler temel çerçevedir.
         </div>
 
         <div class="ctaRow">
@@ -412,6 +439,7 @@
 
     <div class="divider"></div>
 
+    <!-- ÇALIŞMA ALANLARI -->
     <div class="section" id="calisma">
       <div class="sectionTitle">
         <h2>Çalışma Alanlarım</h2>
@@ -439,7 +467,7 @@
         </div>
 
         <div class="card">
-          <h3>Nasıl Çalışıyorum?</h3>
+          <h3>Online Terapi</h3>
           <p><b>1)</b> İlk görüşmede hedefi ve çerçeveyi netleştiririz.</p>
           <p style="margin-top:8px;"><b>2)</b> Seanslar yapılandırılmış ilerler (BDT temelli).</p>
           <p style="margin-top:8px;"><b>3)</b> Uygun olduğunda pratikler ve takip adımları eklenir.</p>
@@ -447,10 +475,11 @@
       </div>
     </div>
 
+    <!-- HAKKIMDA + UYGULAMA -->
     <div class="section" id="hakkimda">
       <div class="sectionTitle">
         <h2>Hakkımda</h2>
-        <p>Kısa • güven veren</p>
+        <p>Kısa • güven veren anlatım</p>
       </div>
 
       <div class="about">
@@ -482,6 +511,7 @@
       </div>
     </div>
 
+    <!-- MMPI -->
     <div class="section" id="mmpi">
       <div class="sectionTitle">
         <h2>MMPI Değerlendirmesi</h2>
@@ -497,6 +527,7 @@
       </div>
     </div>
 
+    <!-- BLOG -->
     <div class="section" id="blog">
       <div class="sectionTitle">
         <h2>Blog</h2>
@@ -527,6 +558,7 @@
       </div>
     </div>
 
+    <!-- İLETİŞİM -->
     <div class="section" id="iletisim">
       <div class="sectionTitle">
         <h2>İletişim</h2>
