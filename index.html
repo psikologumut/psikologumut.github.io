@@ -4,12 +4,11 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Psikolog Umut Göveçliklioğlu | Online Terapi (Bakü – İstanbul)</title>
-  <meta name="description" content="Psikolog Umut Göveçliklioğlu — Bakü–İstanbul | Online Terapi. BDT temelli terapi süreci. MMPI değerlendirmesi. Randevu için WhatsApp veya e-posta ile iletişime geçin." />
+  <meta name="description" content="Psikolog Umut Göveçliklioğlu — Bakü–İstanbul | Online Terapi. Yetişkin ve ergenlerle çalışıyorum. BDT temelli terapi süreci. MMPI değerlendirmesi. Randevu için WhatsApp veya e-posta ile iletişime geçin." />
   <meta name="robots" content="index,follow" />
 
   <style>
     :root{
-      /* Krem tema */
       --bg:#f6f0e6;
       --bg2:#fbf7f1;
       --card:#ffffff;
@@ -20,10 +19,9 @@
       --radius:18px;
       --max:1080px;
 
-      --accent:#111827;        /* buton/başlık */
-      --accent2:#f4efe6;       /* soft vurgu */
+      --accent:#111827;
+      --soft:#f4efe6;
     }
-
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{
@@ -38,7 +36,7 @@
     a{color:inherit}
     .wrap{max-width:var(--max); margin:0 auto; padding:18px 18px 80px;}
 
-    /* Top bar */
+    /* Sticky topbar */
     .topbar{
       display:flex; align-items:center; justify-content:space-between; gap:12px;
       padding:14px 16px;
@@ -109,6 +107,7 @@
       letter-spacing:-.6px;
     }
     @media (max-width: 520px){ h1{font-size:36px} }
+
     .lead{
       margin:0;
       font-size:17px;
@@ -129,7 +128,7 @@
       border-radius:14px;
       border:1px solid var(--line);
       text-decoration:none;
-      font-weight:700;
+      font-weight:800;
       font-size:14px;
       transition: transform .12s ease, opacity .12s ease;
       background: white;
@@ -140,12 +139,12 @@
       border-color: transparent;
     }
     .btn.soft{
-      background: var(--accent2);
+      background: var(--soft);
       color: var(--text);
     }
     .btn:hover{transform: translateY(-1px); opacity:.96}
 
-    /* Right Hero: Photo + quick box */
+    /* Right hero */
     .side{
       border:1px solid var(--line);
       border-radius:var(--radius);
@@ -167,8 +166,10 @@
       align-items:center;
       justify-content:center;
       color: rgba(17,24,39,.55);
-      font-weight: 700;
+      font-weight: 800;
       position: relative;
+      text-align:center;
+      padding:16px;
     }
     .photo img{
       width:100%;
@@ -183,43 +184,18 @@
       padding:14px;
     }
     .quick b{display:block; font-size:13px; color:var(--muted); margin-bottom:8px}
-    .quick .mini{
-      display:flex; gap:8px; flex-wrap:wrap;
-    }
-    .mini a{
-      font-size:13px;
-      padding:10px 12px;
-      border-radius:12px;
-    }
+    .quick .mini{display:flex; gap:8px; flex-wrap:wrap}
 
     /* Sections */
-    .section{
-      margin-top:22px;
-      padding: 0 6px;
-    }
+    .section{margin-top:22px; padding: 0 6px;}
     .sectionTitle{
-      display:flex;
-      align-items:flex-end;
-      justify-content:space-between;
-      gap:12px;
+      display:flex; align-items:flex-end; justify-content:space-between; gap:12px;
       margin: 0 0 10px;
     }
-    .sectionTitle h2{
-      margin:0;
-      font-size:16px;
-      letter-spacing:.2px;
-    }
-    .sectionTitle p{
-      margin:0;
-      color:var(--muted);
-      font-size:13px;
-    }
+    .sectionTitle h2{margin:0; font-size:16px; letter-spacing:.2px}
+    .sectionTitle p{margin:0; color:var(--muted); font-size:13px}
 
-    .grid{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap:12px;
-    }
+    .grid{display:grid; grid-template-columns: repeat(3, 1fr); gap:12px;}
     @media (max-width: 920px){ .grid{grid-template-columns:1fr} }
 
     .card{
@@ -232,17 +208,6 @@
     .card h3{margin:0 0 8px; font-size:15px}
     .card p{margin:0; color:var(--muted); font-size:14px; line-height:1.7}
 
-    .tagRow{margin-top:10px; display:flex; gap:8px; flex-wrap:wrap}
-    .tag{
-      font-size:12px;
-      padding:7px 10px;
-      border-radius:999px;
-      border:1px solid var(--line);
-      background: rgba(17,24,39,.02);
-      color: var(--muted);
-    }
-
-    /* About */
     .about{
       display:grid;
       grid-template-columns: 1.1fr .9fr;
@@ -250,7 +215,6 @@
     }
     @media (max-width: 920px){ .about{grid-template-columns:1fr} }
 
-    /* Blog */
     .blogGrid{
       display:grid;
       grid-template-columns: repeat(3, 1fr);
@@ -258,11 +222,10 @@
     }
     @media (max-width: 920px){ .blogGrid{grid-template-columns:1fr} }
     .postMeta{color:var(--muted); font-size:12.5px; margin-bottom:8px}
-    .postTitle{font-weight:800; margin:0 0 8px}
-    .postLink{display:inline-block; margin-top:10px; color:var(--text); font-weight:800; text-decoration:none}
+    .postTitle{font-weight:900; margin:0 0 8px}
+    .postLink{display:inline-block; margin-top:10px; color:var(--text); font-weight:900; text-decoration:none}
     .postLink:hover{text-decoration:underline}
 
-    /* Footer */
     .footer{
       margin-top:28px;
       padding:18px 6px 0;
@@ -301,7 +264,7 @@
         <div class="badge"><span class="dot"></span> Online görüşme • Gizlilik & etik çerçeve</div>
         <h1>Hayatınızı değiştirmek için bir adım atmaya her zaman gücünüz vardır.</h1>
         <p class="lead">
-          Yetişkinlerle çalışıyorum. Süreçte ağırlıklı olarak <b>Bilişsel Davranışçı Terapi (BDT)</b> yaklaşımını kullanır,
+          <b>Yetişkin ve ergenlerle</b> çalışıyorum. Süreçte ağırlıklı olarak <b>Bilişsel Davranışçı Terapi (BDT)</b> yaklaşımını kullanır,
           hedefleri birlikte netleştirip yapılandırılmış bir planla ilerleriz.
         </p>
 
@@ -310,19 +273,12 @@
           <a class="btn soft" href="#calisma">Çalışma Alanlarım</a>
           <a class="btn" href="#mmpi">MMPI Bilgilendirme</a>
         </div>
-
-        <div class="tagRow">
-          <span class="tag">Online terapi</span>
-          <span class="tag">BDT temelli</span>
-          <span class="tag">İlişki sorunları</span>
-          <span class="tag">Kaygı & stres</span>
-        </div>
       </div>
 
       <div class="side">
         <div class="photo">
-          <!-- profile.jpg yüklersen otomatik gösterir -->
-          <img src="profile.jpg" alt="Psikolog Umut Göveçliklioğlu" onerror="this.remove(); this.parentElement.textContent='(İstersen profile.jpg yükle)';" />
+          <img src="profile.jpg" alt="Psikolog Umut Göveçliklioğlu"
+               onerror="this.remove(); this.parentElement.textContent='(İstersen profile.jpg yükle)\\n\\nFotoğraf ekleyince daha premium durur.';" />
         </div>
 
         <div class="quick">
@@ -338,37 +294,42 @@
       </div>
     </div>
 
-    <!-- ÇALIŞMA ALANLARI -->
+    <!-- ÇALIŞMA ALANLARI (TEMA/PROBLEM ODAKLI) -->
     <div class="section" id="calisma">
       <div class="sectionTitle">
         <h2>Çalışma Alanlarım</h2>
-        <p>Odak alanlarını net ve anlaşılır şekilde</p>
+        <p>Danışanın kendini bulacağı net başlıklar</p>
       </div>
 
       <div class="grid">
         <div class="card">
-          <h3>Bireysel Terapi</h3>
-          <p>Kaygı, stres, özgüven, duygu düzenleme ve yaşam doyumu gibi alanlarda yapılandırılmış terapi süreci.</p>
+          <h3>Kaygı & Anksiyete</h3>
+          <p>Aşırı düşünme, bedensel belirtiler, sosyal kaygı ve kaçınma davranışları üzerine yapılandırılmış çalışma.</p>
         </div>
+
+        <div class="card">
+          <h3>Depresif Duygu Durum</h3>
+          <p>İsteksizlik, mutsuzluk, motivasyon kaybı ve yaşamdan keyif alamama temaları üzerine destek.</p>
+        </div>
+
         <div class="card">
           <h3>İlişki Sorunları</h3>
-          <p>Romantik ilişkilerde iletişim, sınırlar, manipülasyon döngüleri ve ilişki travmaları üzerine çalışma.</p>
+          <p>İletişim problemleri, bağlanma dinamikleri ve tekrar eden ilişki döngülerini anlamaya yönelik çalışma.</p>
         </div>
+
         <div class="card">
-          <h3>Online Terapi</h3>
-          <p>Güvenli ve planlı şekilde online görüşmeler. Hedef belirleme, seans gündemi ve ev ödevleriyle ilerleme.</p>
+          <h3>İlişki Travması & Manipülasyon</h3>
+          <p>Duygusal manipülasyon, terk edilme teması ve güven problemleri üzerine farkındalık ve yeniden yapılandırma.</p>
         </div>
+
         <div class="card">
-          <h3>Kaygı / Anksiyete</h3>
-          <p>Aşırı düşünme, bedensel belirtiler, kaçınma davranışları ve tetikleyicilerle baş etme becerileri.</p>
+          <h3>Özgüven & Yetersizlik Teması</h3>
+          <p>Olumsuz temel inançlar, kendilik algısı ve “yetersizlik” düşünce kalıplarını ele alma.</p>
         </div>
+
         <div class="card">
-          <h3>Stres & Duygusal Zorlanmalar</h3>
-          <p>Günlük yaşam stresi, tükenmişlik hissi, duygusal dalgalanmalar ve baş etme stratejileri.</p>
-        </div>
-        <div class="card">
-          <h3>Özgüven & Benlik</h3>
-          <p>Olumsuz inançlar, kendilik algısı, “yetersizlik” teması ve daha dengeli düşünme alışkanlıkları.</p>
+          <h3>Ergenlik Dönemi Zorlanmaları</h3>
+          <p>Kimlik gelişimi, okul stresi, sınırlar ve ergenlik sürecine özgü duygusal dalgalanmalar.</p>
         </div>
       </div>
     </div>
@@ -377,16 +338,16 @@
     <div class="section" id="hakkimda">
       <div class="sectionTitle">
         <h2>Hakkımda</h2>
-        <p>Kısa, temiz, güven veren anlatım</p>
+        <p>Kısa, güven veren anlatım</p>
       </div>
 
       <div class="about">
         <div class="card">
           <h3>Psikolog Umut Göveçliklioğlu</h3>
           <p>
-            Yetişkinlerle çalışıyorum. Seanslarımda ağırlıklı olarak <b>BDT</b> yaklaşımından yararlanır,
-            terapi sürecini güvenli, etik ve yapılandırılmış şekilde yürütürüm. Amacımız yalnızca konuşmak değil;
-            birlikte çalışarak somut ve kalıcı değişim sağlamaktır.
+            Yetişkin ve ergenlerle çalışıyorum. Seanslarımda ağırlıklı olarak <b>BDT</b> yaklaşımından yararlanır,
+            terapi sürecini güvenli, etik ve yapılandırılmış şekilde yürütürüm.
+            Amacımız yalnızca konuşmak değil; birlikte çalışarak somut ve kalıcı değişim sağlamaktır.
           </p>
           <p style="margin-top:10px; color:var(--muted); font-size:14px; line-height:1.7;">
             <b>Not:</b> Şu an yalnızca online terapi hizmeti veriyorum (Bakü – İstanbul).
@@ -400,7 +361,6 @@
             (Ödeme altyapısı ve ayrı site yakında.)
           </p>
           <div class="ctaRow" style="margin-top:12px;">
-            <!-- Uygulama sitesi hazır olunca buraya link koyacağız -->
             <a class="btn soft" href="#" onclick="alert('Uygulama sitesi yakında eklenecek.'); return false;">Uygulamayı İncele</a>
             <a class="btn" href="#iletisim">Bilgi Al</a>
           </div>
@@ -412,7 +372,7 @@
     <div class="section" id="mmpi">
       <div class="sectionTitle">
         <h2>MMPI Değerlendirmesi</h2>
-        <p>Net, kısa, profesyonel bilgilendirme</p>
+        <p>Net, kısa, profesyonel</p>
       </div>
 
       <div class="card">
@@ -431,21 +391,21 @@
     <div class="section" id="blog">
       <div class="sectionTitle">
         <h2>Blog</h2>
-        <p>İstersen sonra yazıları ekleriz</p>
+        <p>İstersen yazıları sonra çoğaltırız</p>
       </div>
 
       <div class="blogGrid">
         <div class="card">
           <div class="postMeta">Nisan 2026 • İlişkiler</div>
           <h3 class="postTitle">İlişkide sınırlar: “Hayır” demek neden zor?</h3>
-          <p>İlişki dinamiklerinde sınır koyma, suçluluk ve onay ihtiyacı üzerine kısa bir çerçeve.</p>
+          <p>İlişkilerde sınır koyma, suçluluk ve onay ihtiyacı üzerine kısa bir çerçeve.</p>
           <a class="postLink" href="#" onclick="alert('Blog yazıları yakında eklenecek.'); return false;">Devamını oku →</a>
         </div>
 
         <div class="card">
           <div class="postMeta">Nisan 2026 • Kaygı</div>
           <h3 class="postTitle">Aşırı düşünme döngüsü nasıl kırılır?</h3>
-          <p>BDT perspektifinden tetikleyici-düşünce-duygu-davranış zinciri ve küçük müdahaleler.</p>
+          <p>BDT perspektifinden tetikleyici–düşünce–duygu–davranış zinciri ve küçük müdahaleler.</p>
           <a class="postLink" href="#" onclick="alert('Blog yazıları yakında eklenecek.'); return false;">Devamını oku →</a>
         </div>
 
