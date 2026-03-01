@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Psikolog Umut Göveçliklioğlu | Online Terapi</title>
-  <meta name="description" content="Psikolog Umut Göveçliklioğlu — Bakü & İstanbul | Yetişkin ve ergenlerle online terapi. Psikolojik zorlanmalar ve cinsel yaşamla ilgili güçlüklerde yapılandırılmış destek." />
+  <meta name="description" content="Psikolog Umut Göveçliklioğlu — Bakü & İstanbul | Online terapi. Psikolojik zorlanmalar ve cinsel yaşamla ilgili güçlüklerde yapılandırılmış destek." />
   <meta name="robots" content="index,follow" />
 
   <style>
@@ -38,39 +38,6 @@
     a{color:inherit}
     .wrap{max-width:var(--max); margin:0 auto; padding:18px 18px 90px;}
 
-    /* Topbar */
-    .topbar{
-      display:flex; align-items:center; justify-content:space-between; gap:12px;
-      padding:14px 16px;
-      border:1px solid var(--line);
-      border-radius:999px;
-      background:rgba(255,255,255,.62);
-      backdrop-filter: blur(10px);
-      box-shadow: var(--shadow);
-      position: sticky;
-      top: 12px;
-      z-index: 10;
-    }
-    .brand{display:flex; flex-direction:column; line-height:1.15}
-    .brand b{font-size:14px; letter-spacing:.25px}
-    .brand span{font-size:12px; color:var(--muted)}
-    .nav{
-      display:flex; gap:10px; flex-wrap:wrap;
-      font-size:13px; color:var(--muted);
-    }
-    .nav a{
-      text-decoration:none;
-      padding:8px 10px;
-      border-radius:999px;
-      border:1px solid transparent;
-      white-space:nowrap;
-    }
-    .nav a:hover{
-      background:rgba(17,24,39,.04);
-      border-color:rgba(17,24,39,.08);
-      color:var(--text);
-    }
-
     /* Layout */
     .hero{
       padding:34px 6px 12px;
@@ -98,6 +65,16 @@
     }
 
     .side{ padding:18px; min-height: 420px; display:flex; flex-direction:column; gap:12px; }
+
+    /* Mini brand (üst menü yok — burada premium ve sade durur) */
+    .miniBrand{
+      display:flex;
+      flex-direction:column;
+      gap:2px;
+      margin-bottom:10px;
+    }
+    .miniBrand b{font-size:13px; letter-spacing:.25px}
+    .miniBrand span{font-size:12px; color:var(--muted)}
 
     .badge{
       display:inline-flex; align-items:center; gap:8px;
@@ -174,16 +151,8 @@
       word-break:normal;
     }
 
-    .lead{
-      margin:12px 0 0;
-      font-size:16.5px;
-      line-height:1.75;
-      color:var(--muted);
-      max-width: 62ch;
-    }
-
     .microLine{
-      margin-top:10px;
+      margin-top:14px;
       color: rgba(75,85,99,.95);
       font-size:13.5px;
       line-height:1.6;
@@ -275,7 +244,7 @@
     .quick p{margin:10px 0 0; color:var(--muted); font-size:13px; line-height:1.6}
 
     /* Sections */
-    .section{margin-top:26px; padding: 0 6px;}
+    .section{margin-top:34px; padding: 0 6px;}
     .sectionTitle{
       display:flex; align-items:flex-end; justify-content:space-between; gap:12px;
       margin: 0 0 12px;
@@ -369,23 +338,15 @@
 <body>
   <div class="wrap">
 
-    <div class="topbar">
-      <div class="brand">
-        <b>Psikolog Umut Göveçliklioğlu</b>
-        <span>Bakü – İstanbul • Sadece Online Terapi</span>
-      </div>
-      <div class="nav">
-        <a href="#calisma">Çalışma Alanlarım</a>
-        <a href="#hakkimda">Hakkımda</a>
-        <a href="#mmpi">MMPI</a>
-        <a href="#blog">Blog</a>
-        <a href="#iletisim">İletişim</a>
-      </div>
-    </div>
-
     <!-- HERO -->
     <div class="hero">
       <div class="panel heroCard">
+
+        <div class="miniBrand">
+          <b>Psikolog Umut Göveçliklioğlu</b>
+          <span>Bakü – İstanbul • Online Terapi</span>
+        </div>
+
         <div class="badge"><span class="dot"></span> Online görüşme • Gizlilik & etik çerçeve</div>
 
         <div class="sliderRow" aria-label="Öne çıkan mesajlar">
@@ -412,11 +373,6 @@
           <span class="dotP" data-i="2" role="button" tabindex="0" aria-label="3. mesaj"></span>
         </div>
 
-        <p class="lead">
-          <b>Yetişkin ve ergenlerle</b> çalışıyorum. Psikolojik zorlanmalar ve cinsel yaşamla ilgili güçlüklerde,
-          hedefi birlikte netleştirip <b>yapılandırılmış</b> bir planla ilerleriz.
-        </p>
-
         <div class="microLine">
           Seanslar yapılandırılmıştır. Gizlilik ve etik ilkeler temel çerçevedir.
         </div>
@@ -440,7 +396,7 @@
             <a class="btn primary" href="https://wa.me/905467114426?text=Merhaba%20Psikolog%20Umut%20G%C3%B6ve%C3%A7liklio%C4%9Flu%2C%20online%20terapi%20i%C3%A7in%20randevu%20almak%20istiyorum." target="_blank" rel="noopener">WhatsApp</a>
             <a class="btn" href="mailto:pskumutgovecliklioglu@gmail.com?subject=Online%20Terapi%20Randevu%20Talebi">E-posta</a>
           </div>
-          <p>Şu an yüz yüze hizmet vermiyorum. Tüm görüşmeler online yürütülür.</p>
+          <p>Randevu ve bilgi için hızlıca yazabilirsiniz.</p>
         </div>
       </div>
     </div>
@@ -503,7 +459,6 @@
           <p>Türk Psikologlar Derneği’nden MMPI uygulayıcı eğitimimi tamamladım ve aktif olarak test uygulamaları yapıyorum.</p>
 
           <p>Seans sürecinde amacım yalnızca konuşmak değil; düşünce, duygu ve davranış sisteminizi birlikte anlamlandırarak kalıcı değişim sağlamaktır. Süreç güvenli, yapılandırılmış ve bilimsel temellidir. Her danışan için terapi süreci kişiye özgü planlanır.</p>
-
         </div>
 
         <div class="card">
@@ -584,7 +539,7 @@
           <a class="btn" href="mailto:pskumutgovecliklioglu@gmail.com?subject=Online%20Terapi%20Randevu%20Talebi">E-posta ile Yaz</a>
         </div>
 
-        <div class="note"><b>Not:</b> Şu an yüz yüze terapi vermiyorum. Tüm görüşmeler online olarak yürütülür.</div>
+        <div class="note"><b>Not:</b> Görüşmeler online olarak yürütülür.</div>
       </div>
     </div>
 
