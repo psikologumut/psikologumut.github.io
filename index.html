@@ -323,6 +323,14 @@
       width: fit-content;
     }
 
+    /* ✅ Hakkımda metni: premium okunabilirlik + taşma güvenliği */
+    .aboutLong{
+      max-width: 74ch;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+    }
+    .aboutLong p + p{ margin-top:10px; }
+
     /* Blog */
     .blogGrid{
       display:grid;
@@ -483,15 +491,19 @@
       </div>
 
       <div class="about">
-        <div class="card">
+        <div class="card aboutLong">
           <h3>Psikolog Umut Göveçliklioğlu</h3>
-          <p>
-            Yetişkin ve ergenlerle çalışıyorum. Seanslarımda ağırlıklı olarak <b>Bilişsel Davranışçı Terapi (BDT)</b> yaklaşımından yararlanır,
-            süreci güvenli, etik ve yapılandırılmış şekilde yürütürüm.
-          </p>
-          <p style="margin-top:10px;">
-            Romantik ilişkiler ve kişilerarası örüntüler ilgi alanlarım arasındadır.
-          </p>
+
+          <p>Merhaba, ben Psikolog Umut Göveçliklioğlu. Sakarya Üniversitesi Psikoloji Bölümü mezunuyum. Ergen ve yetişkinlerle çalışıyorum.</p>
+
+          <p>Eğitim hayatım boyunca psikolojik danışma süreçleri, gelişimsel dinamikler ve terapötik yaklaşımlar üzerine yoğunlaştım. Özellikle romantik ilişkilerde yaşanan manipülasyon, ilişki travmaları ve terk edilme dinamikleri üzerine çalıştım. Bu alandaki çalışmalarım ulusal düzeyde bir kongrede bildiri olarak sunulmuştur.</p>
+
+          <p>Terapötik yetkinliğimi güçlendirmek amacıyla Bilişsel Davranışçı Psikoterapiler Derneği bünyesinde, Prof. Dr. Hakan Türkçapar koordinatörlüğünde Bilişsel Davranışçı Terapi eğitimimi tamamladım. Aynı kurumda Cinsel Terapi eğitimimi de aldım. Bunun yanında terapilerimde mindfulness temelli yaklaşımları ve Kısa Süreli Çözüm Odaklı Terapi tekniklerini eklektik bir çerçevede kullanıyorum.</p>
+
+          <p>Türk Psikologlar Derneği’nden MMPI uygulayıcı eğitimimi tamamladım ve aktif olarak test uygulamaları yapıyorum.</p>
+
+          <p>Seans sürecinde amacım yalnızca konuşmak değil; düşünce, duygu ve davranış sisteminizi birlikte anlamlandırarak kalıcı değişim sağlamaktır. Süreç güvenli, yapılandırılmış ve bilimsel temellidir. Her danışan için terapi süreci kişiye özgü planlanır.</p>
+
           <div class="note">
             <b>Not:</b> Şu an yalnızca online hizmet veriyorum (Bakü – İstanbul).
           </div>
