@@ -1,602 +1,214 @@
 <!doctype html>
 <html lang="tr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Psikolog Umut Göveçliklioğlu | Online Terapi</title>
-  <meta name="description" content="Psikolog Umut Göveçliklioğlu — Bakü & İstanbul | Online terapi. Psikolojik zorlanmalar ve cinsel yaşamla ilgili güçlüklerde yapılandırılmış destek." />
-  <meta name="robots" content="index,follow" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Psikolog Umut Göveçliklioğlu | Online Terapi</title>
 
-  <style>
-    :root{
-      --bg:#f6f0e6;
-      --card:#ffffff;
-      --text:#111827;
-      --muted:#4b5563;
-      --line:rgba(17,24,39,.10);
-      --shadow:0 18px 45px rgba(17,24,39,.10);
-      --radius:18px;
-      --max:1120px;
+<style>
+:root{
+  --bg:#f6f0e6;
+  --text:#111827;
+  --muted:#4b5563;
+  --accent:#111827;
+  --max:1120px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto;
+  background:var(--bg);
+  color:var(--text);
+}
+.wrap{max-width:var(--max); margin:0 auto; padding:40px 20px 80px;}
 
-      --accent:#111827;
-      --soft:#f4efe6;
+.hero{
+  display:grid;
+  grid-template-columns: 1.15fr .85fr;
+  gap:24px;
+}
+@media (max-width:900px){
+  .hero{grid-template-columns:1fr}
+}
 
-      --focus: rgba(17,24,39,.18);
-    }
+.panel{
+  background:rgba(255,255,255,.65);
+  border-radius:26px;
+  padding:36px;
+  box-shadow:0 25px 60px rgba(0,0,0,.08);
+}
 
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
-      background:
-        radial-gradient(1100px 520px at 25% -10%, rgba(17,24,39,.06), transparent 60%),
-        radial-gradient(900px 420px at 90% 0%, rgba(17,24,39,.04), transparent 55%),
-        var(--bg);
-      color:var(--text);
-    }
-    a{color:inherit}
-    .wrap{max-width:var(--max); margin:0 auto; padding:18px 18px 90px;}
+.miniBrand b{font-size:15px}
+.miniBrand span{font-size:13px; color:var(--muted)}
 
-    /* Layout */
-    .hero{
-      padding:34px 6px 12px;
-      display:grid;
-      grid-template-columns: 1.12fr .88fr;
-      gap:18px;
-      align-items:stretch;
-    }
-    @media (max-width: 920px){ .hero{grid-template-columns:1fr} }
+.sliderRow{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  margin-top:40px;
+}
 
-    .panel{
-      border:1px solid rgba(17,24,39,.08);
-      border-radius:22px;
-      background:rgba(255,255,255,.55);
-      box-shadow: 0 18px 45px rgba(17,24,39,.08);
-      backdrop-filter: blur(10px);
-    }
+.sliderBtn{
+  width:50px;
+  height:50px;
+  border-radius:16px;
+  border:none;
+  background:#fff;
+  box-shadow:0 10px 30px rgba(0,0,0,.1);
+  cursor:pointer;
+  font-size:20px;
+  font-weight:bold;
+}
 
-    .heroCard{
-      padding:28px;
-      min-height: 420px;
-      display:flex;
-      flex-direction:column;
-      justify-content:flex-start;
-    }
+.sliderWrap{
+  position:relative;
+  flex:1;
+  min-height:260px;
+}
 
-    .side{
-      padding:18px;
-      min-height: 420px;
-      display:flex;
-      flex-direction:column;
-      gap:12px;
-    }
+.slide{
+  position:absolute;
+  inset:0;
+  opacity:0;
+  transition:opacity .4s ease;
+  display:flex;
+  align-items:center;
+}
+.slide.active{opacity:1}
 
-    /* Mini brand */
-    .miniBrand{
-      display:flex;
-      flex-direction:column;
-      gap:2px;
-      margin-bottom:10px;
-    }
-    .miniBrand b{font-size:13px; letter-spacing:.25px}
-    .miniBrand span{font-size:12px; color:var(--muted)}
+.heroTitle{
+  font-size:clamp(34px,3.5vw,54px);
+  font-weight:900;
+  line-height:1.1;
+  letter-spacing:-.5px;
+  margin:0;
+}
 
-    .badge{
-      display:inline-flex; align-items:center; gap:8px;
-      padding:8px 12px;
-      border:1px solid rgba(17,24,39,.10);
-      border-radius:999px;
-      background:rgba(255,255,255,.72);
-      color:var(--muted);
-      width: fit-content;
-    }
-    .dot{width:8px; height:8px; border-radius:999px; background:rgba(17,24,39,.55)}
+.dots{
+  margin-top:20px;
+  display:flex;
+  gap:10px;
+}
+.dotP{
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:#ccc;
+}
+.dotP.active{background:#111827}
 
-    /* Slider */
-    .sliderRow{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      margin-top:14px;
-    }
-    .sliderBtn{
-      width:44px; height:44px;
-      border-radius:14px;
-      border:1px solid rgba(17,24,39,.10);
-      background:rgba(255,255,255,.88);
-      cursor:pointer;
-      font-weight:900;
-      color:var(--text);
-      box-shadow: 0 10px 25px rgba(17,24,39,.08);
-      transition: transform .12s ease, box-shadow .12s ease;
-      flex: 0 0 auto;
-    }
-    .sliderBtn:hover{transform: translateY(-1px)}
-    .sliderBtn:active{transform: translateY(0)}
-    .sliderBtn:focus{outline: 2px solid var(--focus); outline-offset: 2px;}
+.side .photo{
+  height:220px;
+  border-radius:20px;
+  background:#eee;
+  margin-bottom:18px;
+}
 
-    .sliderWrap{
-      position:relative;
-      flex:1;
-      display:flex;
-      align-items:flex-start;
-      padding-top:10px;
-      min-height: 250px;
-    }
-    @media (max-width: 920px){
-      .sliderWrap{ min-height: 280px; }
-    }
-    @media (max-width: 520px){
-      .sliderWrap{ min-height: 300px; }
-    }
-
-    .slide{
-      position:absolute;
-      inset:0;
-      opacity:0;
-      transform: translateY(6px);
-      transition: opacity .35s ease, transform .35s ease;
-      display:flex;
-      align-items:flex-start;
-    }
-    .slide.active{
-      opacity:1;
-      transform: translateY(0);
-    }
-
-    .heroTitle{
-      margin:0;
-      font-weight:900;
-      letter-spacing:-.6px;
-      line-height:1.10;
-      font-size: clamp(28px, 3.2vw, 46px);
-      overflow-wrap:anywhere;
-      word-break:normal;
-    }
-
-    /* Slider dots */
-    .dots{
-      display:flex;
-      gap:8px;
-      margin-top:12px;
-      align-items:center;
-      justify-content:flex-start;
-      user-select:none;
-    }
-    .dotP{
-      width:8px; height:8px;
-      border-radius:999px;
-      border:1px solid rgba(17,24,39,.25);
-      background: transparent;
-      opacity:.7;
-      transition: transform .18s ease, opacity .18s ease, background .18s ease;
-      cursor:pointer;
-    }
-    .dotP.active{
-      background: rgba(17,24,39,.75);
-      opacity: 1;
-      transform: scale(1.12);
-    }
-
-    /* Buttons */
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
-      padding:12px 14px;
-      border-radius:14px;
-      border:1px solid rgba(17,24,39,.10);
-      text-decoration:none;
-      font-weight:900;
-      font-size:14px;
-      transition: transform .12s ease, opacity .12s ease, box-shadow .12s ease;
-      background: rgba(255,255,255,.92);
-      white-space:nowrap;
-    }
-    .btn.primary{
-      background: var(--accent);
-      color:#fff;
-      border-color: transparent;
-      box-shadow: 0 12px 26px rgba(17,24,39,.16);
-    }
-    .btn:hover{transform: translateY(-1px); opacity:.97}
-    .btn:active{transform: translateY(0)}
-    .btn:focus{outline: 2px solid var(--focus); outline-offset: 2px;}
-
-    /* Side */
-    .photo{
-      border:1px solid rgba(17,24,39,.08);
-      border-radius:18px;
-      background: linear-gradient(180deg, rgba(17,24,39,.06), rgba(17,24,39,.02));
-      overflow:hidden;
-      height: 215px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      color: rgba(17,24,39,.55);
-      font-weight: 900;
-      text-align:center;
-      padding:16px;
-    }
-    .photo img{width:100%; height:100%; object-fit:cover; display:block;}
-
-    .quick{
-      border:1px solid rgba(17,24,39,.08);
-      border-radius:18px;
-      background: rgba(17,24,39,.02);
-      padding:14px;
-    }
-    .quick b{display:block; font-size:13px; color:var(--muted); margin-bottom:8px}
-    .quick .mini{display:flex; gap:8px; flex-wrap:wrap}
-    .quick p{margin:10px 0 0; color:var(--muted); font-size:13px; line-height:1.6}
-
-    /* Sections */
-    .section{margin-top:84px; padding: 0 6px;}
-    .sectionTitle{
-      display:flex;
-      align-items:flex-end;
-      justify-content:space-between;
-      gap:12px;
-      margin: 0 0 16px;
-    }
-    .sectionTitle h2{
-      margin:0;
-      font-size:24px;
-      font-weight:900;
-      letter-spacing:-.35px;
-    }
-    .sectionTitle p{margin:0; color:var(--muted); font-size:13px}
-
-    .grid{display:grid; grid-template-columns: repeat(3, 1fr); gap:12px;}
-    @media (max-width: 920px){ .grid{grid-template-columns:1fr} }
-
-    .card{
-      border:1px solid rgba(17,24,39,.08);
-      border-radius:22px;
-      background: rgba(255,255,255,.92);
-      box-shadow: 0 16px 40px rgba(17,24,39,.08);
-      padding:20px;
-    }
-    .card h3{margin:0 0 8px; font-size:15px}
-    .card p{margin:0; color:var(--muted); font-size:14px; line-height:1.7}
-    .note{
-      margin-top:10px;
-      font-size:13px;
-      color: rgba(75,85,99,.95);
-      line-height:1.6;
-    }
-
-    .about{
-      display:grid;
-      grid-template-columns: 1.05fr .95fr;
-      gap:12px;
-    }
-    @media (max-width: 920px){ .about{grid-template-columns:1fr} }
-
-    .pill{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding:8px 10px;
-      border-radius:999px;
-      border:1px solid rgba(17,24,39,.10);
-      background: rgba(17,24,39,.02);
-      color: var(--muted);
-      font-size:12.5px;
-      font-weight:800;
-      width: fit-content;
-    }
-
-    .aboutLong{
-      max-width: 74ch;
-      overflow-wrap: anywhere;
-      word-break: break-word;
-    }
-    .aboutLong p + p{ margin-top:10px; }
-
-    /* Blog */
-    .blogGrid{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap:12px;
-    }
-    @media (max-width: 920px){ .blogGrid{grid-template-columns:1fr} }
-    .postMeta{color:var(--muted); font-size:12.5px; margin-bottom:8px}
-    .postTitle{font-weight:900; margin:0 0 8px}
-    .postLink{display:inline-block; margin-top:10px; color:var(--text); font-weight:900; text-decoration:none}
-    .postLink:hover{text-decoration:underline}
-
-    .divider{
-      margin: 36px 6px 0;
-      height:1px;
-      background: rgba(17,24,39,.06);
-      border-radius:999px;
-    }
-
-    /* Footer */
-    .footer{
-      margin-top:30px;
-      padding:18px 6px 0;
-      border-top:1px solid rgba(17,24,39,.08);
-      display:flex;
-      justify-content:space-between;
-      gap:12px;
-      flex-wrap:wrap;
-      color: rgba(75,85,99,.92);
-      font-size:12.5px;
-    }
-    .footer a{color:inherit}
-  </style>
+.quick{
+  background:#fff;
+  padding:20px;
+  border-radius:20px;
+}
+.quick b{display:block; margin-bottom:10px}
+.btn{
+  display:inline-block;
+  padding:12px 16px;
+  border-radius:14px;
+  font-weight:700;
+  text-decoration:none;
+}
+.btn.primary{
+  background:#111827;
+  color:#fff;
+}
+.btn.secondary{
+  background:#f1f1f1;
+  color:#111827;
+}
+</style>
 </head>
 
 <body>
-  <div class="wrap">
+<div class="wrap">
 
-    <!-- HERO -->
-    <div class="hero">
-      <div class="panel heroCard">
+<div class="hero">
+  <div class="panel">
 
-        <div class="miniBrand">
-          <b>Psikolog Umut Göveçliklioğlu</b>
-          <span>Bakü – İstanbul • Online Terapi</span>
-        </div>
-
-        <div class="badge"><span class="dot"></span> Online görüşme • Gizlilik & etik çerçeve</div>
-
-        <div class="sliderRow" aria-label="Öne çıkan mesajlar">
-          <button class="sliderBtn" id="prevBtn" aria-label="Önceki mesaj">‹</button>
-
-          <div class="sliderWrap">
-            <div class="slide active">
-              <h1 class="heroTitle">Zorlandığınız alanı birlikte netleştirebiliriz.</h1>
-            </div>
-            <div class="slide">
-              <h1 class="heroTitle">Yıllardır “idare ettiğiniz” şey, artık yorucu hale geldiyse…</h1>
-            </div>
-            <div class="slide">
-              <h1 class="heroTitle">Görmezden geldiğiniz yer, en çok konuşulması gereken yer olabilir.</h1>
-            </div>
-          </div>
-
-          <button class="sliderBtn" id="nextBtn" aria-label="Sonraki mesaj">›</button>
-        </div>
-
-        <div class="dots" aria-label="Slider göstergeleri">
-          <span class="dotP active" data-i="0" role="button" tabindex="0" aria-label="1. mesaj"></span>
-          <span class="dotP" data-i="1" role="button" tabindex="0" aria-label="2. mesaj"></span>
-          <span class="dotP" data-i="2" role="button" tabindex="0" aria-label="3. mesaj"></span>
-        </div>
-
-      </div>
-
-      <div class="panel side">
-        <div class="photo">
-          <img src="profile.jpg" alt="Psikolog Umut Göveçliklioğlu"
-               onerror="this.remove(); this.parentElement.textContent='(İstersen profile.jpg yükle)\\n\\nFotoğraf ekleyince daha premium durur.';" />
-        </div>
-
-        <div class="quick">
-          <b>Hızlı İletişim</b>
-          <div class="mini">
-            <a class="btn primary" href="https://wa.me/905467114426?text=Merhaba%20Psikolog%20Umut%20G%C3%B6ve%C3%A7liklio%C4%9Flu%2C%20online%20terapi%20i%C3%A7in%20randevu%20almak%20istiyorum." target="_blank" rel="noopener">WhatsApp</a>
-            <a class="btn" href="mailto:pskumutgovecliklioglu@gmail.com?subject=Online%20Terapi%20Randevu%20Talebi">E-posta</a>
-          </div>
-          <p>Randevu ve bilgi için hızlıca yazabilirsiniz.</p>
-        </div>
-      </div>
+    <div class="miniBrand">
+      <b>Psikolog Umut Göveçliklioğlu</b><br>
+      <span>Bakü – İstanbul • Online Terapi</span>
     </div>
 
-    <div class="divider"></div>
+    <div class="sliderRow">
+      <button class="sliderBtn" id="prevBtn">‹</button>
 
-    <!-- ÇALIŞMA ALANLARI -->
-    <div class="section" id="calisma">
-      <div class="sectionTitle">
-        <h2>Çalışma Alanlarım</h2>
-        <p>Net başlıklar • premium düzen</p>
-      </div>
-
-      <div class="grid">
-        <div class="card">
-          <h3>Psikolojik Zorlanmalar</h3>
-          <p>
-            Kaygı bozuklukları, depresif duygu durum, aşırı düşünme, özgüven problemleri ve ergenlik dönemi zorlanmaları üzerine
-            yapılandırılmış terapi süreci.
-          </p>
+      <div class="sliderWrap">
+        <div class="slide active">
+          <h1 class="heroTitle">Zorlandığınız alanı birlikte netleştirebiliriz.</h1>
         </div>
-
-        <div class="card">
-          <h3>Cinsel Terapi</h3>
-          <p>
-            Performans kaygısı, isteksizlik, cinsel işlevle ilgili zorlanmalar ve yakınlık problemleri üzerine psikoeğitim ve
-            yapılandırılmış müdahaleler.
-          </p>
-          <div class="note">
-            Bu alandaki eğitim sürecim devam etmektedir. Uygunluk ilk görüşmede değerlendirilir.
-          </div>
+        <div class="slide">
+          <h1 class="heroTitle">Yıllardır “idare ettiğiniz” şey, artık yorucu hale geldiyse…</h1>
         </div>
-
-        <div class="card">
-          <h3>Online Terapi</h3>
-          <p><b>1)</b> İlk görüşmede hedefi ve çerçeveyi netleştiririz.</p>
-          <p style="margin-top:8px;"><b>2)</b> Seanslar yapılandırılmış ilerler (BDT temelli).</p>
-          <p style="margin-top:8px;"><b>3)</b> Uygun olduğunda pratikler ve takip adımları eklenir.</p>
+        <div class="slide">
+          <h1 class="heroTitle">Görmezden geldiğiniz yer, en çok konuşulması gereken yer olabilir.</h1>
         </div>
       </div>
+
+      <button class="sliderBtn" id="nextBtn">›</button>
     </div>
 
-    <!-- HAKKIMDA + UYGULAMA -->
-    <div class="section" id="hakkimda">
-      <div class="sectionTitle">
-        <h2>Hakkımda</h2>
-        <p>Kısa • güven veren anlatım</p>
-      </div>
-
-      <div class="about">
-        <div class="card aboutLong">
-          <h3>Psikolog Umut Göveçliklioğlu</h3>
-
-          <p>Merhaba, ben Psikolog Umut Göveçliklioğlu. Sakarya Üniversitesi Psikoloji Bölümü mezunuyum. Ergen ve yetişkinlerle çalışıyorum.</p>
-
-          <p>Eğitim hayatım boyunca psikolojik danışma süreçleri, gelişimsel dinamikler ve terapötik yaklaşımlar üzerine yoğunlaştım. Özellikle romantik ilişkilerde yaşanan manipülasyon, ilişki travmaları ve terk edilme dinamikleri üzerine çalıştım. Bu alandaki çalışmalarım ulusal düzeyde bir kongrede bildiri olarak sunulmuştur.</p>
-
-          <p>Terapötik yetkinliğimi güçlendirmek amacıyla Bilişsel Davranışçı Psikoterapiler Derneği bünyesinde, Prof. Dr. Hakan Türkçapar koordinatörlüğünde Bilişsel Davranışçı Terapi eğitimimi tamamladım. Aynı kurumda Cinsel Terapi eğitimimi de aldım. Bunun yanında terapilerimde mindfulness temelli yaklaşımları ve Kısa Süreli Çözüm Odaklı Terapi tekniklerini eklektik bir çerçevede kullanıyorum.</p>
-
-          <p>Türk Psikologlar Derneği’nden MMPI uygulayıcı eğitimimi tamamladım ve aktif olarak test uygulamaları yapıyorum.</p>
-
-          <p>Seans sürecinde amacım yalnızca konuşmak değil; düşünce, duygu ve davranış sisteminizi birlikte anlamlandırarak kalıcı değişim sağlamaktır. Süreç güvenli, yapılandırılmış ve bilimsel temellidir. Her danışan için terapi süreci kişiye özgü planlanır.</p>
-        </div>
-
-        <div class="card">
-          <h3>Meslek & Kişilik Analizi Uygulaması</h3>
-          <p>
-            Kişiliğinize, mesleğe yatkınlığınıza ve bilişsel profilinize göre meslek önerileri sunan bir uygulama projem var.
-          </p>
-          <div class="pill" style="margin-top:12px;">Yakında: Ödeme + ayrı site</div>
-
-          <div style="margin-top:12px;">
-            <a class="btn" href="#iletisim">Uygulama için bilgi al</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- MMPI -->
-    <div class="section" id="mmpi">
-      <div class="sectionTitle">
-        <h2>MMPI Değerlendirmesi</h2>
-        <p>Net • kısa • profesyonel</p>
-      </div>
-
-      <div class="card">
-        <p>
-          <b>MMPI</b>, klinik değerlendirme sürecinde kullanılan kapsamlı bir envanterdir.
-          Uygulama ve yorumlama, <b>klinik görüşme</b> ve <b>geri bildirim</b> süreciyle birlikte yürütülür.
-        </p>
-        <div class="note">Not: Uygunluk, amaç ve etik çerçeve ilk görüşmede değerlendirilir.</div>
-      </div>
-    </div>
-
-    <!-- BLOG -->
-    <div class="section" id="blog">
-      <div class="sectionTitle">
-        <h2>Blog</h2>
-        <p>İstersen içerikleri birlikte büyütürüz</p>
-      </div>
-
-      <div class="blogGrid">
-        <div class="card">
-          <div class="postMeta">Nisan 2026 • İlişkiler</div>
-          <h3 class="postTitle">İlişkide sınırlar: “Hayır” demek neden zor?</h3>
-          <p>İlişkilerde sınır koyma, suçluluk ve onay ihtiyacı üzerine kısa bir çerçeve.</p>
-          <a class="postLink" href="#" onclick="return false;">Devamını oku →</a>
-        </div>
-
-        <div class="card">
-          <div class="postMeta">Nisan 2026 • Kaygı</div>
-          <h3 class="postTitle">Aşırı düşünme döngüsü nasıl kırılır?</h3>
-          <p>BDT perspektifinden tetikleyici–düşünce–duygu–davranış zinciri ve küçük müdahaleler.</p>
-          <a class="postLink" href="#" onclick="return false;">Devamını oku →</a>
-        </div>
-
-        <div class="card">
-          <div class="postMeta">Nisan 2026 • İyi oluş</div>
-          <h3 class="postTitle">Duygu düzenleme: zor duygularla kalabilmek</h3>
-          <p>Duyguları bastırmadan yönetebilmek için pratik bir mini rehber.</p>
-          <a class="postLink" href="#" onclick="return false;">Devamını oku →</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- İLETİŞİM -->
-    <div class="section" id="iletisim">
-      <div class="sectionTitle">
-        <h2>İletişim</h2>
-        <p>Randevu & bilgi için</p>
-      </div>
-
-      <div class="card">
-        <p style="margin:0; color:var(--muted); line-height:1.7;">
-          Randevu ve bilgi için WhatsApp’tan yazabilir veya e-posta gönderebilirsiniz.
-        </p>
-
-        <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px;">
-          <a class="btn primary" href="https://wa.me/905467114426?text=Merhaba%20Psikolog%20Umut%20G%C3%B6ve%C3%A7liklio%C4%9Flu%2C%20online%20terapi%20i%C3%A7in%20randevu%20almak%20istiyorum." target="_blank" rel="noopener">WhatsApp ile Yaz</a>
-          <a class="btn" href="mailto:pskumutgovecliklioglu@gmail.com?subject=Online%20Terapi%20Randevu%20Talebi">E-posta ile Yaz</a>
-        </div>
-
-        <div class="note"><b>Not:</b> Görüşmeler online olarak yürütülür.</div>
-      </div>
-    </div>
-
-    <div class="footer">
-      <span>© 2026 Psikolog Umut Göveçliklioğlu</span>
-      <span>
-        <a href="https://wa.me/905467114426" target="_blank" rel="noopener">WhatsApp</a> •
-        <a href="mailto:pskumutgovecliklioglu@gmail.com">E-posta</a>
-      </span>
+    <div class="dots">
+      <div class="dotP active"></div>
+      <div class="dotP"></div>
+      <div class="dotP"></div>
     </div>
 
   </div>
 
-  <script>
-    (function(){
-      const slides = Array.from(document.querySelectorAll('.slide'));
-      const prevBtn = document.getElementById('prevBtn');
-      const nextBtn = document.getElementById('nextBtn');
-      const dots = Array.from(document.querySelectorAll('.dotP'));
+  <div class="panel side">
+    <div class="photo"></div>
 
-      let idx = 0;
-      let timer = null;
-      const INTERVAL = 4200;
+    <div class="quick">
+      <b>Hızlı İletişim</b>
+      <a class="btn primary" href="#">WhatsApp</a>
+      <a class="btn secondary" href="#">E-posta</a>
+      <p style="color:#6b7280; font-size:13px; margin-top:12px;">
+        Randevu ve bilgi için yazabilirsiniz.
+      </p>
+    </div>
+  </div>
+</div>
 
-      function setDots(i){
-        dots.forEach(d => d.classList.remove('active'));
-        if(dots[i]) dots[i].classList.add('active');
-      }
+</div>
 
-      function show(i){
-        slides[idx].classList.remove('active');
-        idx = (i + slides.length) % slides.length;
-        slides[idx].classList.add('active');
-        setDots(idx);
-      }
+<script>
+const slides = document.querySelectorAll('.slide');
+const dots = document.querySelectorAll('.dotP');
+let index = 0;
 
-      function next(){ show(idx + 1); }
-      function prev(){ show(idx - 1); }
+function showSlide(i){
+  slides.forEach(s=>s.classList.remove('active'));
+  dots.forEach(d=>d.classList.remove('active'));
+  slides[i].classList.add('active');
+  dots[i].classList.add('active');
+}
 
-      function start(){
-        stop();
-        timer = setInterval(next, INTERVAL);
-      }
-      function stop(){
-        if(timer) clearInterval(timer);
-        timer = null;
-      }
+document.getElementById('nextBtn').onclick = ()=>{
+  index = (index+1)%slides.length;
+  showSlide(index);
+};
 
-      nextBtn.addEventListener('click', () => { next(); start(); });
-      prevBtn.addEventListener('click', () => { prev(); start(); });
+document.getElementById('prevBtn').onclick = ()=>{
+  index = (index-1+slides.length)%slides.length;
+  showSlide(index);
+};
 
-      dots.forEach(d => {
-        const go = () => { show(parseInt(d.dataset.i, 10) || 0); start(); };
-        d.addEventListener('click', go);
-        d.addEventListener('keydown', (e) => {
-          if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); go(); }
-        });
-      });
+setInterval(()=>{
+  index = (index+1)%slides.length;
+  showSlide(index);
+},4000);
+</script>
 
-      document.addEventListener('keydown', (e) => {
-        if(e.key === 'ArrowRight'){ next(); start(); }
-        if(e.key === 'ArrowLeft'){ prev(); start(); }
-      });
-
-      const heroCard = document.querySelector('.heroCard');
-      heroCard.addEventListener('mouseenter', stop);
-      heroCard.addEventListener('mouseleave', start);
-
-      start();
-    })();
-  </script>
 </body>
 </html>
