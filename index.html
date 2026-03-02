@@ -251,43 +251,19 @@
       margin-top:12px;
     }
 
-    /* BLOG article styling */
-    .article h1{
-      margin:0 0 10px;
-      font-size:18px;
-      letter-spacing:.2px;
+    /* Blog preview tweaks */
+    .blogPreviewTitle{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
     }
-    .article h4{
-      margin:18px 0 6px;
-      font-size:14px;
-      letter-spacing:.15px;
-    }
-    .article p{
+    .blogPreviewTitle h3{
       margin:0;
-      margin-top:10px;
-      color: var(--muted);
-      font-size:14px;
-      line-height:1.85;
+      font-size:15px;
+      line-height:1.35;
     }
-    .callout{
-      margin-top:14px;
-      padding:14px;
-      border-radius:16px;
-      background: rgba(17,24,39,.03);
-      border:1px solid rgba(17,24,39,.08);
-      color: rgba(17,24,39,.86);
-      font-weight:800;
-      line-height:1.7;
-      font-size:13.5px;
-    }
-    .bullets{
-      margin:10px 0 0;
-      padding-left:18px;
-      color: var(--muted);
-      font-size:14px;
-      line-height:1.85;
-    }
-    .bullets li{margin:6px 0}
 
     /* Footer */
     .footer{
@@ -396,7 +372,7 @@
       </div>
     </div>
 
-    <!-- HAKKIMDA (Yaklaşımım yok) -->
+    <!-- HAKKIMDA -->
     <div class="section" id="hakkimda">
       <div class="sectionTitle">
         <h2>Hakkımda</h2>
@@ -422,6 +398,30 @@
           <div class="note" style="margin-top:10px;">
             <b>Seans sürecinde amacım yalnızca konuşmak değil; düşünce, duygu ve davranış sisteminizi birlikte anlamlandırarak kalıcı değişim sağlamaktır.</b>
           </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BLOG (preview + Devamını oku) -->
+    <div class="section" id="blog">
+      <div class="sectionTitle">
+        <h2>Blog</h2>
+        <p>Güncel yazılar</p>
+      </div>
+
+      <div class="card">
+        <div class="blogPreviewTitle">
+          <h3>Romantik İlişkilerde Travma, Manipülasyon ve Terk Edilme</h3>
+          <a class="btn" href="blog-romantik-iliskiler.html">Devamını oku →</a>
+        </div>
+
+        <p style="margin-top:10px; color:var(--muted); font-size:14px; line-height:1.7;">
+          İlişki travması, geçmiş ilişkilerde yaşanan olumsuz deneyimlerin bugünkü ilişkilerde güveni, yakınlığı ve duygusal dengeyi nasıl etkilediğini anlatır.
+          Bu yazıda; ilişki travmasının izleri, manipülasyonun sessiz yolları ve terk edilme korkusunun ilişkide nasıl döngüye dönüştüğü üzerine kapsamlı bir çerçeve bulacaksınız.
+        </p>
+
+        <div class="ctaRow" style="justify-content:flex-end;">
+          <a class="btn primary" href="blog-romantik-iliskiler.html">Devam et</a>
         </div>
       </div>
     </div>
