@@ -10,8 +10,8 @@
   <style>
     :root{
       /* Premium palette */
-      --bg0:#fbf7f0;   /* ana arka plan */
-      --bg1:#f3ede4;   /* sıcak katman */
+      --bg0:#fbf7f0;
+      --bg1:#f3ede4;
       --card: rgba(255,255,255,.78);
       --card2: rgba(255,255,255,.92);
 
@@ -152,7 +152,6 @@
       transform: translateY(0);
     }
 
-    /* Premium type: daha “editorial” */
     .heroTitle{
       margin:0;
       font-weight:950;
@@ -184,7 +183,7 @@
       background: rgba(15,23,42,.82);
       opacity: 1;
       transform: scale(1.05);
-      width:18px; /* premium “pill” aktif nokta */
+      width:18px;
     }
 
     /* Photo (hero right) */
@@ -258,19 +257,17 @@
       line-height:1.6;
     }
 
-    .about{
+    /* About: tek kolon (yaklaşımım kartı kaldırıldı) */
+    .aboutSingle{
       display:grid;
-      grid-template-columns: 1.05fr .95fr;
+      grid-template-columns: 1fr;
       gap:12px;
     }
-    @media (max-width: 920px){ .about{grid-template-columns:1fr} }
 
-    /* About: nefesli, ama anlam bozulmadan */
     .aboutLong p{margin:0}
     .aboutLong p + p{ margin-top:12px; }
-    .aboutLong{
-      max-width: 78ch;
-    }
+    .aboutLong{ max-width: 82ch; }
+
     .highlightLine{
       margin-top:14px;
       padding:14px 14px;
@@ -448,14 +445,14 @@
       </div>
     </div>
 
-    <!-- HAKKIMDA -->
+    <!-- HAKKIMDA (tek kart) -->
     <div class="section" id="hakkimda">
       <div class="sectionTitle">
         <h2>Hakkımda</h2>
         <p>Kısa • güven veren anlatım</p>
       </div>
 
-      <div class="about">
+      <div class="aboutSingle">
         <div class="card aboutLong">
           <h3>Psikolog Umut Göveçliklioğlu</h3>
 
@@ -473,33 +470,6 @@
 
           <p style="margin-top:12px;">Süreç güvenli, yapılandırılmış ve bilimsel temellidir. Her danışan için terapi süreci kişiye özgü planlanır.</p>
         </div>
-
-        <div class="card">
-          <h3>Yaklaşımım</h3>
-          <p>
-            Seanslarda ağırlıklı olarak Bilişsel Davranışçı Terapi (BDT) yaklaşımından yararlanırım.
-            Uygun olduğunda mindfulness temelli teknikler ve Kısa Süreli Çözüm Odaklı Terapi araçlarıyla süreci desteklerim.
-          </p>
-          <div class="note">
-            Terapi süreci; hedef, çerçeve ve takip adımları açısından net bir şekilde yapılandırılır.
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- MMPI -->
-    <div class="section" id="mmpi">
-      <div class="sectionTitle">
-        <h2>MMPI Değerlendirmesi</h2>
-        <p>Net • kısa • profesyonel</p>
-      </div>
-
-      <div class="card">
-        <p>
-          <b>MMPI</b>, klinik değerlendirme sürecinde kullanılan kapsamlı bir envanterdir.
-          Uygulama ve yorumlama, <b>klinik görüşme</b> ve <b>geri bildirim</b> süreciyle birlikte yürütülür.
-        </p>
-        <div class="note">Not: Uygunluk, amaç ve etik çerçeve ilk görüşmede değerlendirilir.</div>
       </div>
     </div>
 
