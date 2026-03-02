@@ -9,28 +9,19 @@
 
   <style>
     :root{
-      /* Premium palette */
-      --bg0:#fbf7f0;
-      --bg1:#f3ede4;
+      --bg:#f6f0e6;
+      --card:#ffffff;
+      --text:#111827;
+      --muted:#4b5563;
+      --line:rgba(17,24,39,.10);
+      --shadow:0 18px 45px rgba(17,24,39,.10);
+      --radius:18px;
+      --max:1120px;
 
-      --text:#0f172a;
-      --muted:#475569;
+      --accent:#111827;
+      --soft:#f4efe6;
 
-      --card: rgba(255,255,255,.78);
-      --card2: rgba(255,255,255,.92);
-
-      --line: rgba(15,23,42,.10);
-      --line2: rgba(15,23,42,.08);
-
-      --shadow: 0 22px 55px rgba(15,23,42,.10);
-      --shadow2: 0 16px 40px rgba(15,23,42,.08);
-
-      --radius: 22px;
-      --radius2: 26px;
-      --max: 1120px;
-
-      --accent:#0f172a;
-      --focus: rgba(15,23,42,.18);
+      --focus: rgba(17,24,39,.18);
     }
 
     *{box-sizing:border-box}
@@ -38,38 +29,36 @@
     body{
       margin:0;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
-      color:var(--text);
       background:
-        radial-gradient(900px 520px at 18% -10%, rgba(15,23,42,.06), transparent 60%),
-        radial-gradient(900px 520px at 92% 0%, rgba(15,23,42,.04), transparent 55%),
-        radial-gradient(1200px 900px at 45% 110%, rgba(15,23,42,.05), transparent 60%),
-        linear-gradient(180deg, var(--bg0), var(--bg1));
+        radial-gradient(1100px 520px at 25% -10%, rgba(17,24,39,.06), transparent 60%),
+        radial-gradient(900px 420px at 90% 0%, rgba(17,24,39,.04), transparent 55%),
+        var(--bg);
+      color:var(--text);
     }
-
     a{color:inherit}
-    .wrap{max-width:var(--max); margin:0 auto; padding:22px 18px 90px;}
+    .wrap{max-width:var(--max); margin:0 auto; padding:18px 18px 90px;}
 
-    /* HERO */
+    /* Layout */
     .hero{
-      padding:38px 6px 14px;
+      padding:34px 6px 12px;
       display:grid;
-      grid-template-columns: 1.15fr .85fr;
-      gap:16px;
+      grid-template-columns: 1.12fr .88fr;
+      gap:18px;
       align-items:stretch;
     }
     @media (max-width: 920px){ .hero{grid-template-columns:1fr} }
 
     .panel{
-      border:1px solid var(--line2);
-      border-radius:var(--radius2);
-      background: var(--card);
-      backdrop-filter: blur(12px);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      background:rgba(255,255,255,.72);
       box-shadow: var(--shadow);
     }
 
+    /* heroCard */
     .heroCard{
-      padding:30px;
-      min-height: 440px;
+      padding:28px;
+      min-height: 420px;
       display:flex;
       flex-direction:column;
       justify-content:flex-start;
@@ -77,52 +66,32 @@
 
     .side{
       padding:18px;
-      min-height: 440px;
+      min-height: 420px;
       display:flex;
       flex-direction:column;
       gap:12px;
-    }
-
-    /* Brand */
-    .miniBrand{
-      display:flex;
-      flex-direction:column;
-      gap:2px;
-      margin-bottom:12px;
-    }
-    .miniBrand b{
-      font-size:13px;
-      letter-spacing:.35px;
-      font-weight:900;
-    }
-    .miniBrand span{
-      font-size:12px;
-      color:var(--muted);
-      letter-spacing:.18px;
     }
 
     /* Slider */
     .sliderRow{
       display:flex;
       align-items:center;
-      gap:12px;
-      margin-top:14px;
+      gap:10px;
+      margin-top:6px;
     }
-
     .sliderBtn{
-      width:46px; height:46px;
-      border-radius:16px;
+      width:44px; height:44px;
+      border-radius:14px;
       border:1px solid var(--line);
-      background: rgba(255,255,255,.88);
+      background:rgba(255,255,255,.88);
       cursor:pointer;
-      color:var(--text);
-      box-shadow: 0 10px 22px rgba(15,23,42,.08);
-      transition: transform .14s ease, box-shadow .14s ease, background .14s ease;
-      flex: 0 0 auto;
       font-weight:900;
-      font-size:18px;
+      color:var(--text);
+      box-shadow: 0 10px 25px rgba(17,24,39,.08);
+      transition: transform .12s ease, box-shadow .12s ease;
+      flex: 0 0 auto;
     }
-    .sliderBtn:hover{transform: translateY(-1px); box-shadow: 0 14px 28px rgba(15,23,42,.10)}
+    .sliderBtn:hover{transform: translateY(-1px)}
     .sliderBtn:active{transform: translateY(0)}
     .sliderBtn:focus{outline: 2px solid var(--focus); outline-offset: 2px;}
 
@@ -131,18 +100,22 @@
       flex:1;
       display:flex;
       align-items:flex-start;
-      padding-top:12px;
-      min-height: 260px;
+      padding-top:10px;
+      min-height: 210px;
     }
-    @media (max-width: 920px){ .sliderWrap{ min-height: 290px; } }
-    @media (max-width: 520px){ .sliderWrap{ min-height: 310px; } }
+    @media (max-width: 920px){
+      .sliderWrap{ min-height: 240px; }
+    }
+    @media (max-width: 520px){
+      .sliderWrap{ min-height: 260px; }
+    }
 
     .slide{
       position:absolute;
       inset:0;
       opacity:0;
-      transform: translateY(10px);
-      transition: opacity .38s ease, transform .38s ease;
+      transform: translateY(6px);
+      transition: opacity .35s ease, transform .35s ease;
       display:flex;
       align-items:flex-start;
     }
@@ -153,18 +126,19 @@
 
     .heroTitle{
       margin:0;
-      font-weight:950;
-      letter-spacing:-.85px;
-      line-height:1.08;
-      font-size: clamp(30px, 3.35vw, 50px);
+      font-weight:900;
+      letter-spacing:-.6px;
+      line-height:1.10;
+      font-size: clamp(28px, 3.2vw, 46px);
       overflow-wrap:anywhere;
       word-break:normal;
     }
 
+    /* Slider dots */
     .dots{
       display:flex;
-      gap:9px;
-      margin-top:14px;
+      gap:8px;
+      margin-top:12px;
       align-items:center;
       justify-content:flex-start;
       user-select:none;
@@ -172,33 +146,30 @@
     .dotP{
       width:8px; height:8px;
       border-radius:999px;
-      border:1px solid rgba(15,23,42,.28);
+      border:1px solid rgba(17,24,39,.25);
       background: transparent;
-      opacity:.6;
-      transition: transform .18s ease, opacity .18s ease, background .18s ease, width .18s ease;
+      opacity:.7;
+      transition: transform .18s ease, opacity .18s ease, background .18s ease;
       cursor:pointer;
     }
     .dotP.active{
-      background: rgba(15,23,42,.82);
+      background: rgba(17,24,39,.75);
       opacity: 1;
-      transform: scale(1.05);
-      width:18px;
+      transform: scale(1.12);
     }
 
-    /* Photo (hero right) */
+    /* Side photo only */
     .photo{
-      border:1px solid var(--line2);
-      border-radius:22px;
-      background:
-        radial-gradient(700px 300px at 30% 0%, rgba(15,23,42,.08), transparent 60%),
-        linear-gradient(180deg, rgba(15,23,42,.06), rgba(15,23,42,.02));
+      border:1px solid var(--line);
+      border-radius:16px;
+      background: linear-gradient(180deg, rgba(17,24,39,.06), rgba(17,24,39,.02));
       overflow:hidden;
       height: 100%;
-      min-height: 404px;
+      min-height: 384px;
       display:flex;
       align-items:center;
       justify-content:center;
-      color: rgba(15,23,42,.55);
+      color: rgba(17,24,39,.55);
       font-weight: 900;
       text-align:center;
       padding:16px;
@@ -208,117 +179,48 @@
     }
     .photo img{width:100%; height:100%; object-fit:cover; display:block;}
 
-    /* Divider + sections */
     .divider{
-      margin: 36px 6px 0;
+      margin: 22px 6px 0;
       height:1px;
-      background: rgba(15,23,42,.06);
+      background: rgba(17,24,39,.08);
       border-radius:999px;
     }
 
-    .section{margin-top:86px; padding: 0 6px;}
+    /* Sections */
+    .section{margin-top:26px; padding: 0 6px;}
     .sectionTitle{
-      display:flex;
-      align-items:flex-end;
-      justify-content:space-between;
-      gap:12px;
-      margin: 0 0 18px;
+      display:flex; align-items:flex-end; justify-content:space-between; gap:12px;
+      margin: 0 0 12px;
     }
-    .sectionTitle h2{
-      margin:0;
-      font-size:24px;
-      font-weight:950;
-      letter-spacing:-.35px;
-    }
+    .sectionTitle h2{margin:0; font-size:16px; letter-spacing:.2px}
     .sectionTitle p{margin:0; color:var(--muted); font-size:13px}
 
-    /* Cards */
     .grid{display:grid; grid-template-columns: repeat(4, 1fr); gap:12px;}
-    @media (max-width: 980px){ .grid{grid-template-columns:1fr} }
+    @media (max-width: 920px){ .grid{grid-template-columns:1fr} }
 
     .card{
-      border:1px solid var(--line2);
+      border:1px solid var(--line);
       border-radius:var(--radius);
-      background: var(--card2);
-      box-shadow: var(--shadow2);
-      padding:20px;
-      transition: transform .16s ease, box-shadow .16s ease;
+      background: var(--card);
+      box-shadow: var(--shadow);
+      padding:18px;
     }
-    .card:hover{
-      transform: translateY(-2px);
-      box-shadow: 0 20px 48px rgba(15,23,42,.10);
-    }
-    .card h3{margin:0 0 8px; font-size:15px; font-weight:950}
-    .card p{margin:0; color:var(--muted); font-size:14px; line-height:1.75}
+    .card h3{margin:0 0 8px; font-size:15px}
+    .card p{margin:0; color:var(--muted); font-size:14px; line-height:1.7}
     .note{
       margin-top:10px;
       font-size:13px;
-      color: rgba(71,85,105,.95);
+      color: rgba(75,85,99,.95);
       line-height:1.6;
     }
 
-    /* About (single) */
+    /* About single */
     .aboutSingle{
       display:grid;
       grid-template-columns: 1fr;
       gap:12px;
     }
-    .aboutLong p{margin:0}
-    .aboutLong p + p{ margin-top:12px; }
-    .aboutLong{ max-width: 82ch; }
 
-    .highlightLine{
-      margin-top:14px;
-      padding:14px 14px;
-      border-radius:16px;
-      background: rgba(15,23,42,.03);
-      border: 1px solid rgba(15,23,42,.07);
-      color: rgba(15,23,42,.86);
-      font-size:13.5px;
-      line-height:1.65;
-      font-weight:700;
-    }
-
-    /* Blog article */
-    .article{
-      border:1px solid var(--line2);
-      border-radius:var(--radius);
-      background: var(--card2);
-      box-shadow: var(--shadow2);
-      padding:22px;
-    }
-    .article h3{
-      margin:18px 0 6px;
-      font-size:16px;
-      font-weight:950;
-      letter-spacing:-.2px;
-    }
-    .article p{
-      margin:0;
-      margin-top:8px;
-      color:var(--muted);
-      font-size:14.5px;
-      line-height:1.85;
-    }
-    .article .callout{
-      margin-top:14px;
-      padding:14px;
-      border-radius:16px;
-      background: rgba(15,23,42,.03);
-      border:1px solid rgba(15,23,42,.07);
-      color: rgba(15,23,42,.86);
-      font-weight:750;
-      line-height:1.7;
-      font-size:13.7px;
-    }
-    .article .hr{
-      height:1px;
-      background: rgba(15,23,42,.07);
-      border-radius:999px;
-      margin:18px 0;
-    }
-
-    /* Buttons */
     .btn{
       display:inline-flex;
       align-items:center;
@@ -326,34 +228,77 @@
       gap:10px;
       padding:12px 14px;
       border-radius:14px;
-      border:1px solid rgba(15,23,42,.10);
+      border:1px solid var(--line);
       text-decoration:none;
-      font-weight:950;
+      font-weight:900;
       font-size:14px;
       transition: transform .12s ease, opacity .12s ease, box-shadow .12s ease;
-      background: rgba(255,255,255,.92);
+      background: white;
       white-space:nowrap;
     }
     .btn.primary{
       background: var(--accent);
       color:#fff;
       border-color: transparent;
-      box-shadow: 0 12px 26px rgba(15,23,42,.16);
+      box-shadow: 0 12px 26px rgba(17,24,39,.16);
     }
-    .btn:hover{transform: translateY(-1px); opacity:.98}
+    .btn:hover{transform: translateY(-1px); opacity:.97}
     .btn:active{transform: translateY(0)}
     .btn:focus{outline: 2px solid var(--focus); outline-offset: 2px;}
 
+    .ctaRow{
+      display:flex; gap:10px; flex-wrap:wrap;
+      margin-top:12px;
+    }
+
+    /* BLOG article styling */
+    .article h1{
+      margin:0 0 10px;
+      font-size:18px;
+      letter-spacing:.2px;
+    }
+    .article h4{
+      margin:18px 0 6px;
+      font-size:14px;
+      letter-spacing:.15px;
+    }
+    .article p{
+      margin:0;
+      margin-top:10px;
+      color: var(--muted);
+      font-size:14px;
+      line-height:1.85;
+    }
+    .callout{
+      margin-top:14px;
+      padding:14px;
+      border-radius:16px;
+      background: rgba(17,24,39,.03);
+      border:1px solid rgba(17,24,39,.08);
+      color: rgba(17,24,39,.86);
+      font-weight:800;
+      line-height:1.7;
+      font-size:13.5px;
+    }
+    .bullets{
+      margin:10px 0 0;
+      padding-left:18px;
+      color: var(--muted);
+      font-size:14px;
+      line-height:1.85;
+    }
+    .bullets li{margin:6px 0}
+
     /* Footer */
     .footer{
-      margin-top:34px;
+      margin-top:30px;
       padding:18px 6px 0;
-      border-top:1px solid rgba(15,23,42,.08);
+      border-top:1px solid var(--line);
       display:flex;
       justify-content:space-between;
       gap:12px;
       flex-wrap:wrap;
-      color: rgba(71,85,105,.92);
+      color: rgba(75,85,99,.92);
       font-size:12.5px;
     }
     .footer a{color:inherit}
@@ -366,9 +311,10 @@
     <!-- HERO -->
     <div class="hero">
       <div class="panel heroCard">
-        <div class="miniBrand">
-          <b>Psikolog Umut Göveçliklioğlu</b>
-          <span>Bakü – İstanbul • Online Terapi</span>
+
+        <div style="display:flex; flex-direction:column; gap:4px; margin-bottom:2px;">
+          <b style="font-size:13px; letter-spacing:.25px;">Psikolog Umut Göveçliklioğlu</b>
+          <span style="font-size:12px; color:var(--muted);">Bakü – İstanbul • Online Terapi</span>
         </div>
 
         <div class="sliderRow" aria-label="Öne çıkan mesajlar">
@@ -394,64 +340,58 @@
           <span class="dotP" data-i="1" role="button" tabindex="0" aria-label="2. mesaj"></span>
           <span class="dotP" data-i="2" role="button" tabindex="0" aria-label="3. mesaj"></span>
         </div>
+
       </div>
 
-      <!-- SAĞ TARAF: SADECE FOTO -->
-      <div class="panel side" style="padding:18px;">
+      <!-- Photo only -->
+      <div class="panel side">
         <div class="photo">
           <img src="profile.jpg" alt="Psikolog Umut Göveçliklioğlu"
-               onerror="this.remove(); this.parentElement.textContent='(Fotoğrafı en son ekleriz)\\n\\nŞimdilik profile.jpg yükleyebilirsin.';" />
+               onerror="this.remove(); this.parentElement.textContent='(Fotoğrafı en son ekleriz)\\n\\nprofile.jpg yükleyince burada görünecek.';" />
         </div>
       </div>
     </div>
 
     <div class="divider"></div>
 
-    <!-- ÇALIŞMA ALANLARIM -->
+    <!-- ÇALIŞMA ALANLARI -->
     <div class="section" id="calisma">
       <div class="sectionTitle">
         <h2>Çalışma Alanlarım</h2>
-        <p>Net • sade • bilgilendirici</p>
+        <p>Net başlıklar • premium düzen</p>
       </div>
 
       <div class="grid">
         <div class="card">
           <h3>Bireysel Terapi</h3>
           <p>
-            Bireysel terapi; yaşadığınız zorlanmayı yalnızca konuşmak değil, onu gerçekten anlamlandırma sürecidir.
-            Seanslarda düşünce–duygu–davranış döngüsünü birlikte ele alır, sorunun kaynağını netleştirir ve bunu
-            günlük hayatta karşılığı olan somut adımlara dönüştürürüz.
+            Bireysel terapi; yaşadığınız zorlanmayı yalnızca konuşmak değil, onu anlamlandırma sürecidir.
+            Düşünce–duygu–davranış döngüsünü birlikte ele alır, hedefi netleştirir ve günlük hayatta karşılığı olan adımlarla ilerleriz.
           </p>
-          <div class="note">Amaç; geçici rahatlama değil, kalıcı bir iç denge oluşturmaktır.</div>
         </div>
 
         <div class="card">
           <h3>Cinsel Terapi</h3>
           <p>
-            Cinsel terapi; performans kaygısı, isteksizlik, vajinismus, uyarılma güçlüğü, orgazm zorlukları ve erken boşalma gibi
-            alanlarda yapılandırılmış bir destek sürecidir. Amaç; “bozukluk” etiketlemek değil, kaygıyı ve düşünce kalıplarını
-            düzenleyerek daha güvenli ve tatmin edici bir deneyim alanı oluşturmaktır.
+            Performans kaygısı, isteksizlik, vajinismus, uyarılma güçlüğü, orgazm zorlukları ve erken boşalma gibi alanlarda
+            yapılandırılmış bir destek süreci yürütülür. Uygunluk ve yol haritası ilk görüşmede netleştirilir.
           </p>
-          <div class="note">Uygunluk ve yol haritası ilk görüşmede netleştirilir.</div>
         </div>
 
         <div class="card">
           <h3>MMPI Testi</h3>
           <p>
-            MMPI, kişilik özellikleri ve psikolojik örüntüler hakkında kapsamlı bir değerlendirme sunar.
-            Sonuçlar tek başına yorumlanmaz; klinik görüşme ve profesyonel geri bildirimle birlikte anlam kazanır.
-            Amaç; güçlü yönleri ve zorlayıcı örüntüleri daha net görmektir.
+            MMPI, kişilik örüntüleri ve psikolojik dinamikler hakkında kapsamlı bir değerlendirme sunar.
+            Sonuçlar klinik görüşme ve profesyonel geri bildirimle birlikte anlam kazanır.
           </p>
-          <div class="note">Değerlendirme, etik ve gizlilik çerçevesinde yürütülür.</div>
         </div>
 
         <div class="card">
           <h3>Online Terapi</h3>
           <p>
-            Online terapi; yüz yüze terapiyle aynı etik ve gizlilik çerçevesinde yürütülen, yapılandırılmış bir süreçtir.
-            İlk görüşmede hedefi ve çerçeveyi netleştiririz. Zaman ve mekân esnekliği sayesinde terapi süreci daha sürdürülebilir olur.
+            Online terapi; etik ve gizlilik çerçevesinde yürütülen, yapılandırılmış bir süreçtir.
+            İlk görüşmede hedef ve çerçeve netleştirilir; süreç kişiye özgü planlanır.
           </p>
-          <div class="note">Görüşmeler görüntülü olarak gerçekleştirilir.</div>
         </div>
       </div>
     </div>
@@ -464,35 +404,39 @@
       </div>
 
       <div class="aboutSingle">
-        <div class="card aboutLong">
+        <div class="card">
           <h3>Psikolog Umut Göveçliklioğlu</h3>
-
-          <p>Merhaba, ben Psikolog Umut Göveçliklioğlu. Sakarya Üniversitesi Psikoloji Bölümü mezunuyum. Ergen ve yetişkinlerle çalışıyorum.</p>
-
-          <p>Eğitim hayatım boyunca psikolojik danışma süreçleri, gelişimsel dinamikler ve terapötik yaklaşımlar üzerine yoğunlaştım. Özellikle romantik ilişkilerde yaşanan manipülasyon, ilişki travmaları ve terk edilme dinamikleri üzerine çalıştım. Bu alandaki çalışmalarım ulusal düzeyde bir kongrede bildiri olarak sunulmuştur.</p>
-
-          <p>Terapötik yetkinliğimi güçlendirmek amacıyla Bilişsel Davranışçı Psikoterapiler Derneği bünyesinde, Prof. Dr. Hakan Türkçapar koordinatörlüğünde Bilişsel Davranışçı Terapi eğitimimi tamamladım. Aynı kurumda Cinsel Terapi eğitimimi de aldım. Bunun yanında terapilerimde mindfulness temelli yaklaşımları ve Kısa Süreli Çözüm Odaklı Terapi tekniklerini eklektik bir çerçevede kullanıyorum.</p>
-
-          <p>Türk Psikologlar Derneği’nden MMPI uygulayıcı eğitimimi tamamladım ve aktif olarak test uygulamaları yapıyorum.</p>
-
-          <div class="highlightLine">
-            Seans sürecinde amacım yalnızca konuşmak değil; düşünce, duygu ve davranış sisteminizi birlikte anlamlandırarak kalıcı değişim sağlamaktır.
+          <p>
+            Merhaba, ben Psikolog Umut Göveçliklioğlu. Sakarya Üniversitesi Psikoloji Bölümü mezunuyum. Ergen ve yetişkinlerle çalışıyorum.
+          </p>
+          <p style="margin-top:10px;">
+            Terapötik yetkinliğimi güçlendirmek amacıyla Bilişsel Davranışçı Psikoterapiler Derneği bünyesinde,
+            Prof. Dr. Hakan Türkçapar koordinatörlüğünde Bilişsel Davranışçı Terapi eğitimimi tamamladım.
+            Aynı kurumda Cinsel Terapi eğitimimi de aldım. Bunun yanında terapilerimde mindfulness temelli yaklaşımları ve
+            Kısa Süreli Çözüm Odaklı Terapi tekniklerini eklektik bir çerçevede kullanıyorum.
+          </p>
+          <p style="margin-top:10px;">
+            Türk Psikologlar Derneği’nden MMPI uygulayıcı eğitimimi tamamladım ve aktif olarak test uygulamaları yapıyorum.
+            Bu alandaki çalışmalarım ulusal düzeyde bir kongrede bildiri olarak sunulmuştur.
+          </p>
+          <div class="note" style="margin-top:10px;">
+            <b>Seans sürecinde amacım yalnızca konuşmak değil; düşünce, duygu ve davranış sisteminizi birlikte anlamlandırarak kalıcı değişim sağlamaktır.</b>
           </div>
-
-          <p style="margin-top:12px;">Süreç güvenli, yapılandırılmış ve bilimsel temellidir. Her danışan için terapi süreci kişiye özgü planlanır.</p>
         </div>
       </div>
     </div>
 
-    <!-- BLOG: tek gerçek yazı -->
+    <!-- BLOG (tek gerçek yazı) -->
     <div class="section" id="blog">
       <div class="sectionTitle">
         <h2>Blog</h2>
-        <p>Romantik İlişkilerde Travma, Manipülasyon ve Terk Edilme</p>
+        <p>Güncel yazılar</p>
       </div>
 
-      <div class="article">
-        <h3>İlişki Travması: Nedir, Nasıl Ortaya Çıkıyor?</h3>
+      <div class="card article">
+        <h1>Romantik İlişkilerde Travma, Manipülasyon ve Terk Edilme</h1>
+
+        <h4>İlişki Travması: Nedir, Nasıl Ortaya Çıkıyor</h4>
         <p>
           İlişki travması, bir kişinin geçmiş ilişkilerinde yaşadığı olumsuz deneyimlerin bugünkü ilişkilerine duygusal, psikolojik ve davranışsal düzeyde yansımasıdır.
           Bu travmalar; aldatılma, ani terk edilme, sürekli eleştirilme, duygusal istismar, manipülasyon ya da güvensiz bağlanma gibi olaylardan kaynaklanabilir.
@@ -504,54 +448,91 @@
         </p>
         <p>
           Ayrıca ilişki travması yalnızca “o an yaşanan” bir acı değildir; kişinin kendilik algısını, özdeğerini ve duygusal düzenleme becerilerini de etkiler.
-          Travma yaşayan bireyler kendilerini değersiz, yetersiz veya kolayca terk edilebilir hissedebilir. Bu nedenle ilişki travması, romantik ilişkilerde hem duygusal yoğunluğu artıran hem de sağlıklı ilişki kurmayı zorlaştıran güçlü bir etkendir.
+          Travma yaşayan bireyler kendilerini değersiz, yetersiz veya kolayca terk edilebilir hissedebilir. Bu nedenle ilişki travması, romantik ilişkilerde hem duygusal yoğunluğu artıran
+          hem de sağlıklı ilişki kurmayı zorlaştıran güçlü bir etkendir.
         </p>
 
-        <div class="hr"></div>
-
-        <h3>Manipülasyonun Sessiz ve Sinsi Yolları</h3>
+        <h4>Manipülasyonun Sessiz ve Sinsi Yolları</h4>
         <p>
           Manipülasyon, ilişkilerde en fark edilmesi zor ama en çok yoran dinamiklerden biridir. Çünkü çoğu zaman bağırarak, tehdit ederek değil;
           sessiz, ince, dışarıdan normal görünen davranışlarla ortaya çıkar. Kişi çoğu zaman ancak ilişki bittikten sonra “Ben o süreçte manipüle ediliyormuşum” diyebilir.
         </p>
 
         <div class="callout">
-          <b>Sık görülen örnekler:</b> Suçluluk yükleme (guilt-tripping), gaslighting (algı çarpıtma), sessiz ceza/duygusal soğukluk, love-bombing ve kontrol etme/sınır ihlali.
+          <b>Romantik ilişkilerde sık görülen manipülasyon türleri:</b>
+          <ul class="bullets">
+            <li><b>Suçluluk yükleme (Guilt-Tripping):</b> “Bunu yapmasaydın bu hale gelmezdik.”</li>
+            <li><b>Gaslighting (Algı çarpıtma):</b> “Sen yanlış hatırlıyorsun.” “Bu kadar abartacak bir şey yok.”</li>
+            <li><b>Duygusal soğukluk & sessiz ceza:</b> Görmezden gelme, konuşmama, açıklamasız uzaklaşma.</li>
+            <li><b>Love-bombing:</b> Başta aşırı ilgi, ardından ilginin hızla geri çekilmesi.</li>
+            <li><b>Kontrol etme & sınır ihlali:</b> “Ben sadece seni korumaya çalışıyorum.” gibi sevgi kılıflı baskılar.</li>
+          </ul>
         </div>
 
         <p>
-          Sürekli kendini açıklamak zorunda hissediyorsan, partnerin davranışları seni suçlu/yetersiz ya da “sanki sorun bende” diye düşündürüyorsa,
-          görünmeyen bir manipülasyon döngüsüne yakalanmış olabilirsin. İyi haber şu ki: bu döngü fark edildiğinde kırılabilir.
+          Sürekli kendini açıklamak zorunda hissediyor musun? Partnerin davranışları seni suçlu, yetersiz veya “sorun bende mi?” diye düşündürüyor mu?
+          İlk baştaki yoğun ilgi zamanla yerini soğukluğa ve kontrol etmeye mi bıraktı? Konuşmak istediğinde sessizlikle cezalandırılıyor musun?
+        </p>
+        <p>
+          Eğer cevaplardan biri bile “evet” ise, ilişkide görünmeyen bir manipülasyon döngüsüne yakalanmış olabilirsin.
+          İyi haber şu ki: Bu döngü fark edildiğinde kırılabilir.
         </p>
 
-        <div class="hr"></div>
-
-        <h3>Araştırma Bulgularından Kısa Notlar (Ne Sık Görünüyor)</h3>
+        <h4>Araştırma Bulgularından Kısa Notlar (Ne Sık Görünüyor)</h4>
         <p>
-          18–29 yaş arası genç yetişkinlerle yürüttüğüm çalışmada, romantik ilişkilerde öne çıkan dinamikleri sistematik olarak inceledim.
-          Bulgular; travma, güvensizlik, manipülasyon ve terk edilme korkusunun çoğu zaman döngüsel bir biçimde birbirini beslediğini gösteriyor.
+          18–29 yaş arası genç yetişkinlerle yaptığım araştırmada, romantik ilişkilerde en çok hangi dinamiklerin ortaya çıktığını sistematik olarak inceledim.
+          Elde edilen bulgular ilişki dünyasının ne kadar karmaşık ama bir o kadar da ortak olduğunu gösteriyor.
         </p>
 
         <div class="callout">
-          “Travma → Güvensizlik → Manipülasyon → Terk edilme korkusu → Daha fazla travma” döngüsü yaygın şekilde görülüyor.
+          <ul class="bullets">
+            <li><b>Bağlanma profilleri karma:</b> Güvenli, kaygılı ve kaçıngan özellikler bir arada görülebiliyor.</li>
+            <li><b>Travma yaşayanlarda güven problemi belirgin:</b> test etme, fazla analiz etme, ani dalgalanmalar artıyor.</li>
+            <li><b>En yaygın manipülasyon:</b> dolaylı manipülasyon (suçluluk, sessizlik, geri çekilme).</li>
+            <li><b>Terk edilme korkusu:</b> sınır koymayı zorlaştırıyor ve manipülasyona açıklığı artırıyor.</li>
+            <li><b>Manipülasyon + terk edilme korkusu:</b> travma düzeyini ve yıpranmayı artırıyor.</li>
+            <li><b>Döngüsel işleyiş:</b> Travma → Güvensizlik → Manipülasyon → Terk edilme korkusu → Daha fazla travma</li>
+          </ul>
         </div>
 
-        <div class="hr"></div>
-
-        <h3>Peki Ne Yapmalı?</h3>
+        <h4>Peki Ne Yapmalı</h4>
         <p>
-          Duygusal farkındalık geliştirmek, sınır koymayı öğrenmek ve bağlanma stilini tanımak bu döngüyü kırmanın temel adımlarıdır.
-          Manipülasyonu erken tanımayı öğrenmek ve duygusal düzenleme becerilerini güçlendirmek, ilişkide daha dengeli kalmayı sağlar.
-        </p>
-        <p>
-          Travma temelli ilişki sorunlarında profesyonel destek almak; süreci daha hızlı ve kalıcı hale getirebilir.
+          İlişki travması, manipülasyon ve terk edilme korkusu bir araya geldiğinde kişi kendini duygusal bir labirentin içinde sıkışmış gibi hissedebilir.
+          Ancak bu döngü kırılabilir.
         </p>
 
-        <div class="hr"></div>
+        <div class="callout">
+          <ul class="bullets">
+            <li><b>Duygusal farkındalık:</b> “Şu an ne hissediyorum ve neden?”</li>
+            <li><b>Sınırlar:</b> Hayır diyebilmek ve kendini korumak.</li>
+            <li><b>Bağlanma stilini tanımak:</b> Döngüyü anlamak döngüyü kırar.</li>
+            <li><b>Manipülasyonu erken tanımak:</b> sessiz ceza, suçluluk, gaslighting, love-bombing.</li>
+            <li><b>Duygu düzenleme:</b> farkındalık pratikleri, nefes egzersizleri, düşünce-duygu-davranış bağlantısı.</li>
+            <li><b>Profesyonel destek:</b> BDT, Şema Terapi, EMDR gibi yaklaşımlar etkili olabilir.</li>
+          </ul>
+        </div>
 
-        <h3>Kaynakça</h3>
+        <h4>İlişkilerde Sağlıklı Döngüyü Nasıl Kurabiliriz</h4>
+        <div class="callout">
+          <ul class="bullets">
+            <li><b>Şeffaf iletişim:</b> duyguları ve beklentileri net ifade etmek.</li>
+            <li><b>Duyguyu görmek-yansıtmak:</b> “Seni duyuyorum.”</li>
+            <li><b>Sınırları ortak belirlemek:</b> iki taraf için güvenli alan.</li>
+            <li><b>Tepkiyi yönetmek:</b> duyguyu fark edip düzenlemek.</li>
+            <li><b>Karşılıklılık:</b> veren-alan dengesini korumak.</li>
+            <li><b>“Biz” dili:</b> “Bu durum beni böyle hissettiriyor, birlikte çözebilir miyiz?”</li>
+          </ul>
+        </div>
+
+        <h4>Kaynakça</h4>
         <p>
-          Bowlby, J. (1988). <i>A secure base</i>. • Mikulincer, M., & Shaver, P. R. (2007). <i>Attachment in adulthood</i>. • Riggs, S. A., & Stermac, L. E. (2014). Adult attachment, trauma, and romantic relationships. • Hyde, M., & Grieve, R. (2014). Sex and emotional manipulation. • Koessler, R. B., et al. (2019). Ghosting and avoidance in modern dating. • Cloitre, M., et al. (2002). Emotion regulation and interpersonal problems in PTSD.
+          Bowlby, J. (1988). <i>A secure base</i>. Basic Books.<br>
+          Mikulincer, M., & Shaver, P. R. (2007). <i>Attachment in adulthood</i>. Guilford Press.<br>
+          Riggs, S. A., & Stermac, L. E. (2014). Adult attachment, trauma, and romantic relationships. <i>Journal of Aggression, Maltreatment & Trauma</i>, 23(5), 474–490.<br>
+          Hyde, M., & Grieve, R. (2014). Sex and emotional manipulation: Does gender matter? <i>Current Psychology</i>, 33(3), 271–283.<br>
+          Koessler, R. B., et al. (2019). Ghosting and avoidance in modern dating. <i>Journal of Social and Personal Relationships</i>, 36(12), 4007–4030.<br>
+          Cloitre, M., et al. (2002). Emotion regulation and interpersonal problems in PTSD. <i>Behaviour Research and Therapy</i>, 40(3), 301–315.<br>
+          Pratkanis, A., & Aronson, E. (2001). <i>Age of propaganda</i>. W. H. Freeman.
         </p>
       </div>
     </div>
@@ -568,7 +549,7 @@
           Randevu ve bilgi için WhatsApp’tan yazabilir veya e-posta gönderebilirsiniz.
         </p>
 
-        <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px;">
+        <div class="ctaRow">
           <a class="btn primary" href="https://wa.me/905467114426?text=Merhaba%20Psikolog%20Umut%20G%C3%B6ve%C3%A7liklio%C4%9Flu%2C%20online%20terapi%20i%C3%A7in%20randevu%20almak%20istiyorum." target="_blank" rel="noopener">WhatsApp ile Yaz</a>
           <a class="btn" href="mailto:pskumutgovecliklioglu@gmail.com?subject=Online%20Terapi%20Randevu%20Talebi">E-posta ile Yaz</a>
         </div>
@@ -584,7 +565,6 @@
         <a href="mailto:pskumutgovecliklioglu@gmail.com">E-posta</a>
       </span>
     </div>
-
   </div>
 
   <script>
