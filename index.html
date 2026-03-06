@@ -61,14 +61,17 @@ margin-top:30px;
 background:white;
 border-radius:var(--radius);
 border:1px solid var(--line);
-padding:28px;
+padding:36px;
 box-shadow:var(--shadow);
 }
 
 .heroTitle{
-font-size:clamp(28px,3vw,44px);
+font-size:clamp(36px,4vw,56px);
 font-weight:900;
-line-height:1.1;
+line-height:1.25;
+letter-spacing:-0.5px;
+max-width:620px;
+margin:0;
 }
 
 .lead{
@@ -94,7 +97,7 @@ color:white;
 
 .sliderWrap{
 position:relative;
-min-height:200px;
+min-height:260px;
 }
 
 .slide{
@@ -113,11 +116,21 @@ margin-top:40px;
 
 .sectionTitle{
 margin-bottom:16px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:12px;
+}
+
+.sectionTitle p{
+margin:0;
+font-size:14px;
+color:var(--muted);
 }
 
 .grid{
 display:grid;
-grid-template-columns:repeat(3,1fr);
+grid-template-columns:repeat(4,1fr);
 gap:14px;
 }
 
@@ -150,6 +163,11 @@ color:#777;
 
 .faqItem{
 border-bottom:1px solid var(--line);
+background:white;
+border-radius:14px;
+margin-bottom:12px;
+box-shadow:var(--shadow);
+overflow:hidden;
 }
 
 .faqQuestion{
@@ -157,15 +175,18 @@ width:100%;
 text-align:left;
 background:none;
 border:none;
-padding:16px;
+padding:18px 20px;
 font-size:15px;
 font-weight:700;
 cursor:pointer;
+display:flex;
+justify-content:space-between;
+align-items:center;
 }
 
 .faqAnswer{
 display:none;
-padding:0 16px 16px 16px;
+padding:0 20px 18px 20px;
 color:var(--muted);
 line-height:1.7;
 font-size:14px;
@@ -181,6 +202,12 @@ display:flex;
 justify-content:space-between;
 }
 
+@media(max-width:1100px){
+.grid{
+grid-template-columns:repeat(2,1fr);
+}
+}
+
 @media(max-width:900px){
 
 .hero{
@@ -193,6 +220,16 @@ grid-template-columns:1fr;
 
 .about{
 grid-template-columns:1fr;
+}
+
+.heroTitle{
+font-size:clamp(32px,8vw,44px);
+line-height:1.2;
+max-width:100%;
+}
+
+.sliderWrap{
+min-height:220px;
 }
 
 }
@@ -225,7 +262,7 @@ grid-template-columns:1fr;
 <div class="sliderWrap">
 
 <div class="slide active">
-<h1 class="heroTitle">Görmezden geldiğiniz yer, en çok konuşulması gereken yer olabilir.</h1>
+<h1 class="heroTitle">Zorlandığınız alanı birlikte netleştirebiliriz.</h1>
 </div>
 
 <div class="slide">
@@ -233,7 +270,7 @@ grid-template-columns:1fr;
 </div>
 
 <div class="slide">
-<h1 class="heroTitle">Zorlandığınız alanı birlikte netleştirebiliriz.</h1>
+<h1 class="heroTitle">Görmezden geldiğiniz yer, en çok konuşulması gereken yer olabilir.</h1>
 </div>
 
 </div>
@@ -273,24 +310,42 @@ href="mailto:pskumutgovecliklioglu@gmail.com">E-posta</a>
 <div class="section" id="calisma">
 
 <div class="sectionTitle">
-<h2>Çalışma Alanları</h2>
+<h2>Çalışma Alanlarım</h2>
+<p>Net başlıklar • premium düzen</p>
 </div>
 
 <div class="grid">
 
 <div class="card">
 <h3>Bireysel Terapi</h3>
-<p>Kaygı, depresyon, özgüven ve duygusal zorlanmalar üzerine yapılandırılmış terapi.</p>
+<p>
+Bireysel terapi; yaşadığınız zorlanmayı yalnızca konuşmak değil, onu anlamlandırma sürecidir.
+Düşünce–duygu–davranış döngüsünü birlikte ele alır, hedefi netleştirir ve günlük hayatta karşılığı olan adımlarla ilerleriz.
+</p>
 </div>
 
 <div class="card">
 <h3>Cinsel Terapi</h3>
-<p>Cinsel işlev sorunları ve performans kaygısı üzerine psikolojik destek.</p>
+<p>
+Performans kaygısı, isteksizlik, vajinismus, uyarılma güçlüğü, orgazm zorlukları ve erken boşalma gibi alanlarda yapılandırılmış bir destek süreci yürütülür.
+Uygunluk ve yol haritası ilk görüşmede netleştirilir.
+</p>
 </div>
 
 <div class="card">
 <h3>MMPI Testi</h3>
-<p>Klinik değerlendirme sürecinde kullanılan kapsamlı psikolojik test.</p>
+<p>
+MMPI, kişilik örüntüleri ve psikolojik dinamikler hakkında kapsamlı bir değerlendirme sunar.
+Sonuçlar klinik görüşme ve profesyonel geri bildirimle birlikte anlam kazanır.
+</p>
+</div>
+
+<div class="card">
+<h3>Online Terapi</h3>
+<p>
+Online terapi; etik ve gizlilik çerçevesinde yürütülen, yapılandırılmış bir süreçtir.
+İlk görüşmede hedef ve çerçeve netleştirilir; süreç kişiye özgü planlanır.
+</p>
 </div>
 
 </div>
@@ -303,21 +358,28 @@ href="mailto:pskumutgovecliklioglu@gmail.com">E-posta</a>
 
 <div class="sectionTitle">
 <h2>Hakkımda</h2>
+<p>Kısa • güven veren anlatım</p>
 </div>
 
 <div class="about">
 
 <div class="card">
 
+<h3>Psikolog Umut Göveçliklioğlu</h3>
+
 <p>
-Yetişkin ve ergenlerle çalışıyorum. Seanslarımda ağırlıklı olarak
-Bilişsel Davranışçı Terapi (BDT) yaklaşımından yararlanırım.
+Merhaba, ben Psikolog Umut Göveçliklioğlu. Sakarya Üniversitesi Psikoloji Bölümü mezunuyum. Ergen ve yetişkinlerle çalışıyorum.
 </p>
 
 <p style="margin-top:12px">
-Amacım yalnızca konuşmak değil; düşünce, duygu ve davranış örüntülerini birlikte
-anlamlandırarak kalıcı değişim sağlamaktır.
+Terapötik yetkinliğimi güçlendirmek amacıyla Bilişsel Davranışçı Psikoterapiler Derneği bünyesinde, Prof. Dr. Hakan Türkçapar koordinatörlüğünde Bilişsel Davranışçı Terapi eğitimimi tamamladım. Aynı kurumda Cinsel Terapi eğitimimi de aldım. Bunun yanında terapilerimde mindfulness temelli yaklaşımlar ve Kısa Süreli Çözüm Odaklı Terapi tekniklerini eklektik bir çerçevede kullanıyorum.
 </p>
+
+<p style="margin-top:12px">
+Türk Psikologlar Derneği’nden MMPI uygulayıcı eğitimimi tamamladım ve aktif olarak test uygulamaları yapıyorum. Bu alandaki çalışmalarım ulusal düzeyde bir kongrede bildiri olarak sunulmuştur.
+</p>
+
+<p style="margin-top:12px"><b>Seans sürecinde amacım yalnızca konuşmak değil; düşünce, duygu ve davranış sisteminizi birlikte anlamlandırarak kalıcı değişim sağlamaktır.</b></p>
 
 </div>
 
@@ -326,8 +388,7 @@ anlamlandırarak kalıcı değişim sağlamaktır.
 <h3>Meslek Analizi Uygulaması</h3>
 
 <p>
-Kişilik özellikleri, bilişsel profil ve ilgi alanlarına göre meslek önerileri
-sunan bir uygulama projesi üzerinde çalışıyorum.
+Kişilik özellikleri, bilişsel profil ve ilgi alanlarına göre meslek önerileri sunan bir uygulama projesi üzerinde çalışıyorum.
 </p>
 
 </div>
@@ -342,16 +403,20 @@ sunan bir uygulama projesi üzerinde çalışıyorum.
 
 <div class="sectionTitle">
 <h2>Blog</h2>
+<p>Güncel yazılar</p>
 </div>
 
 <div class="card">
 
 <h3>Romantik İlişkilerde Travma, Manipülasyon ve Terk Edilme</h3>
 
-<p>
-Romantik ilişkilerde yaşanan travmatik deneyimler kişinin güven,
-bağlanma ve duygusal yakınlık kurma biçimini etkileyebilir.
+<p style="margin-top:10px">
+İlişki travması, geçmiş ilişkilerde yaşanan olumsuz deneyimlerin bugünkü ilişkilerde güveni, yakınlığı ve duygusal dengeyi nasıl etkilediğini anlatır. Bu yazıda; ilişki travmasının izleri, manipülasyonun sessiz yolları ve terk edilme korkusunun ilişkide nasıl döngüye dönüştüğü üzerine kapsamlı bir çerçeve bulacaksınız.
 </p>
+
+<div style="margin-top:18px">
+<a class="btn primary" href="blog-romantik-iliskiler.html">Devam et</a>
+</div>
 
 </div>
 
@@ -363,46 +428,77 @@ bağlanma ve duygusal yakınlık kurma biçimini etkileyebilir.
 
 <div class="sectionTitle">
 <h2>Sık Sorulan Sorular</h2>
+<p>Terapi süreci hakkında</p>
 </div>
 
-<div class="card">
-
 <div class="faqItem">
-<button class="faqQuestion">İlk seans nasıl geçer?</button>
+<button class="faqQuestion">Terapi süreci nasıl ilerler?<span>+</span></button>
 <div class="faqAnswer">
-İlk görüşme sizi ve yaşadığınız zorlukları anlamaya yönelik bir tanışma seansıdır.
+İlk görüşmede yaşadığınız zorlukları ve terapi hedeflerini birlikte değerlendiririz. Sonraki seanslarda düşünce, duygu ve davranış örüntülerini ele alarak süreci yapılandırılmış bir şekilde ilerletiriz.
 </div>
 </div>
 
 <div class="faqItem">
-<button class="faqQuestion">Terapi süreci nasıl ilerler?</button>
-<div class="faqAnswer">
-İlk görüşmede terapi hedefleri belirlenir ve sonraki seanslar yapılandırılmış şekilde ilerler.
-</div>
-</div>
-
-<div class="faqItem">
-<button class="faqQuestion">Online terapi etkili midir?</button>
-<div class="faqAnswer">
-Araştırmalar online terapinin birçok psikolojik sorun için yüz yüze terapi kadar etkili
-olabileceğini göstermektedir.
-</div>
-</div>
-
-<div class="faqItem">
-<button class="faqQuestion">Seans süresi ne kadardır?</button>
+<button class="faqQuestion">Seanslar ne kadar sürer?<span>+</span></button>
 <div class="faqAnswer">
 Bir terapi seansı yaklaşık 50 dakika sürmektedir.
 </div>
 </div>
 
 <div class="faqItem">
-<button class="faqQuestion">Görüşmeler gizli midir?</button>
+<button class="faqQuestion">Online terapi yüz yüze terapi kadar etkili midir?<span>+</span></button>
 <div class="faqAnswer">
-Evet. Tüm görüşmeler etik ve gizlilik ilkeleri çerçevesinde yürütülür.
+Araştırmalar, online terapinin birçok psikolojik sorun için yüz yüze terapi kadar etkili olabildiğini göstermektedir.
 </div>
 </div>
 
+<div class="faqItem">
+<button class="faqQuestion">Görüşmeler gizli midir?<span>+</span></button>
+<div class="faqAnswer">
+Evet. Tüm görüşmeler etik kurallar ve gizlilik ilkeleri çerçevesinde yürütülür.
+</div>
+</div>
+
+<div class="faqItem">
+<button class="faqQuestion">İlk görüşmede neler konuşulur?<span>+</span></button>
+<div class="faqAnswer">
+İlk görüşme, sizi ve yaşadığınız zorlukları anlamaya yönelik bir tanışma seansıdır. Bu görüşmede terapi hedefleri ve sürecin nasıl ilerleyeceği birlikte değerlendirilir.
+</div>
+</div>
+
+<div class="faqItem">
+<button class="faqQuestion">Terapi süreci ne kadar sürer?<span>+</span></button>
+<div class="faqAnswer">
+Terapi süresi kişinin ihtiyaçlarına, hedeflerine ve yaşadığı güçlüğün niteliğine göre değişmektedir. Bu nedenle süreç kişiye özel planlanır.
+</div>
+</div>
+
+<div class="faqItem">
+<button class="faqQuestion">Online terapi için özel bir hazırlık gerekir mi?<span>+</span></button>
+<div class="faqAnswer">
+Sessiz, rahat ve bölünmeyecek bir ortam seçmeniz; görüşme sırasında internet bağlantınızın stabil olması yeterlidir.
+</div>
+</div>
+
+<div class="faqItem">
+<button class="faqQuestion">Terapiye ne zaman başvurmalıyım?<span>+</span></button>
+<div class="faqAnswer">
+Yaşadığınız sorun günlük yaşamınızı, ilişkilerinizi veya işlevselliğinizi etkilemeye başladıysa destek almak için uygun bir zaman olabilir.
+</div>
+</div>
+
+<div class="faqItem">
+<button class="faqQuestion">Cinsel terapi nasıl ilerler?<span>+</span></button>
+<div class="faqAnswer">
+Cinsel terapi sürecinde yaşanan güçlükler ayrıntılı olarak değerlendirilir, psikoeğitim verilir ve uygun müdahale planı birlikte oluşturulur.
+</div>
+</div>
+
+<div class="faqItem">
+<button class="faqQuestion">Randevu nasıl alabilirim?<span>+</span></button>
+<div class="faqAnswer">
+Sayfanın iletişim bölümündeki WhatsApp veya e-posta butonlarını kullanarak kolayca iletişime geçebilirsiniz.
+</div>
 </div>
 
 </div>
@@ -413,15 +509,19 @@ Evet. Tüm görüşmeler etik ve gizlilik ilkeleri çerçevesinde yürütülür.
 
 <div class="sectionTitle">
 <h2>İletişim</h2>
+<p>Randevu & bilgi için</p>
 </div>
 
 <div class="card">
 
-<p>Aklınızdaki soruları sormak veya randevu oluşturmak için WhatsApp’tan yazabilirsiniz.</p>
+<p>Randevu almak veya süreç hakkında bilgi edinmek için WhatsApp üzerinden mesaj gönderebilir ya da e-posta ile iletişime geçebilirsiniz.</p>
 
 <a class="btn primary"
 href="https://wa.me/905467114426"
 target="_blank">WhatsApp ile Yaz</a>
+
+<a class="btn"
+href="mailto:pskumutgovecliklioglu@gmail.com">E-posta ile Yaz</a>
 
 </div>
 
@@ -432,6 +532,7 @@ target="_blank">WhatsApp ile Yaz</a>
 <div>© 2026 Psikolog Umut Göveçliklioğlu</div>
 
 <div>
+<a href="https://wa.me/905467114426" target="_blank">WhatsApp</a> •
 <a href="mailto:pskumutgovecliklioglu@gmail.com">E-posta</a>
 </div>
 
@@ -442,10 +543,8 @@ target="_blank">WhatsApp ile Yaz</a>
 <script>
 
 /* slider */
-
 const slides=document.querySelectorAll(".slide")
 let i=0
-
 setInterval(()=>{
 slides[i].classList.remove("active")
 i=(i+1)%slides.length
@@ -453,7 +552,6 @@ slides[i].classList.add("active")
 },4000)
 
 /* faq */
-
 document.querySelectorAll(".faqQuestion").forEach(q=>{
 q.addEventListener("click",()=>{
 const a=q.nextElementSibling
