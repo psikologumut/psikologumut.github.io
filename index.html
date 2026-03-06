@@ -52,10 +52,9 @@ font-size:14px;
 
 .hero{
 display:grid;
-grid-template-columns:1.15fr .85fr;
+grid-template-columns:1fr 1fr;
 gap:20px;
 margin-top:30px;
-align-items:stretch;
 }
 
 .panel{
@@ -66,53 +65,16 @@ padding:28px;
 box-shadow:var(--shadow);
 }
 
-/* SADECE HERO YAZISI İÇİN DÜZENLENDİ */
-.heroPanel{
-display:flex;
-flex-direction:column;
-justify-content:flex-start;
-min-height:340px;
-}
-
-.sliderWrap{
-position:relative;
-min-height:220px;
-margin-top:10px;
-display:flex;
-align-items:flex-start;
-}
-
-.slide{
-position:absolute;
-top:0;
-left:0;
-width:100%;
-opacity:0;
-transition:.35s ease;
-}
-
-.slide.active{
-opacity:1;
-}
-
 .heroTitle{
-margin:0;
-font-size:clamp(30px, 2.7vw, 48px);
-font-weight:850;
-line-height:1.14;
-letter-spacing:-0.03em;
-max-width:11ch;
-text-wrap:balance;
-word-break:normal;
-overflow-wrap:normal;
+font-size:clamp(28px,3vw,44px);
+font-weight:900;
+line-height:1.1;
 }
 
 .lead{
 margin-top:12px;
 color:var(--muted);
-line-height:1.75;
-font-size:16px;
-max-width:58ch;
+line-height:1.7;
 }
 
 .btn{
@@ -128,6 +90,21 @@ border:1px solid var(--line);
 .btn.primary{
 background:var(--accent);
 color:white;
+}
+
+.sliderWrap{
+position:relative;
+min-height:200px;
+}
+
+.slide{
+position:absolute;
+opacity:0;
+transition:.3s;
+}
+
+.slide.active{
+opacity:1;
 }
 
 .section{
@@ -218,16 +195,6 @@ grid-template-columns:1fr;
 grid-template-columns:1fr;
 }
 
-.heroTitle{
-max-width:12ch;
-font-size:clamp(28px, 7vw, 40px);
-line-height:1.16;
-}
-
-.sliderWrap{
-min-height:170px;
-}
-
 }
 
 </style>
@@ -253,7 +220,7 @@ min-height:170px;
 
 <div class="hero">
 
-<div class="panel heroPanel">
+<div class="panel">
 
 <div class="sliderWrap">
 
