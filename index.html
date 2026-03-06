@@ -6,6 +6,7 @@
   <title>Psikolog Umut Göveçliklioğlu | Online Terapi</title>
   <meta name="description" content="Psikolog Umut Göveçliklioğlu — Bakü & İstanbul | Online terapi. Psikolojik zorlanmalar ve cinsel yaşamla ilgili güçlüklerde yapılandırılmış destek." />
   <meta name="robots" content="index,follow" />
+  <meta name="author" content="Psikolog Umut Göveçliklioğlu" />
 
   <style>
     :root{
@@ -55,7 +56,6 @@
       box-shadow: var(--shadow);
     }
 
-    /* heroCard */
     .heroCard{
       padding:28px;
       min-height: 420px;
@@ -265,6 +265,54 @@
       line-height:1.35;
     }
 
+    /* FAQ */
+    .faqList{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+    .faqItem{
+      border:1px solid var(--line);
+      border-radius:16px;
+      background:#fff;
+      overflow:hidden;
+    }
+    .faqQuestion{
+      width:100%;
+      border:none;
+      background:transparent;
+      padding:16px 18px;
+      text-align:left;
+      font-size:14px;
+      font-weight:800;
+      color:var(--text);
+      cursor:pointer;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+    }
+    .faqQuestion span:last-child{
+      font-size:18px;
+      line-height:1;
+      color:var(--muted);
+      transition: transform .2s ease;
+      flex:0 0 auto;
+    }
+    .faqItem.active .faqQuestion span:last-child{
+      transform: rotate(45deg);
+    }
+    .faqAnswer{
+      display:none;
+      padding:0 18px 16px;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.75;
+    }
+    .faqItem.active .faqAnswer{
+      display:block;
+    }
+
     /* Footer */
     .footer{
       margin-top:30px;
@@ -323,7 +371,7 @@
       <div class="panel side">
         <div class="photo">
           <img src="profile.jpg" alt="Psikolog Umut Göveçliklioğlu"
-               onerror="this.remove(); this.parentElement.textContent='(Fotoğrafı en son ekleriz)\\n\\nprofile.jpg yükleyince burada görünecek.';" />
+               onerror="this.remove(); this.parentElement.textContent='(Fotoğrafı en son ekleriz)\n\nprofile.jpg yükleyince burada görünecek.';" />
         </div>
       </div>
     </div>
@@ -402,7 +450,7 @@
       </div>
     </div>
 
-    <!-- BLOG (preview + Devamını oku) -->
+    <!-- BLOG -->
     <div class="section" id="blog">
       <div class="sectionTitle">
         <h2>Blog</h2>
@@ -423,6 +471,118 @@
         <div class="ctaRow" style="justify-content:flex-end;">
           <a class="btn primary" href="blog-romantik-iliskiler.html">Devam et</a>
         </div>
+      </div>
+    </div>
+
+    <!-- SSS -->
+    <div class="section" id="sss">
+      <div class="sectionTitle">
+        <h2>Sık Sorulan Sorular</h2>
+        <p>Terapi süreci hakkında</p>
+      </div>
+
+      <div class="faqList">
+
+        <div class="faqItem">
+          <button class="faqQuestion">
+            <span>Terapi süreci nasıl ilerler?</span>
+            <span>+</span>
+          </button>
+          <div class="faqAnswer">
+            Terapi süreci ilk görüşmede danışanın ihtiyaçlarının anlaşılmasıyla başlar. Bu görüşmede yaşadığınız zorluklar, hedefleriniz ve beklentileriniz konuşulur. Sonrasında süreç size uygun bir planla ilerler.
+          </div>
+        </div>
+
+        <div class="faqItem">
+          <button class="faqQuestion">
+            <span>Seanslar ne kadar sürer?</span>
+            <span>+</span>
+          </button>
+          <div class="faqAnswer">
+            Bir terapi seansı ortalama 50 dakika sürer.
+          </div>
+        </div>
+
+        <div class="faqItem">
+          <button class="faqQuestion">
+            <span>Online terapi yüz yüze terapi kadar etkili midir?</span>
+            <span>+</span>
+          </button>
+          <div class="faqAnswer">
+            Araştırmalar, online terapinin birçok psikolojik konuda yüz yüze terapi kadar etkili olduğunu göstermektedir.
+          </div>
+        </div>
+
+        <div class="faqItem">
+          <button class="faqQuestion">
+            <span>Görüşmeler gizli midir?</span>
+            <span>+</span>
+          </button>
+          <div class="faqAnswer">
+            Evet. Terapi süreci etik ve gizlilik ilkeleri çerçevesinde yürütülür.
+          </div>
+        </div>
+
+        <div class="faqItem">
+          <button class="faqQuestion">
+            <span>İlk görüşmede neler konuşulur?</span>
+            <span>+</span>
+          </button>
+          <div class="faqAnswer">
+            İlk görüşmede danışanın yaşadığı zorluklar, terapiye başvurma nedeni ve beklentileri ele alınır. Aynı zamanda terapi sürecinin nasıl ilerleyeceği hakkında bilgi verilir.
+          </div>
+        </div>
+
+        <div class="faqItem">
+          <button class="faqQuestion">
+            <span>Terapi süreci ne kadar sürer?</span>
+            <span>+</span>
+          </button>
+          <div class="faqAnswer">
+            Terapi süresi kişinin yaşadığı zorluklara, hedeflerine ve terapi sürecindeki ilerlemeye göre değişebilir. Bazı konular daha kısa sürede ele alınabilirken, bazı durumlarda daha uzun bir süreç gerekebilir.
+          </div>
+        </div>
+
+        <div class="faqItem">
+          <button class="faqQuestion">
+            <span>Online terapi için özel bir hazırlık gerekir mi?</span>
+            <span>+</span>
+          </button>
+          <div class="faqAnswer">
+            Sadece internet bağlantısı olan, sessiz ve rahat bir ortam yeterlidir. Görüşmeler genellikle görüntülü konuşma üzerinden gerçekleştirilir.
+          </div>
+        </div>
+
+        <div class="faqItem">
+          <button class="faqQuestion">
+            <span>Terapiye ne zaman başvurmalıyım?</span>
+            <span>+</span>
+          </button>
+          <div class="faqAnswer">
+            Günlük yaşamınızı zorlayan düşünceler, duygular veya ilişkisel sorunlar yaşıyorsanız terapi desteği almak faydalı olabilir.
+          </div>
+        </div>
+
+        <div class="faqItem">
+          <button class="faqQuestion">
+            <span>Cinsel terapi nasıl ilerler?</span>
+            <span>+</span>
+          </button>
+          <div class="faqAnswer">
+            Cinsel terapi sürecinde yaşanan zorluklar değerlendirilir ve bilimsel yöntemlere dayalı bir çalışma planı oluşturulur. Süreç danışanın ihtiyaçlarına göre yapılandırılır.
+          </div>
+        </div>
+
+        <div class="faqItem">
+          <button class="faqQuestion">
+            <span>Randevu nasıl alabilirim?</span>
+            <span>+</span>
+          </button>
+          <div class="faqAnswer">
+            Randevu almak veya bilgi edinmek için WhatsApp üzerinden mesaj gönderebilir veya e-posta yoluyla iletişime geçebilirsiniz.
+          </div>
+        </div>
+
       </div>
     </div>
 
@@ -512,6 +672,14 @@
       heroCard.addEventListener('mouseleave', start);
 
       start();
+
+      const faqItems = document.querySelectorAll('.faqItem');
+      faqItems.forEach(item => {
+        const btn = item.querySelector('.faqQuestion');
+        btn.addEventListener('click', () => {
+          item.classList.toggle('active');
+        });
+      });
     })();
   </script>
 </body>
