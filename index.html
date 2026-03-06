@@ -4,9 +4,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Psikolog Umut Göveçliklioğlu | Online Terapi</title>
-  <meta name="description" content="Psikolog Umut Göveçliklioğlu — Bakü & İstanbul | Online terapi. Psikolojik zorlanmalar ve cinsel yaşamla ilgili güçlüklerde yapılandırılmış destek." />
+  <meta name="description" content="Psikolog Umut Göveçliklioğlu — Bakü & İstanbul | Yetişkin ve ergenlerle online terapi. Psikolojik zorlanmalar ve cinsel yaşamla ilgili güçlüklerde yapılandırılmış destek." />
   <meta name="robots" content="index,follow" />
-  <meta name="author" content="Psikolog Umut Göveçliklioğlu" />
 
   <style>
     :root{
@@ -18,12 +17,9 @@
       --shadow:0 18px 45px rgba(17,24,39,.10);
       --radius:18px;
       --max:1120px;
-
       --accent:#111827;
       --soft:#f4efe6;
       --focus: rgba(17,24,39,.18);
-
-      --heroText:#1f2937;
     }
 
     *{box-sizing:border-box}
@@ -40,7 +36,38 @@
     a{color:inherit}
     .wrap{max-width:var(--max); margin:0 auto; padding:18px 18px 90px;}
 
-    /* Layout */
+    .topbar{
+      display:flex; align-items:center; justify-content:space-between; gap:12px;
+      padding:14px 16px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      background:rgba(255,255,255,.62);
+      backdrop-filter: blur(10px);
+      box-shadow: var(--shadow);
+      position: sticky;
+      top: 12px;
+      z-index: 10;
+    }
+    .brand{display:flex; flex-direction:column; line-height:1.15}
+    .brand b{font-size:14px; letter-spacing:.25px}
+    .brand span{font-size:12px; color:var(--muted)}
+    .nav{
+      display:flex; gap:10px; flex-wrap:wrap;
+      font-size:13px; color:var(--muted);
+    }
+    .nav a{
+      text-decoration:none;
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid transparent;
+      white-space:nowrap;
+    }
+    .nav a:hover{
+      background:rgba(17,24,39,.04);
+      border-color:rgba(17,24,39,.08);
+      color:var(--text);
+    }
+
     .hero{
       padding:34px 6px 12px;
       display:grid;
@@ -58,7 +85,7 @@
     }
 
     .heroCard{
-      padding:28px;
+      padding:30px;
       min-height: 420px;
       display:flex;
       flex-direction:column;
@@ -73,42 +100,66 @@
       gap:12px;
     }
 
-    /* Slider */
-    .sliderRow{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      margin-top:6px;
-    }
-    .sliderBtn{
-      width:44px; height:44px;
-      border-radius:14px;
+    .badge{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:8px 12px;
       border:1px solid var(--line);
-      background:rgba(255,255,255,.88);
+      border-radius:999px;
+      background:rgba(255,255,255,.78);
+      color:var(--muted);
+      width: fit-content;
+    }
+    .dot{width:8px; height:8px; border-radius:999px; background:rgba(17,24,39,.55)}
+
+    .sliderRow{
+      display:grid;
+      grid-template-columns: 56px 1fr 56px;
+      gap:18px;
+      align-items:center;
+      margin-top:18px;
+    }
+
+    .sliderBtn{
+      width:56px;
+      height:56px;
+      border-radius:18px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.92);
       cursor:pointer;
       font-weight:900;
+      font-size:18px;
       color:var(--text);
       box-shadow: 0 10px 25px rgba(17,24,39,.08);
       transition: transform .12s ease, box-shadow .12s ease;
       flex: 0 0 auto;
     }
     .sliderBtn:hover{transform: translateY(-1px)}
-    .sliderBtn:active{transform: translateY(0)}
     .sliderBtn:focus{outline: 2px solid var(--focus); outline-offset: 2px;}
 
     .sliderWrap{
       position:relative;
-      flex:1;
+      min-height: 190px;
       display:flex;
       align-items:flex-start;
-      padding-top:10px;
-      min-height: 230px;
+      padding-top:6px;
     }
+
     @media (max-width: 920px){
-      .sliderWrap{ min-height: 250px; }
+      .sliderWrap{min-height:220px;}
     }
-    @media (max-width: 520px){
-      .sliderWrap{ min-height: 270px; }
+
+    @media (max-width: 640px){
+      .sliderRow{
+        grid-template-columns: 46px 1fr 46px;
+        gap:12px;
+      }
+      .sliderBtn{
+        width:46px;
+        height:46px;
+        border-radius:14px;
+        font-size:16px;
+      }
+      .sliderWrap{min-height:180px;}
     }
 
     .slide{
@@ -127,102 +178,46 @@
 
     .heroTitle{
       margin:0;
-      font-weight:800;
-      letter-spacing:-0.4px;
-      line-height:1.18;
-      font-size:clamp(28px, 3vw, 42px);
-      color:var(--heroText);
-      max-width:11ch;
-      text-wrap:balance;
-      overflow-wrap:anywhere;
-      word-break:normal;
+      font-weight:850;
+      letter-spacing:-.5px;
+      line-height:1.16;
+      font-size: clamp(23px, 2.7vw, 38px);
+      max-width: 12ch;
+      overflow-wrap: break-word;
+      word-break: normal;
+      text-wrap: balance;
     }
 
-    /* Slider dots */
-    .dots{
-      display:flex;
-      gap:8px;
-      margin-top:12px;
-      align-items:center;
-      justify-content:flex-start;
-      user-select:none;
-    }
-    .dotP{
-      width:8px; height:8px;
-      border-radius:999px;
-      border:1px solid rgba(17,24,39,.25);
-      background: transparent;
-      opacity:.7;
-      transition: transform .18s ease, opacity .18s ease, background .18s ease;
-      cursor:pointer;
-    }
-    .dotP.active{
-      background: rgba(17,24,39,.75);
-      opacity: 1;
-      transform: scale(1.12);
-    }
-
-    /* Side photo only */
-    .photo{
-      border:1px solid var(--line);
-      border-radius:16px;
-      background: linear-gradient(180deg, rgba(17,24,39,.06), rgba(17,24,39,.02));
-      overflow:hidden;
-      height: 100%;
-      min-height: 384px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      color: rgba(17,24,39,.55);
-      font-weight: 900;
-      text-align:center;
-      padding:16px;
-    }
     @media (max-width: 920px){
-      .photo{min-height: 260px;}
-    }
-    .photo img{width:100%; height:100%; object-fit:cover; display:block;}
-
-    .divider{
-      margin: 22px 6px 0;
-      height:1px;
-      background: rgba(17,24,39,.08);
-      border-radius:999px;
+      .heroTitle{max-width: 14ch;}
     }
 
-    /* Sections */
-    .section{margin-top:26px; padding: 0 6px;}
-    .sectionTitle{
-      display:flex; align-items:flex-end; justify-content:space-between; gap:12px;
-      margin: 0 0 12px;
+    @media (max-width: 640px){
+      .heroTitle{
+        font-size: clamp(22px, 6vw, 32px);
+        max-width: 14ch;
+        line-height:1.18;
+      }
     }
-    .sectionTitle h2{margin:0; font-size:16px; letter-spacing:.2px}
-    .sectionTitle p{margin:0; color:var(--muted); font-size:13px}
 
-    .grid{display:grid; grid-template-columns: repeat(4, 1fr); gap:12px;}
-    @media (max-width: 920px){ .grid{grid-template-columns:1fr} }
-
-    .card{
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      background: var(--card);
-      box-shadow: var(--shadow);
-      padding:18px;
+    .lead{
+      margin:16px 0 0;
+      font-size:16.5px;
+      line-height:1.78;
+      color:var(--muted);
+      max-width: 62ch;
     }
-    .card h3{margin:0 0 8px; font-size:15px}
-    .card p{margin:0; color:var(--muted); font-size:14px; line-height:1.7}
-    .note{
+
+    .microLine{
       margin-top:10px;
-      font-size:13px;
       color: rgba(75,85,99,.95);
+      font-size:13.5px;
       line-height:1.6;
     }
 
-    /* About single */
-    .aboutSingle{
-      display:grid;
-      grid-template-columns: 1fr;
-      gap:12px;
+    .ctaRow{
+      display:flex; gap:10px; flex-wrap:wrap;
+      margin-top:18px;
     }
 
     .btn{
@@ -246,91 +241,153 @@
       border-color: transparent;
       box-shadow: 0 12px 26px rgba(17,24,39,.16);
     }
+    .btn.soft{
+      background: var(--soft);
+      color: var(--text);
+    }
     .btn:hover{transform: translateY(-1px); opacity:.97}
-    .btn:active{transform: translateY(0)}
     .btn:focus{outline: 2px solid var(--focus); outline-offset: 2px;}
 
-    .ctaRow{
-      display:flex; gap:10px; flex-wrap:wrap;
-      margin-top:12px;
+    .dots{
+      display:flex;
+      gap:8px;
+      margin-top:10px;
+      align-items:center;
+      justify-content:flex-start;
+      user-select:none;
+    }
+    .dotP{
+      width:8px; height:8px;
+      border-radius:999px;
+      border:1px solid rgba(17,24,39,.25);
+      background: transparent;
+      opacity:.7;
+      transition: transform .18s ease, opacity .18s ease, background .18s ease;
+      cursor:pointer;
+    }
+    .dotP.active{
+      background: rgba(17,24,39,.75);
+      opacity: 1;
+      transform: scale(1.12);
     }
 
-    /* Blog preview tweaks */
-    .blogPreviewTitle{
-      display:flex;
-      align-items:flex-start;
-      justify-content:space-between;
-      gap:12px;
-      flex-wrap:wrap;
-    }
-    .blogPreviewTitle h3{
-      margin:0;
-      font-size:15px;
-      line-height:1.35;
-    }
-
-    /* FAQ */
-    .faqList{
-      display:flex;
-      flex-direction:column;
-      gap:10px;
-    }
-    .faqItem{
+    .photo{
       border:1px solid var(--line);
       border-radius:16px;
-      background:#fff;
+      background: linear-gradient(180deg, rgba(17,24,39,.06), rgba(17,24,39,.02));
       overflow:hidden;
-    }
-    .faqQuestion{
-      width:100%;
-      border:none;
-      background:transparent;
-      padding:16px 18px;
-      text-align:left;
-      font-size:14px;
-      font-weight:800;
-      color:var(--text);
-      cursor:pointer;
+      height: 215px;
       display:flex;
       align-items:center;
-      justify-content:space-between;
+      justify-content:center;
+      color: rgba(17,24,39,.55);
+      font-weight: 900;
+      text-align:center;
+      padding:16px;
+    }
+    .photo img{width:100%; height:100%; object-fit:cover; display:block;}
+
+    .quick{
+      border:1px solid var(--line);
+      border-radius:16px;
+      background: rgba(17,24,39,.02);
+      padding:14px;
+    }
+    .quick b{display:block; font-size:13px; color:var(--muted); margin-bottom:8px}
+    .quick .mini{display:flex; gap:8px; flex-wrap:wrap}
+    .quick p{margin:10px 0 0; color:var(--muted); font-size:13px; line-height:1.6}
+
+    .section{margin-top:26px; padding: 0 6px;}
+    .sectionTitle{
+      display:flex; align-items:flex-end; justify-content:space-between; gap:12px;
+      margin: 0 0 12px;
+    }
+    .sectionTitle h2{margin:0; font-size:16px; letter-spacing:.2px}
+    .sectionTitle p{margin:0; color:var(--muted); font-size:13px}
+
+    .grid{display:grid; grid-template-columns: repeat(4, 1fr); gap:12px;}
+    @media (max-width: 1100px){ .grid{grid-template-columns: repeat(2, 1fr);} }
+    @media (max-width: 720px){ .grid{grid-template-columns:1fr} }
+
+    .card{
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      background: var(--card);
+      box-shadow: var(--shadow);
+      padding:18px;
+    }
+    .card h3{margin:0 0 8px; font-size:15px}
+    .card p{margin:0; color:var(--muted); font-size:14px; line-height:1.7}
+    .note{
+      margin-top:10px;
+      font-size:13px;
+      color: rgba(75,85,99,.95);
+      line-height:1.6;
+    }
+
+    .about{
+      display:grid;
+      grid-template-columns: 1.05fr .95fr;
       gap:12px;
     }
-    .faqQuestion span:last-child{
-      font-size:18px;
-      line-height:1;
-      color:var(--muted);
-      transition: transform .2s ease;
-      flex:0 0 auto;
+    @media (max-width: 920px){ .about{grid-template-columns:1fr} }
+
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background: rgba(17,24,39,.02);
+      color: var(--muted);
+      font-size:12.5px;
+      font-weight:800;
+      width: fit-content;
     }
-    .faqItem.active .faqQuestion span:last-child{
-      transform: rotate(45deg);
+
+    .faqCard{
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      background: var(--card);
+      box-shadow: var(--shadow);
+      overflow:hidden;
     }
+
+    .faqItem{
+      border-bottom:1px solid var(--line);
+    }
+    .faqItem:last-child{
+      border-bottom:none;
+    }
+
+    .faqQuestion{
+      width:100%;
+      text-align:left;
+      background:none;
+      border:none;
+      padding:18px 20px;
+      font-size:15px;
+      font-weight:700;
+      cursor:pointer;
+      color:var(--text);
+    }
+
     .faqAnswer{
       display:none;
-      padding:0 18px 16px;
+      padding:0 20px 18px 20px;
       color:var(--muted);
+      line-height:1.7;
       font-size:14px;
-      line-height:1.75;
-    }
-    .faqItem.active .faqAnswer{
-      display:block;
     }
 
-    .softCta{
-      margin-top:32px;
-      padding:0 6px;
-    }
-    .softCtaInner{
-      max-width:640px;
-      margin:0 auto;
-      text-align:center;
-      color:#374151;
-      line-height:1.8;
-      font-size:14.5px;
+    .divider{
+      margin: 22px 6px 0;
+      height:1px;
+      background: rgba(17,24,39,.08);
+      border-radius:999px;
     }
 
-    /* Footer */
     .footer{
       margin-top:30px;
       padding:18px 6px 0;
@@ -349,356 +406,282 @@
 <body>
   <div class="wrap">
 
-    <!-- HERO -->
+    <div class="topbar">
+      <div class="brand">
+        <b>Psikolog Umut Göveçliklioğlu</b>
+        <span>Bakü – İstanbul • Online Terapi</span>
+      </div>
+      <div class="nav">
+        <a href="#calisma">Çalışma Alanları</a>
+        <a href="#hakkimda">Hakkımda</a>
+        <a href="#blog">Blog</a>
+        <a href="#sss">SSS</a>
+        <a href="#iletisim">İletişim</a>
+      </div>
+    </div>
+
     <div class="hero">
       <div class="panel heroCard">
+        <div class="badge"><span class="dot"></span> Online görüşme • Gizlilik & etik çerçeve</div>
 
-        <div style="display:flex; flex-direction:column; gap:4px; margin-bottom:2px;">
-          <b style="font-size:13px; letter-spacing:.25px;">Psikolog Umut Göveçliklioğlu</b>
-          <span style="font-size:12px; color:var(--muted);">Bakü – İstanbul • Online Terapi</span>
-        </div>
-
-        <div class="sliderRow" aria-label="Öne çıkan mesajlar">
-          <button class="sliderBtn" id="prevBtn" aria-label="Önceki mesaj">‹</button>
+        <div class="sliderRow">
+          <button class="sliderBtn" id="prevBtn" aria-label="Önceki">‹</button>
 
           <div class="sliderWrap">
             <div class="slide active">
-              <h1 class="heroTitle">Zorlandığınız alanı birlikte netleştirebiliriz.</h1>
+              <h1 class="heroTitle">Zorlandığınız yeri birlikte anlayabiliriz.</h1>
             </div>
             <div class="slide">
-              <h1 class="heroTitle">Yıllardır “idare ettiğiniz” şey, artık yorucu hale geldiyse…</h1>
+              <h1 class="heroTitle">İdare ettiğiniz şey artık yorucu hale geldiyse…</h1>
             </div>
             <div class="slide">
-              <h1 class="heroTitle">Görmezden geldiğiniz yer, en çok konuşulması gereken yer olabilir.</h1>
+              <h1 class="heroTitle">Bazen en çok kaçındığınız yer, en çok ihtiyaç duyduğunuz yerdir.</h1>
             </div>
           </div>
 
-          <button class="sliderBtn" id="nextBtn" aria-label="Sonraki mesaj">›</button>
+          <button class="sliderBtn" id="nextBtn" aria-label="Sonraki">›</button>
         </div>
 
-        <div class="dots" aria-label="Slider göstergeleri">
-          <span class="dotP active" data-i="0" role="button" tabindex="0" aria-label="1. mesaj"></span>
-          <span class="dotP" data-i="1" role="button" tabindex="0" aria-label="2. mesaj"></span>
-          <span class="dotP" data-i="2" role="button" tabindex="0" aria-label="3. mesaj"></span>
+        <div class="dots">
+          <span class="dotP active" data-i="0"></span>
+          <span class="dotP" data-i="1"></span>
+          <span class="dotP" data-i="2"></span>
         </div>
 
+        <p class="lead">
+          Yetişkin ve ergenlerle çalışıyorum. Psikolojik zorlanmalar ve cinsel yaşamla ilgili güçlüklerde yapılandırılmış bir terapi süreci sunuyorum.
+        </p>
+
+        <div class="microLine">
+          Seanslar etik ve gizlilik ilkeleri temelinde yürütülür.
+        </div>
+
+        <div class="ctaRow">
+          <a class="btn primary" href="#iletisim">Randevu / İletişim</a>
+          <a class="btn soft" href="#calisma">Çalışma Alanları</a>
+        </div>
       </div>
 
-      <!-- Photo only -->
       <div class="panel side">
         <div class="photo">
-          <img src="profile.jpg" alt="Psikolog Umut Göveçliklioğlu"
-               onerror="this.remove(); this.parentElement.textContent='(Fotoğrafı en son ekleriz)\n\nprofile.jpg yükleyince burada görünecek.';" />
+          Fotoğraf buraya eklenecek
+        </div>
+
+        <div class="quick">
+          <b>Hızlı İletişim</b>
+          <div class="mini">
+            <a class="btn primary" href="https://wa.me/905467114426" target="_blank">WhatsApp</a>
+            <a class="btn" href="mailto:pskumutgovecliklioglu@gmail.com">E-posta</a>
+          </div>
+          <p>Aklınızdaki soruları sormak veya randevu oluşturmak için WhatsApp’tan yazabilirsiniz.</p>
         </div>
       </div>
     </div>
 
     <div class="divider"></div>
 
-    <!-- ÇALIŞMA ALANLARI -->
     <div class="section" id="calisma">
       <div class="sectionTitle">
-        <h2>Çalışma Alanlarım</h2>
+        <h2>Çalışma Alanları</h2>
+        <p>Net başlıklar • premium düzen</p>
       </div>
 
       <div class="grid">
         <div class="card">
           <h3>Bireysel Terapi</h3>
-          <p>
-            Bireysel terapi; yaşadığınız zorlanmayı yalnızca konuşmak değil, onu anlamlandırma sürecidir.
-            Düşünce–duygu–davranış döngüsünü birlikte ele alır, hedefi netleştirir ve günlük hayatta karşılığı olan adımlarla ilerleriz.
-          </p>
+          <p>Bireysel terapi; yaşadığınız zorlanmayı yalnızca konuşmak değil, onu anlamlandırma sürecidir. Düşünce–duygu–davranış döngüsünü birlikte ele alır, hedefi netleştirir ve günlük hayatta karşılığı olan adımlarla ilerleriz.</p>
         </div>
 
         <div class="card">
           <h3>Cinsel Terapi</h3>
-          <p>
-            Performans kaygısı, isteksizlik, vajinismus, uyarılma güçlüğü, orgazm zorlukları ve erken boşalma gibi alanlarda
-            yapılandırılmış bir destek süreci yürütülür. Uygunluk ve yol haritası ilk görüşmede netleştirilir.
-          </p>
+          <p>Performans kaygısı, isteksizlik, vajinismus, uyarılma güçlüğü, orgazm zorlukları ve erken boşalma gibi alanlarda yapılandırılmış bir destek süreci yürütülür.</p>
+          <div class="note">Uygunluk ve yol haritası ilk görüşmede netleştirilir.</div>
         </div>
 
         <div class="card">
           <h3>MMPI Testi</h3>
-          <p>
-            MMPI, kişilik örüntüleri ve psikolojik dinamikler hakkında kapsamlı bir değerlendirme sunar.
-            Sonuçlar klinik görüşme ve profesyonel geri bildirimle birlikte anlam kazanır.
-          </p>
+          <p>MMPI, kişilik örüntüleri ve psikolojik dinamikler hakkında kapsamlı bir değerlendirme sunar. Sonuçlar klinik görüşme ve profesyonel geri bildirimle birlikte anlam kazanır.</p>
         </div>
 
         <div class="card">
           <h3>Online Terapi</h3>
-          <p>
-            Online terapi; etik ve gizlilik çerçevesinde yürütülen, yapılandırılmış bir süreçtir.
-            İlk görüşmede hedef ve çerçeve netleştirilir; süreç kişiye özgü planlanır.
-          </p>
+          <p>Online terapi; etik ve gizlilik çerçevesinde yürütülen, yapılandırılmış bir süreçtir. İlk görüşmede hedef ve çerçeve netleştirilir; süreç kişiye özgü planlanır.</p>
         </div>
       </div>
     </div>
 
-    <!-- HAKKIMDA -->
     <div class="section" id="hakkimda">
       <div class="sectionTitle">
         <h2>Hakkımda</h2>
+        <p>Kısa • güven veren anlatım</p>
       </div>
 
-      <div class="aboutSingle">
+      <div class="about">
         <div class="card">
           <h3>Psikolog Umut Göveçliklioğlu</h3>
           <p>
             Merhaba, ben Psikolog Umut Göveçliklioğlu. Sakarya Üniversitesi Psikoloji Bölümü mezunuyum. Ergen ve yetişkinlerle çalışıyorum.
           </p>
-          <p style="margin-top:10px;">
-            Terapötik yetkinliğimi güçlendirmek amacıyla Bilişsel Davranışçı Psikoterapiler Derneği bünyesinde,
-            Prof. Dr. Hakan Türkçapar koordinatörlüğünde Bilişsel Davranışçı Terapi eğitimimi tamamladım.
-            Aynı kurumda Cinsel Terapi eğitimimi de aldım. Bunun yanında terapilerimde mindfulness temelli yaklaşımları ve
-            Kısa Süreli Çözüm Odaklı Terapi tekniklerini eklektik bir çerçevede kullanıyorum.
+          <p style="margin-top:12px;">
+            Terapötik yetkinliğimi güçlendirmek amacıyla Bilişsel Davranışçı Terapi eğitimimi tamamladım. Bunun yanında terapilerimde mindfulness temelli yaklaşımlar ve kısa süreli çözüm odaklı teknikleri eklektik bir çerçevede kullanıyorum.
           </p>
-          <p style="margin-top:10px;">
-            Türk Psikologlar Derneği’nden MMPI uygulayıcı eğitimimi tamamladım ve aktif olarak test uygulamaları yapıyorum.
-            Bu alandaki çalışmalarım ulusal düzeyde bir kongrede bildiri olarak sunulmuştur.
+          <p style="margin-top:12px;">
+            MMPI uygulayıcı eğitimimi tamamladım ve aktif olarak test uygulamaları yapıyorum.
           </p>
-          <div class="note" style="margin-top:10px;">
-            <b>Seans sürecinde amacım yalnızca konuşmak değil; düşünce, duygu ve davranış sisteminizi birlikte anlamlandırarak kalıcı değişim sağlamaktır.</b>
+          <div class="note">
+            Seans sürecinde amacım yalnızca konuşmak değil; düşünce, duygu ve davranış sistemini birlikte anlamlandırarak kalıcı değişim sağlamaktır.
           </div>
+        </div>
+
+        <div class="card">
+          <h3>Meslek & Kişilik Analizi Uygulaması</h3>
+          <p>
+            Kişiliğinize, mesleğe yatkınlığınıza ve bilişsel profilinize göre meslek önerileri sunan bir uygulama projesi üzerinde çalışıyorum.
+          </p>
+          <div class="pill" style="margin-top:12px;">Yakında aktif olacak</div>
         </div>
       </div>
     </div>
 
-    <!-- BLOG -->
     <div class="section" id="blog">
       <div class="sectionTitle">
         <h2>Blog</h2>
+        <p>Güncel yazılar</p>
       </div>
 
       <div class="card">
-        <div class="blogPreviewTitle">
-          <h3>Romantik İlişkilerde Travma, Manipülasyon ve Terk Edilme</h3>
-        </div>
-
-        <p style="margin-top:10px; color:var(--muted); font-size:14px; line-height:1.7;">
-          İlişki travması, geçmiş ilişkilerde yaşanan olumsuz deneyimlerin bugünkü ilişkilerde güveni, yakınlığı ve duygusal dengeyi nasıl etkilediğini anlatır.
-          Bu yazıda; ilişki travmasının izleri, manipülasyonun sessiz yolları ve terk edilme korkusunun ilişkide nasıl döngüye dönüştüğü üzerine kapsamlı bir çerçeve bulacaksınız.
+        <h3>Romantik İlişkilerde Travma, Manipülasyon ve Terk Edilme</h3>
+        <p style="margin-top:10px;">
+          İlişki travması, geçmiş ilişkilerde yaşanan olumsuz deneyimlerin bugünkü ilişkilerde güveni, yakınlığı ve duygusal dengeyi nasıl etkilediğini anlatır. Bu yazıda; ilişki travmasının izleri, manipülasyonun sessiz yolları ve terk edilme korkusunun ilişkide nasıl döngüye dönüştüğü üzerine kapsamlı bir çerçeve bulacaksınız.
         </p>
-
-        <div class="ctaRow" style="justify-content:flex-end;">
-          <a class="btn primary" href="blog-romantik-iliskiler.html">Devam et</a>
-        </div>
       </div>
     </div>
 
-    <!-- SSS -->
     <div class="section" id="sss">
       <div class="sectionTitle">
         <h2>Sık Sorulan Sorular</h2>
         <p>Terapi süreci hakkında</p>
       </div>
 
-      <div class="faqList">
-
+      <div class="faqCard">
         <div class="faqItem">
-          <button class="faqQuestion">
-            <span>Terapi süreci nasıl ilerler?</span>
-            <span>+</span>
-          </button>
+          <button class="faqQuestion">İlk seans nasıl geçer?</button>
           <div class="faqAnswer">
-            Terapi süreci ilk görüşmede danışanın ihtiyaçlarının anlaşılmasıyla başlar. Bu görüşmede yaşadığınız zorluklar, hedefleriniz ve beklentileriniz konuşulur. Sonrasında süreç size uygun bir planla ilerler.
+            İlk görüşme, sizi ve yaşadığınız zorlukları anlamaya yönelik bir tanışma seansıdır. Bu görüşmede terapi hedefleri ve sürecin nasıl ilerleyeceği birlikte değerlendirilir.
           </div>
         </div>
 
         <div class="faqItem">
-          <button class="faqQuestion">
-            <span>Seanslar ne kadar sürer?</span>
-            <span>+</span>
-          </button>
+          <button class="faqQuestion">Terapi süreci nasıl ilerler?</button>
           <div class="faqAnswer">
-            Bir terapi seansı ortalama 50 dakika sürer.
+            İlk görüşmede yaşadığınız zorlukları ve terapi hedeflerini birlikte belirleriz. Sonraki seanslarda düşünce, duygu ve davranış örüntülerini ele alarak yapılandırılmış şekilde ilerleriz.
           </div>
         </div>
 
         <div class="faqItem">
-          <button class="faqQuestion">
-            <span>Online terapi yüz yüze terapi kadar etkili midir?</span>
-            <span>+</span>
-          </button>
+          <button class="faqQuestion">Seanslar ne sıklıkla yapılır?</button>
           <div class="faqAnswer">
-            Araştırmalar, online terapinin birçok psikolojik konuda yüz yüze terapi kadar etkili olduğunu göstermektedir.
+            Genellikle haftada bir görüşme önerilir. Ancak görüşme sıklığı kişinin ihtiyaçlarına göre birlikte belirlenebilir.
           </div>
         </div>
 
         <div class="faqItem">
-          <button class="faqQuestion">
-            <span>Görüşmeler gizli midir?</span>
-            <span>+</span>
-          </button>
+          <button class="faqQuestion">Online terapi etkili midir?</button>
           <div class="faqAnswer">
-            Evet. Terapi süreci etik ve gizlilik ilkeleri çerçevesinde yürütülür.
+            Araştırmalar, online terapinin birçok psikolojik sorun için yüz yüze terapi kadar etkili olabildiğini göstermektedir.
           </div>
         </div>
 
         <div class="faqItem">
-          <button class="faqQuestion">
-            <span>İlk görüşmede neler konuşulur?</span>
-            <span>+</span>
-          </button>
+          <button class="faqQuestion">Seans süresi ne kadardır?</button>
           <div class="faqAnswer">
-            İlk görüşmede danışanın yaşadığı zorluklar, terapiye başvurma nedeni ve beklentileri ele alınır. Aynı zamanda terapi sürecinin nasıl ilerleyeceği hakkında bilgi verilir.
+            Bir terapi seansı yaklaşık 50 dakika sürmektedir.
           </div>
         </div>
 
         <div class="faqItem">
-          <button class="faqQuestion">
-            <span>Terapi süreci ne kadar sürer?</span>
-            <span>+</span>
-          </button>
+          <button class="faqQuestion">Görüşmeler gizli midir?</button>
           <div class="faqAnswer">
-            Terapi süresi kişinin yaşadığı zorluklara, hedeflerine ve terapi sürecindeki ilerlemeye göre değişebilir. Bazı konular daha kısa sürede ele alınabilirken, bazı durumlarda daha uzun bir süreç gerekebilir.
+            Evet. Tüm görüşmeler etik kurallar ve gizlilik ilkeleri çerçevesinde yürütülür.
           </div>
         </div>
-
-        <div class="faqItem">
-          <button class="faqQuestion">
-            <span>Online terapi için özel bir hazırlık gerekir mi?</span>
-            <span>+</span>
-          </button>
-          <div class="faqAnswer">
-            Sadece internet bağlantısı olan, sessiz ve rahat bir ortam yeterlidir. Görüşmeler genellikle görüntülü konuşma üzerinden gerçekleştirilir.
-          </div>
-        </div>
-
-        <div class="faqItem">
-          <button class="faqQuestion">
-            <span>Terapiye ne zaman başvurmalıyım?</span>
-            <span>+</span>
-          </button>
-          <div class="faqAnswer">
-            Günlük yaşamınızı zorlayan düşünceler, duygular veya ilişkisel sorunlar yaşıyorsanız terapi desteği almak faydalı olabilir.
-          </div>
-        </div>
-
-        <div class="faqItem">
-          <button class="faqQuestion">
-            <span>Cinsel terapi nasıl ilerler?</span>
-            <span>+</span>
-          </button>
-          <div class="faqAnswer">
-            Cinsel terapi sürecinde yaşanan zorluklar değerlendirilir ve bilimsel yöntemlere dayalı bir çalışma planı oluşturulur. Süreç danışanın ihtiyaçlarına göre yapılandırılır.
-          </div>
-        </div>
-
-        <div class="faqItem">
-          <button class="faqQuestion">
-            <span>Randevu nasıl alabilirim?</span>
-            <span>+</span>
-          </button>
-          <div class="faqAnswer">
-            Randevu almak veya bilgi edinmek için WhatsApp üzerinden mesaj gönderebilir veya e-posta yoluyla iletişime geçebilirsiniz.
-          </div>
-        </div>
-
       </div>
     </div>
 
-    <!-- SOFT CTA -->
-    <div class="softCta">
-      <div class="softCtaInner">
-        <b>Terapiye başlamak için her şeyi netleştirmiş olmanız gerekmez.</b><br><br>
-        Sadece yaşadığınız durumu kısaca yazmanız yeterlidir. Nereden başlayacağımızı birlikte belirleyebiliriz.
-      </div>
-    </div>
-
-    <!-- İLETİŞİM -->
     <div class="section" id="iletisim">
       <div class="sectionTitle">
         <h2>İletişim</h2>
+        <p>Randevu & bilgi için</p>
       </div>
 
       <div class="card">
         <p style="margin:0; color:var(--muted); line-height:1.7;">
-          Randevu almak veya süreç hakkında bilgi edinmek için WhatsApp üzerinden mesaj gönderebilir ya da e-posta ile iletişime geçebilirsiniz.
+          Aklınızdaki soruları sormak veya randevu oluşturmak için WhatsApp’tan yazabilirsiniz.
         </p>
 
-        <div class="ctaRow">
-          <a class="btn primary" href="https://wa.me/905467114426?text=Merhaba%2C%20web%20siteniz%20%C3%BCzerinden%20yaz%C4%B1yorum.%20Terapi%20s%C3%BCreci%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener">WhatsApp ile Yaz</a>
-          <a class="btn" href="mailto:pskumutgovecliklioglu@gmail.com?subject=Online%20Terapi%20Randevu%20Talebi">E-posta ile Yaz</a>
+        <div class="ctaRow" style="margin-top:12px;">
+          <a class="btn primary" href="https://wa.me/905467114426" target="_blank">WhatsApp ile Yaz</a>
+          <a class="btn" href="mailto:pskumutgovecliklioglu@gmail.com">E-posta ile Yaz</a>
         </div>
+
+        <div class="note"><b>Not:</b> Görüşmeler online olarak yürütülür.</div>
       </div>
     </div>
 
     <div class="footer">
       <span>© 2026 Psikolog Umut Göveçliklioğlu</span>
       <span>
-        <a href="https://wa.me/905467114426" target="_blank" rel="noopener">WhatsApp</a> •
+        <a href="https://wa.me/905467114426" target="_blank">WhatsApp</a> •
         <a href="mailto:pskumutgovecliklioglu@gmail.com">E-posta</a>
       </span>
     </div>
   </div>
 
   <script>
-    (function(){
-      const slides = Array.from(document.querySelectorAll('.slide'));
-      const prevBtn = document.getElementById('prevBtn');
-      const nextBtn = document.getElementById('nextBtn');
-      const dots = Array.from(document.querySelectorAll('.dotP'));
+    const slides = document.querySelectorAll(".slide");
+    const dots = document.querySelectorAll(".dotP");
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+    let i = 0;
 
-      let idx = 0;
-      let timer = null;
-      const INTERVAL = 4200;
+    function showSlide(index){
+      slides.forEach(slide => slide.classList.remove("active"));
+      dots.forEach(dot => dot.classList.remove("active"));
+      slides[index].classList.add("active");
+      dots[index].classList.add("active");
+    }
 
-      function setDots(i){
-        dots.forEach(d => d.classList.remove('active'));
-        if(dots[i]) dots[i].classList.add('active');
-      }
+    function nextSlide(){
+      i = (i + 1) % slides.length;
+      showSlide(i);
+    }
 
-      function show(i){
-        slides[idx].classList.remove('active');
-        idx = (i + slides.length) % slides.length;
-        slides[idx].classList.add('active');
-        setDots(idx);
-      }
+    function prevSlide(){
+      i = (i - 1 + slides.length) % slides.length;
+      showSlide(i);
+    }
 
-      function next(){ show(idx + 1); }
-      function prev(){ show(idx - 1); }
+    nextBtn.addEventListener("click", nextSlide);
+    prevBtn.addEventListener("click", prevSlide);
 
-      function start(){
-        stop();
-        timer = setInterval(next, INTERVAL);
-      }
-      function stop(){
-        if(timer) clearInterval(timer);
-        timer = null;
-      }
+    dots.forEach((dot, index) => {
+      dot.addEventListener("click", () => {
+        i = index;
+        showSlide(i);
+      });
+    });
 
-      nextBtn.addEventListener('click', () => { next(); start(); });
-      prevBtn.addEventListener('click', () => { prev(); start(); });
+    setInterval(nextSlide, 4500);
 
-      dots.forEach(d => {
-        const go = () => { show(parseInt(d.dataset.i, 10) || 0); start(); };
-        d.addEventListener('click', go);
-        d.addEventListener('keydown', (e) => {
-          if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); go(); }
+    document.querySelectorAll(".faqQuestion").forEach(q => {
+      q.addEventListener("click", () => {
+        const a = q.nextElementSibling;
+        document.querySelectorAll(".faqAnswer").forEach(el => {
+          if (el !== a) el.style.display = "none";
         });
+        a.style.display = a.style.display === "block" ? "none" : "block";
       });
-
-      document.addEventListener('keydown', (e) => {
-        if(e.key === 'ArrowRight'){ next(); start(); }
-        if(e.key === 'ArrowLeft'){ prev(); start(); }
-      });
-
-      const heroCard = document.querySelector('.heroCard');
-      heroCard.addEventListener('mouseenter', stop);
-      heroCard.addEventListener('mouseleave', start);
-
-      start();
-
-      const faqItems = document.querySelectorAll('.faqItem');
-      faqItems.forEach(item => {
-        const btn = item.querySelector('.faqQuestion');
-        btn.addEventListener('click', () => {
-          item.classList.toggle('active');
-        });
-      });
-    })();
+    });
   </script>
 </body>
 </html>
