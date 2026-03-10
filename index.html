@@ -129,7 +129,7 @@
     .sliderWrap{
       position:relative;
       min-width:0;
-      min-height:220px;
+      min-height:250px;
       display:flex;
       align-items:center;
     }
@@ -152,15 +152,30 @@
     .heroTitle{
       margin:0;
       font-weight:800;
-      letter-spacing:-0.8px;
-      line-height:1.08;
-      font-size:clamp(34px, 4.1vw, 58px);
+      letter-spacing:-0.9px;
       color:var(--heroText);
-      max-width:9.5ch;
       text-wrap:balance;
       word-break:normal;
       overflow-wrap:normal;
       hyphens:none;
+    }
+
+    .heroTitle.t1{
+      font-size:clamp(34px, 4.2vw, 58px);
+      line-height:1.06;
+      max-width:10ch;
+    }
+
+    .heroTitle.t2{
+      font-size:clamp(28px, 3.3vw, 46px);
+      line-height:1.08;
+      max-width:12ch;
+    }
+
+    .heroTitle.t3{
+      font-size:clamp(26px, 3vw, 42px);
+      line-height:1.1;
+      max-width:13ch;
     }
 
     /* Dots */
@@ -488,6 +503,27 @@
 
     .footer a{color:inherit}
 
+    @media (max-width:920px){
+      .sliderWrap{
+        min-height:220px;
+      }
+
+      .heroTitle.t1{
+        font-size:clamp(30px, 6vw, 46px);
+        max-width:11ch;
+      }
+
+      .heroTitle.t2{
+        font-size:clamp(26px, 5.2vw, 38px);
+        max-width:13ch;
+      }
+
+      .heroTitle.t3{
+        font-size:clamp(24px, 4.8vw, 34px);
+        max-width:14ch;
+      }
+    }
+
     @media (max-width:640px){
       .heroCard{
         min-height:auto;
@@ -507,10 +543,19 @@
         min-height:190px;
       }
 
-      .heroTitle{
+      .heroTitle.t1{
         font-size:clamp(26px, 8vw, 38px);
         max-width:11ch;
-        line-height:1.1;
+      }
+
+      .heroTitle.t2{
+        font-size:clamp(23px, 7vw, 32px);
+        max-width:13ch;
+      }
+
+      .heroTitle.t3{
+        font-size:clamp(22px, 6.4vw, 30px);
+        max-width:14ch;
       }
 
       .btn{
@@ -562,13 +607,15 @@
 
           <div class="sliderWrap">
             <div class="slide active">
-              <h1 class="heroTitle">Zorlandığınız alanı birlikte netleştirebiliriz.</h1>
+              <h1 class="heroTitle t1">Zorlandığınız alanı birlikte netleştirebiliriz.</h1>
             </div>
+
             <div class="slide">
-              <h1 class="heroTitle">Yıllardır “idare ettiğiniz” şey, artık yorucu hale geldiyse…</h1>
+              <h1 class="heroTitle t2">Uzun süredir idare ettiğiniz şey, artık yorucu hale geldiyse…</h1>
             </div>
+
             <div class="slide">
-              <h1 class="heroTitle">Görmezden geldiğiniz yer, belki de en çok konuşulması gereken yerdir.</h1>
+              <h1 class="heroTitle t3">Görmezden geldiğiniz yer, belki de en çok konuşulması gereken yerdir.</h1>
             </div>
           </div>
 
