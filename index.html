@@ -21,53 +21,63 @@
 
       --accent:#111827;
       --soft:#f4efe6;
-      --focus: rgba(17,24,39,.18);
+      --focus:rgba(17,24,39,.18);
 
       --heroText:#1f2937;
 
       --waBg:#eef7f1;
-      --waBorder:rgba(22,101,52,.14);
+      --waBorder:rgba(22,101,52,.16);
       --waText:#14532d;
 
       --mailBg:#eef3fb;
-      --mailBorder:rgba(30,64,175,.14);
+      --mailBorder:rgba(30,64,175,.16);
       --mailText:#1e3a8a;
     }
 
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
+
     body{
       margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      font-family:ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       background:
         radial-gradient(1100px 520px at 25% -10%, rgba(17,24,39,.06), transparent 60%),
         radial-gradient(900px 420px at 90% 0%, rgba(17,24,39,.04), transparent 55%),
         var(--bg);
       color:var(--text);
     }
+
     a{color:inherit}
-    .wrap{max-width:var(--max); margin:0 auto; padding:18px 18px 90px;}
+
+    .wrap{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:18px 18px 90px;
+    }
 
     /* Layout */
     .hero{
       padding:34px 6px 12px;
       display:grid;
-      grid-template-columns: 1.12fr .88fr;
+      grid-template-columns:1.12fr .88fr;
       gap:18px;
       align-items:stretch;
     }
-    @media (max-width: 920px){ .hero{grid-template-columns:1fr} }
+
+    @media (max-width:920px){
+      .hero{grid-template-columns:1fr}
+    }
 
     .panel{
       border:1px solid var(--line);
       border-radius:var(--radius);
       background:rgba(255,255,255,.72);
-      box-shadow: var(--shadow);
+      box-shadow:var(--shadow);
     }
 
     .heroCard{
       padding:28px;
-      min-height: 420px;
+      min-height:420px;
       display:flex;
       flex-direction:column;
       justify-content:flex-start;
@@ -75,7 +85,7 @@
 
     .side{
       padding:18px;
-      min-height: 420px;
+      min-height:420px;
       display:flex;
       flex-direction:column;
       gap:12px;
@@ -88,21 +98,27 @@
       gap:10px;
       margin-top:6px;
     }
+
     .sliderBtn{
-      width:44px; height:44px;
+      width:44px;
+      height:44px;
       border-radius:14px;
       border:1px solid var(--line);
       background:rgba(255,255,255,.88);
       cursor:pointer;
       font-weight:900;
       color:var(--text);
-      box-shadow: 0 10px 25px rgba(17,24,39,.08);
-      transition: transform .12s ease, box-shadow .12s ease;
-      flex: 0 0 auto;
+      box-shadow:0 10px 25px rgba(17,24,39,.08);
+      transition:transform .12s ease, box-shadow .12s ease;
+      flex:0 0 auto;
     }
-    .sliderBtn:hover{transform: translateY(-1px)}
-    .sliderBtn:active{transform: translateY(0)}
-    .sliderBtn:focus{outline: 2px solid var(--focus); outline-offset: 2px;}
+
+    .sliderBtn:hover{transform:translateY(-1px)}
+    .sliderBtn:active{transform:translateY(0)}
+    .sliderBtn:focus{
+      outline:2px solid var(--focus);
+      outline-offset:2px;
+    }
 
     .sliderWrap{
       position:relative;
@@ -110,27 +126,30 @@
       display:flex;
       align-items:flex-start;
       padding-top:10px;
-      min-height: 230px;
+      min-height:230px;
     }
-    @media (max-width: 920px){
-      .sliderWrap{ min-height: 250px; }
+
+    @media (max-width:920px){
+      .sliderWrap{min-height:250px}
     }
-    @media (max-width: 520px){
-      .sliderWrap{ min-height: 270px; }
+
+    @media (max-width:520px){
+      .sliderWrap{min-height:270px}
     }
 
     .slide{
       position:absolute;
       inset:0;
       opacity:0;
-      transform: translateY(6px);
-      transition: opacity .35s ease, transform .35s ease;
+      transform:translateY(6px);
+      transition:opacity .35s ease, transform .35s ease;
       display:flex;
       align-items:flex-start;
     }
+
     .slide.active{
       opacity:1;
-      transform: translateY(0);
+      transform:translateY(0);
     }
 
     .heroTitle{
@@ -146,7 +165,7 @@
       word-break:normal;
     }
 
-    /* Slider dots */
+    /* Dots */
     .dots{
       display:flex;
       gap:8px;
@@ -155,84 +174,130 @@
       justify-content:flex-start;
       user-select:none;
     }
+
     .dotP{
-      width:8px; height:8px;
+      width:8px;
+      height:8px;
       border-radius:999px;
       border:1px solid rgba(17,24,39,.25);
-      background: transparent;
+      background:transparent;
       opacity:.7;
-      transition: transform .18s ease, opacity .18s ease, background .18s ease;
+      transition:transform .18s ease, opacity .18s ease, background .18s ease;
       cursor:pointer;
     }
+
     .dotP.active{
-      background: rgba(17,24,39,.75);
-      opacity: 1;
-      transform: scale(1.12);
+      background:rgba(17,24,39,.75);
+      opacity:1;
+      transform:scale(1.12);
     }
 
-    /* Side photo only */
+    /* Photo */
     .photo{
       border:1px solid var(--line);
       border-radius:16px;
-      background: linear-gradient(180deg, rgba(17,24,39,.06), rgba(17,24,39,.02));
+      background:linear-gradient(180deg, rgba(17,24,39,.06), rgba(17,24,39,.02));
       overflow:hidden;
-      height: 100%;
-      min-height: 384px;
+      height:100%;
+      min-height:384px;
       display:flex;
       align-items:center;
       justify-content:center;
-      color: rgba(17,24,39,.55);
-      font-weight: 900;
+      color:rgba(17,24,39,.55);
+      font-weight:900;
       text-align:center;
       padding:16px;
+      white-space:pre-line;
     }
-    @media (max-width: 920px){
-      .photo{min-height: 260px;}
+
+    @media (max-width:920px){
+      .photo{min-height:260px}
     }
-    .photo img{width:100%; height:100%; object-fit:cover; display:block;}
+
+    .photo img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
 
     .divider{
-      margin: 22px 6px 0;
+      margin:22px 6px 0;
       height:1px;
-      background: rgba(17,24,39,.08);
+      background:rgba(17,24,39,.08);
       border-radius:999px;
     }
 
     /* Sections */
-    .section{margin-top:26px; padding: 0 6px;}
-    .sectionTitle{
-      display:flex; align-items:flex-end; justify-content:space-between; gap:12px;
-      margin: 0 0 12px;
+    .section{
+      margin-top:26px;
+      padding:0 6px;
     }
-    .sectionTitle h2{margin:0; font-size:16px; letter-spacing:.2px}
-    .sectionTitle p{margin:0; color:var(--muted); font-size:13px}
 
-    .grid{display:grid; grid-template-columns: repeat(4, 1fr); gap:12px;}
-    @media (max-width: 920px){ .grid{grid-template-columns:1fr} }
+    .sectionTitle{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:12px;
+      margin:0 0 12px;
+    }
+
+    .sectionTitle h2{
+      margin:0;
+      font-size:16px;
+      letter-spacing:.2px;
+    }
+
+    .sectionTitle p{
+      margin:0;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(4, 1fr);
+      gap:12px;
+    }
+
+    @media (max-width:920px){
+      .grid{grid-template-columns:1fr}
+    }
 
     .card{
       border:1px solid var(--line);
       border-radius:var(--radius);
-      background: var(--card);
-      box-shadow: var(--shadow);
+      background:var(--card);
+      box-shadow:var(--shadow);
       padding:18px;
     }
-    .card h3{margin:0 0 8px; font-size:15px}
-    .card p{margin:0; color:var(--muted); font-size:14px; line-height:1.7}
+
+    .card h3{
+      margin:0 0 8px;
+      font-size:15px;
+    }
+
+    .card p{
+      margin:0;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.7;
+    }
+
     .note{
       margin-top:10px;
       font-size:13px;
-      color: rgba(75,85,99,.95);
+      color:rgba(75,85,99,.95);
       line-height:1.6;
     }
 
-    /* About single */
     .aboutSingle{
       display:grid;
-      grid-template-columns: 1fr;
+      grid-template-columns:1fr;
       gap:12px;
     }
 
+    /* Buttons */
     .btn{
       display:inline-flex;
       align-items:center;
@@ -247,29 +312,40 @@
       font-weight:800;
       font-size:14px;
       letter-spacing:.1px;
-      transition: transform .12s ease, opacity .12s ease, box-shadow .12s ease, background .12s ease;
+      transition:transform .12s ease, opacity .12s ease, box-shadow .12s ease, background .12s ease;
       white-space:nowrap;
-      box-shadow: 0 10px 24px rgba(17,24,39,.06);
+      box-shadow:0 10px 24px rgba(17,24,39,.06);
     }
-    .btn:hover{transform: translateY(-1px); opacity:.98}
-    .btn:active{transform: translateY(0)}
-    .btn:focus{outline: 2px solid var(--focus); outline-offset: 2px;}
+
+    .btn:hover{
+      transform:translateY(-1px);
+      opacity:.98;
+    }
+
+    .btn:active{transform:translateY(0)}
+
+    .btn:focus{
+      outline:2px solid var(--focus);
+      outline-offset:2px;
+    }
 
     .btn.primary{
-      background: var(--accent);
+      background:var(--accent);
       color:#fff;
-      border-color: transparent;
-      box-shadow: 0 12px 26px rgba(17,24,39,.16);
+      border-color:transparent;
+      box-shadow:0 12px 26px rgba(17,24,39,.16);
     }
 
     .btn.contact{
       background:#fff;
     }
+
     .btn.whatsapp{
       background:var(--waBg);
       border-color:var(--waBorder);
       color:var(--waText);
     }
+
     .btn.email{
       background:var(--mailBg);
       border-color:var(--mailBorder);
@@ -283,7 +359,7 @@
       margin-top:14px;
     }
 
-    /* Blog preview tweaks */
+    /* Blog */
     .blogPreviewTitle{
       display:flex;
       align-items:flex-start;
@@ -291,6 +367,7 @@
       gap:12px;
       flex-wrap:wrap;
     }
+
     .blogPreviewTitle h3{
       margin:0;
       font-size:15px;
@@ -303,12 +380,14 @@
       flex-direction:column;
       gap:10px;
     }
+
     .faqItem{
       border:1px solid var(--line);
       border-radius:16px;
       background:#fff;
       overflow:hidden;
     }
+
     .faqQuestion{
       width:100%;
       border:none;
@@ -324,16 +403,19 @@
       justify-content:space-between;
       gap:12px;
     }
+
     .faqQuestion span:last-child{
       font-size:18px;
       line-height:1;
       color:var(--muted);
-      transition: transform .2s ease;
+      transition:transform .2s ease;
       flex:0 0 auto;
     }
+
     .faqItem.active .faqQuestion span:last-child{
-      transform: rotate(45deg);
+      transform:rotate(45deg);
     }
+
     .faqAnswer{
       display:none;
       padding:0 18px 16px;
@@ -341,6 +423,7 @@
       font-size:14px;
       line-height:1.75;
     }
+
     .faqItem.active .faqAnswer{
       display:block;
     }
@@ -350,6 +433,7 @@
       margin-top:34px;
       padding:0 6px;
     }
+
     .softCtaInner{
       max-width:760px;
       margin:0 auto;
@@ -358,8 +442,9 @@
       border:1px solid rgba(17,24,39,.08);
       border-radius:20px;
       padding:28px 24px;
-      box-shadow: 0 16px 36px rgba(17,24,39,.06);
+      box-shadow:0 16px 36px rgba(17,24,39,.06);
     }
+
     .softCtaTitle{
       margin:0;
       font-size:clamp(22px, 2.6vw, 30px);
@@ -367,12 +452,14 @@
       letter-spacing:-0.3px;
       color:#243041;
     }
+
     .softCtaLead{
       margin:14px 0 0;
       font-size:17px;
       line-height:1.8;
       color:#4b5563;
     }
+
     .softCtaText{
       margin:10px 0 0;
       font-size:14.5px;
@@ -389,22 +476,26 @@
       justify-content:space-between;
       gap:12px;
       flex-wrap:wrap;
-      color: rgba(75,85,99,.92);
+      color:rgba(75,85,99,.92);
       font-size:12.5px;
     }
+
     .footer a{color:inherit}
 
-    @media (max-width: 640px){
+    @media (max-width:640px){
       .btn{
         width:100%;
         min-width:0;
       }
+
       .ctaRow{
         flex-direction:column;
       }
+
       .softCtaInner{
         padding:24px 18px;
       }
+
       .softCtaLead{
         font-size:16px;
       }
@@ -450,11 +541,13 @@
 
       </div>
 
-      <!-- Photo only -->
       <div class="panel side">
         <div class="photo">
-          <img src="profile.jpg" alt="Psikolog Umut Göveçliklioğlu"
-               onerror="this.remove(); this.parentElement.textContent='(Fotoğrafı en son ekleriz)\n\nprofile.jpg yükleyince burada görünecek.';" />
+          <img
+            src="profile.jpg"
+            alt="Psikolog Umut Göveçliklioğlu"
+            onerror="this.remove(); this.parentElement.textContent='(Fotoğrafı en son ekleriz)\n\nprofile.jpg yükleyince burada görünecek.';"
+          />
         </div>
       </div>
     </div>
@@ -479,8 +572,8 @@
         <div class="card">
           <h3>Cinsel Terapi</h3>
           <p>
-            Performans kaygısı, isteksizlik, vajinismus, uyarılma güçlüğü, orgazm zorlukları ve erken boşalma gibi alanlarda
-            yapılandırılmış bir destek süreci yürütülür. Uygunluk ve yol haritası ilk görüşmede netleştirilir.
+            Performans kaygısı, isteksizlik, vajinismus, uyarılma güçlüğü, orgazm zorlukları ve erken boşalma gibi alanlarda yapılandırılmış bir destek süreci yürütülür.
+            Uygunluk ve yol haritası ilk görüşmede netleştirilir.
           </p>
         </div>
 
@@ -561,7 +654,6 @@
       </div>
 
       <div class="faqList">
-
         <div class="faqItem">
           <button class="faqQuestion">
             <span>Terapi süreci nasıl ilerler?</span>
@@ -661,7 +753,6 @@
             Randevu almak veya bilgi edinmek için WhatsApp üzerinden mesaj gönderebilir veya e-posta yoluyla iletişime geçebilirsiniz.
           </div>
         </div>
-
       </div>
     </div>
 
@@ -702,67 +793,95 @@
   </div>
 
   <script>
-    (function(){
-      const slides = Array.from(document.querySelectorAll('.slide'));
-      const prevBtn = document.getElementById('prevBtn');
-      const nextBtn = document.getElementById('nextBtn');
-      const dots = Array.from(document.querySelectorAll('.dotP'));
+    (function () {
+      const slides = Array.from(document.querySelectorAll(".slide"));
+      const prevBtn = document.getElementById("prevBtn");
+      const nextBtn = document.getElementById("nextBtn");
+      const dots = Array.from(document.querySelectorAll(".dotP"));
 
       let idx = 0;
       let timer = null;
       const INTERVAL = 4200;
 
-      function setDots(i){
-        dots.forEach(d => d.classList.remove('active'));
-        if(dots[i]) dots[i].classList.add('active');
+      function setDots(i) {
+        dots.forEach((d) => d.classList.remove("active"));
+        if (dots[i]) dots[i].classList.add("active");
       }
 
-      function show(i){
-        slides[idx].classList.remove('active');
+      function show(i) {
+        slides[idx].classList.remove("active");
         idx = (i + slides.length) % slides.length;
-        slides[idx].classList.add('active');
+        slides[idx].classList.add("active");
         setDots(idx);
       }
 
-      function next(){ show(idx + 1); }
-      function prev(){ show(idx - 1); }
+      function next() {
+        show(idx + 1);
+      }
 
-      function start(){
+      function prev() {
+        show(idx - 1);
+      }
+
+      function start() {
         stop();
         timer = setInterval(next, INTERVAL);
       }
-      function stop(){
-        if(timer) clearInterval(timer);
+
+      function stop() {
+        if (timer) clearInterval(timer);
         timer = null;
       }
 
-      nextBtn.addEventListener('click', () => { next(); start(); });
-      prevBtn.addEventListener('click', () => { prev(); start(); });
+      nextBtn.addEventListener("click", () => {
+        next();
+        start();
+      });
 
-      dots.forEach(d => {
-        const go = () => { show(parseInt(d.dataset.i, 10) || 0); start(); };
-        d.addEventListener('click', go);
-        d.addEventListener('keydown', (e) => {
-          if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); go(); }
+      prevBtn.addEventListener("click", () => {
+        prev();
+        start();
+      });
+
+      dots.forEach((d) => {
+        const go = () => {
+          show(parseInt(d.dataset.i, 10) || 0);
+          start();
+        };
+
+        d.addEventListener("click", go);
+        d.addEventListener("keydown", (e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            go();
+          }
         });
       });
 
-      document.addEventListener('keydown', (e) => {
-        if(e.key === 'ArrowRight'){ next(); start(); }
-        if(e.key === 'ArrowLeft'){ prev(); start(); }
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "ArrowRight") {
+          next();
+          start();
+        }
+        if (e.key === "ArrowLeft") {
+          prev();
+          start();
+        }
       });
 
-      const heroCard = document.querySelector('.heroCard');
-      heroCard.addEventListener('mouseenter', stop);
-      heroCard.addEventListener('mouseleave', start);
+      const heroCard = document.querySelector(".heroCard");
+      if (heroCard) {
+        heroCard.addEventListener("mouseenter", stop);
+        heroCard.addEventListener("mouseleave", start);
+      }
 
       start();
 
-      const faqItems = document.querySelectorAll('.faqItem');
-      faqItems.forEach(item => {
-        const btn = item.querySelector('.faqQuestion');
-        btn.addEventListener('click', () => {
-          item.classList.toggle('active');
+      const faqItems = document.querySelectorAll(".faqItem");
+      faqItems.forEach((item) => {
+        const btn = item.querySelector(".faqQuestion");
+        btn.addEventListener("click", () => {
+          item.classList.toggle("active");
         });
       });
     })();
