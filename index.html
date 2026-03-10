@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Psikolog Umut Göveçliklioğlu | Online Terapi</title>
-  <meta name="description" content="Psikolog Umut Göveçliklioğlu — Bakü & İstanbul | Online terapi. Psikolojik zorlanmalar ve cinsel yaşamla ilgili güçlüklerde yapılandırılmış destek." />
+  <meta name="description" content="Psikolog Umut Göveçliklioğlu — Bakü & İstanbul | Online terapi. Kaygı, depresyon, ilişki sorunları ve cinsel yaşamla ilgili güçlüklerde yapılandırılmış psikolojik destek." />
   <meta name="robots" content="index,follow" />
   <meta name="author" content="Psikolog Umut Göveçliklioğlu" />
 
@@ -24,6 +24,14 @@
       --focus: rgba(17,24,39,.18);
 
       --heroText:#1f2937;
+
+      --waBg:#eef7f1;
+      --waBorder:rgba(22,101,52,.14);
+      --waText:#14532d;
+
+      --mailBg:#eef3fb;
+      --mailBorder:rgba(30,64,175,.14);
+      --mailText:#1e3a8a;
     }
 
     *{box-sizing:border-box}
@@ -230,29 +238,49 @@
       align-items:center;
       justify-content:center;
       gap:10px;
-      padding:12px 14px;
-      border-radius:14px;
+      padding:13px 18px;
+      min-height:50px;
+      min-width:220px;
+      border-radius:15px;
       border:1px solid var(--line);
       text-decoration:none;
-      font-weight:900;
+      font-weight:800;
       font-size:14px;
-      transition: transform .12s ease, opacity .12s ease, box-shadow .12s ease;
-      background: white;
+      letter-spacing:.1px;
+      transition: transform .12s ease, opacity .12s ease, box-shadow .12s ease, background .12s ease;
       white-space:nowrap;
+      box-shadow: 0 10px 24px rgba(17,24,39,.06);
     }
+    .btn:hover{transform: translateY(-1px); opacity:.98}
+    .btn:active{transform: translateY(0)}
+    .btn:focus{outline: 2px solid var(--focus); outline-offset: 2px;}
+
     .btn.primary{
       background: var(--accent);
       color:#fff;
       border-color: transparent;
       box-shadow: 0 12px 26px rgba(17,24,39,.16);
     }
-    .btn:hover{transform: translateY(-1px); opacity:.97}
-    .btn:active{transform: translateY(0)}
-    .btn:focus{outline: 2px solid var(--focus); outline-offset: 2px;}
+
+    .btn.contact{
+      background:#fff;
+    }
+    .btn.whatsapp{
+      background:var(--waBg);
+      border-color:var(--waBorder);
+      color:var(--waText);
+    }
+    .btn.email{
+      background:var(--mailBg);
+      border-color:var(--mailBorder);
+      color:var(--mailText);
+    }
 
     .ctaRow{
-      display:flex; gap:10px; flex-wrap:wrap;
-      margin-top:12px;
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:14px;
     }
 
     /* Blog preview tweaks */
@@ -317,17 +345,39 @@
       display:block;
     }
 
+    /* Soft CTA */
     .softCta{
-      margin-top:32px;
+      margin-top:34px;
       padding:0 6px;
     }
     .softCtaInner{
-      max-width:640px;
+      max-width:760px;
       margin:0 auto;
       text-align:center;
-      color:#374151;
+      background:rgba(255,255,255,.55);
+      border:1px solid rgba(17,24,39,.08);
+      border-radius:20px;
+      padding:28px 24px;
+      box-shadow: 0 16px 36px rgba(17,24,39,.06);
+    }
+    .softCtaTitle{
+      margin:0;
+      font-size:clamp(22px, 2.6vw, 30px);
+      line-height:1.3;
+      letter-spacing:-0.3px;
+      color:#243041;
+    }
+    .softCtaLead{
+      margin:14px 0 0;
+      font-size:17px;
       line-height:1.8;
+      color:#4b5563;
+    }
+    .softCtaText{
+      margin:10px 0 0;
       font-size:14.5px;
+      line-height:1.9;
+      color:#5b6473;
     }
 
     /* Footer */
@@ -343,6 +393,22 @@
       font-size:12.5px;
     }
     .footer a{color:inherit}
+
+    @media (max-width: 640px){
+      .btn{
+        width:100%;
+        min-width:0;
+      }
+      .ctaRow{
+        flex-direction:column;
+      }
+      .softCtaInner{
+        padding:24px 18px;
+      }
+      .softCtaLead{
+        font-size:16px;
+      }
+    }
   </style>
 </head>
 
@@ -405,8 +471,8 @@
         <div class="card">
           <h3>Bireysel Terapi</h3>
           <p>
-            Bireysel terapi; yaşadığınız zorlanmayı yalnızca konuşmak değil, onu anlamlandırma sürecidir.
-            Düşünce–duygu–davranış döngüsünü birlikte ele alır, hedefi netleştirir ve günlük hayatta karşılığı olan adımlarla ilerleriz.
+            Kaygı bozuklukları, depresyon, panik atak, özgüven problemleri, ilişki sorunları ve yoğun düşünme döngüleri gibi alanlarda psikolojik destek sunuyorum.
+            Terapi sürecinde düşünce–duygu–davranış ilişkisini birlikte ele alarak daha dengeli ve işlevsel bir yaşam kurmayı hedefleriz.
           </p>
         </div>
 
@@ -602,8 +668,9 @@
     <!-- SOFT CTA -->
     <div class="softCta">
       <div class="softCtaInner">
-        <b>Terapiye başlamak için her şeyi netleştirmiş olmanız gerekmez.</b><br><br>
-        Sadece yaşadığınız durumu kısaca yazmanız yeterlidir. Nereden başlayacağımızı birlikte belirleyebiliriz.
+        <h3 class="softCtaTitle">Terapiye başlamak için her şeyi netleştirmiş olmanız gerekmez.</h3>
+        <p class="softCtaLead">Bazen yalnızca konuşmaya başlamak bile değişimin ilk adımıdır.</p>
+        <p class="softCtaText">Sadece yaşadığınız durumu kısaca yazmanız yeterlidir. Nereden başlayacağımızı birlikte belirleyebiliriz.</p>
       </div>
     </div>
 
@@ -619,8 +686,8 @@
         </p>
 
         <div class="ctaRow">
-          <a class="btn primary" href="https://wa.me/905467114426?text=Merhaba%2C%20web%20siteniz%20%C3%BCzerinden%20yaz%C4%B1yorum.%20Terapi%20s%C3%BCreci%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener">WhatsApp ile Yaz</a>
-          <a class="btn" href="mailto:pskumutgovecliklioglu@gmail.com?subject=Online%20Terapi%20Randevu%20Talebi">E-posta ile Yaz</a>
+          <a class="btn contact whatsapp" href="https://wa.me/905467114426?text=Merhaba%2C%20web%20siteniz%20%C3%BCzerinden%20yaz%C4%B1yorum.%20Terapi%20s%C3%BCreci%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener">WhatsApp’tan Mesaj Gönder</a>
+          <a class="btn contact email" href="mailto:pskumutgovecliklioglu@gmail.com?subject=Online%20Terapi%20Randevu%20Talebi">E-posta Gönder</a>
         </div>
       </div>
     </div>
