@@ -10,17 +10,21 @@
 
   <style>
     :root{
-      --bg:#f6f0e6;
-      --card:#ffffff;
+      --bg:#e9e2d8;
+      --card:#f7f3ed;
       --text:#111827;
       --muted:#4b5563;
-      --line:rgba(17,24,39,.10);
-      --shadow:0 18px 45px rgba(17,24,39,.10);
+      --line:rgba(17,24,39,.14);
+      --shadow:0 18px 45px rgba(17,24,39,.13);
       --radius:18px;
       --max:1120px;
 
-      --accent:#111827;
-      --soft:#f4efe6;
+      --accent:#263f36;
+      --accentDark:#1d3029;
+      --aboutLight:#edf4ef;
+      --sage:#dce6df;
+      --sageSoft:#e8ece7;
+      --soft:#eee7dd;
       --focus:rgba(17,24,39,.18);
 
       --heroText:#334155;
@@ -64,8 +68,8 @@
       gap:18px;
       border:1px solid rgba(17,24,39,.09);
       border-radius:18px;
-      background:rgba(255,255,255,.82);
-      box-shadow:0 12px 35px rgba(17,24,39,.08);
+      background:rgba(247,243,237,.94);
+      box-shadow:0 12px 35px rgba(17,24,39,.12);
       backdrop-filter:blur(18px);
       -webkit-backdrop-filter:blur(18px);
     }
@@ -75,9 +79,10 @@
     .brand span{font-size:11px; color:var(--muted); margin-top:4px}
     .navLinks{display:flex; align-items:center; gap:4px}
     .navLinks a{padding:9px 11px; border-radius:10px; text-decoration:none; font-size:12.5px; font-weight:750; color:#475569}
-    .navLinks a:hover{background:#f3eee5; color:var(--text)}
-    .navCta{background:var(--accent)!important; color:#fff!important; padding-inline:15px!important}
-    .menuBtn{display:none; width:42px; height:42px; border:1px solid var(--line); border-radius:12px; background:#fff; font-size:20px; cursor:pointer}
+    .navLinks a:hover{background:var(--sage); color:var(--accentDark)}
+    .navCta{background:var(--accent)!important; color:#fff!important; padding-inline:15px!important; box-shadow:0 8px 18px rgba(49,88,73,.20)}
+    .navCta:hover{background:var(--accentDark)!important; color:#fff!important}
+    .menuBtn{display:none; width:42px; height:42px; border:1px solid var(--line); border-radius:12px; background:#f7f3ed; font-size:20px; cursor:pointer}
 
     .wrap{
       max-width:var(--max);
@@ -101,7 +106,7 @@
     .panel{
       border:1px solid var(--line);
       border-radius:var(--radius);
-      background:rgba(255,255,255,.72);
+      background:rgba(247,243,237,.88);
       box-shadow:var(--shadow);
     }
 
@@ -137,7 +142,7 @@
       height:44px;
       border-radius:14px;
       border:1px solid var(--line);
-      background:rgba(255,255,255,.88);
+      background:rgba(250,247,242,.94);
       cursor:pointer;
       font-weight:900;
       color:var(--text);
@@ -283,10 +288,10 @@
       border-radius:26px;
     }
 
-    #calisma{background:rgba(255,255,255,.32); border:1px solid rgba(17,24,39,.06)}
-    #hakkimda{background:linear-gradient(135deg, #e9e2d5 0%, #f4efe7 68%, #ece4d8 100%); border:1px solid rgba(17,24,39,.07)}
-    #blog{background:rgba(244,239,230,.65); border:1px solid rgba(17,24,39,.06)}
-    #sss{padding-left:6px; padding-right:6px}
+    #calisma{background:linear-gradient(135deg,#dce5de 0%,#e7e1d7 100%); border:1px solid rgba(49,88,73,.14)}
+    #hakkimda{background:linear-gradient(135deg,#e2d8ca 0%,#ece4d9 58%,#ddd4c8 100%); border:1px solid rgba(17,24,39,.10)}
+    #blog{background:linear-gradient(135deg,#e8ded1 0%,#dce5df 100%); border:1px solid rgba(49,88,73,.12)}
+    #sss{padding-left:20px; padding-right:20px; background:#e0e5df; border:1px solid rgba(49,88,73,.12)}
 
     .sectionTitle{
       display:flex;
@@ -326,6 +331,8 @@
       padding:18px;
     }
 
+    #calisma .card{background:rgba(248,245,239,.96); border-color:rgba(49,88,73,.14)}
+
     .card h3{
       margin:0 0 8px;
       font-size:15px;
@@ -351,18 +358,19 @@
       gap:12px;
     }
 
-    .aboutCard{padding:0; overflow:hidden; background:rgba(255,255,255,.74)}
+    .aboutCard{padding:0; overflow:hidden; background:rgba(248,245,239,.94)}
     .aboutGrid{display:grid; grid-template-columns:1.25fr .75fr; gap:0}
     .aboutCopy{padding:28px}
     .aboutCopy h3{font-family:Georgia, 'Times New Roman', serif; font-size:clamp(25px,3vw,36px); font-weight:500; letter-spacing:-.5px; color:#334155; margin-bottom:18px}
     .aboutCopy p + p{margin-top:13px}
     .aboutAside{padding:28px; background:#26352f; color:#fff; display:flex; flex-direction:column; justify-content:center}
-    .aboutAside h4{margin:0 0 14px; font-size:13px; letter-spacing:.12em; text-transform:uppercase; color:#d9e4dc}
+    .aboutAside h4{margin:0 0 14px; font-size:13px; letter-spacing:.12em; text-transform:uppercase; color:var(--aboutLight)}
     .credentialList{display:flex; flex-wrap:wrap; gap:8px}
-    .credential{padding:9px 11px; border:1px solid rgba(255,255,255,.16); border-radius:999px; background:rgba(255,255,255,.08); font-size:12px; line-height:1.2}
-    .approachNote{margin-top:20px; padding-top:18px; border-top:1px solid rgba(255,255,255,.14); font-size:13px; line-height:1.65; color:#e5ece7}
+    .credential{padding:9px 11px; border:1px solid rgba(237,244,239,.22); border-radius:999px; background:rgba(237,244,239,.08); color:var(--aboutLight); font-size:12px; line-height:1.2}
+    .aboutAside .approachNote{margin-top:20px; padding-top:18px; border-top:1px solid rgba(237,244,239,.22); font-size:13px; line-height:1.72; color:var(--aboutLight)}
+    .aboutAside .approachNote strong{color:var(--aboutLight); font-weight:800}
 
-    .contactBand{margin:26px 6px 0; padding:28px; border-radius:24px; color:#fff; background:linear-gradient(135deg,#26352f,#33483f); box-shadow:0 18px 38px rgba(38,53,47,.18); display:grid; grid-template-columns:1.15fr .85fr; gap:28px; align-items:center}
+    .contactBand{margin:26px 6px 0; padding:28px; border-radius:24px; color:#fff; background:var(--accent); box-shadow:0 18px 38px rgba(49,88,73,.22); display:grid; grid-template-columns:1.15fr .85fr; gap:28px; align-items:center}
     .contactBand h2{margin:0; font-family:Georgia, 'Times New Roman', serif; font-size:clamp(25px,3vw,37px); font-weight:500; letter-spacing:-.4px}
     .contactBand p{margin:10px 0 0; color:#dce7df; font-size:14px; line-height:1.7; max-width:58ch}
     .contactActions{display:flex; flex-direction:column; gap:10px}
@@ -409,7 +417,7 @@
     }
 
     .btn.contact{
-      background:#fff;
+      background:#f7f3ed;
     }
 
     .btn.whatsapp{
@@ -510,8 +518,8 @@
       max-width:840px;
       margin:0 auto;
       text-align:center;
-      background:rgba(255,255,255,.56);
-      border:1px solid rgba(17,24,39,.07);
+      background:#fff;
+      border:1px solid rgba(17,24,39,.12);
       border-radius:24px;
       padding:34px 28px 30px;
       box-shadow:0 14px 32px rgba(17,24,39,.05);
@@ -717,7 +725,7 @@
       <div class="panel side">
         <div class="photo">
           <img
-            src="./profile.jpg.png?v=2"
+            src="profile.jpg.png"
             alt="Psikolog Umut Göveçliklioğlu"
             onerror="this.remove(); this.parentElement.textContent='Fotoğraf yüklenemedi.';"
           />
