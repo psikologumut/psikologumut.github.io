@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Psikolog Umut Göveçliklioğlu | Online Terapi</title>
-  <meta name="description" content="Psikolog Umut Göveçliklioğlu — Bakü & İstanbul | Online terapi. Kaygı, depresyon, ilişki sorunları ve cinsel yaşamla ilgili güçlüklerde yapılandırılmış psikolojik destek." />
+  <title>Psikolog Umut Göveçliklioğlu | Online Psikolojik Danışmanlık</title>
+  <meta name="description" content="Psikolog Umut Göveçliklioğlu — Bakü & İstanbul | Online psikolojik danışmanlık. Kaygı, depresyon, ilişki sorunları ve cinsel yaşamla ilgili güçlüklerde yapılandırılmış psikolojik destek." />
   <meta name="robots" content="index,follow" />
   <meta name="author" content="Psikolog Umut Göveçliklioğlu" />
 
@@ -48,6 +48,36 @@
     }
 
     a{color:inherit}
+
+    section, [id]{scroll-margin-top:96px}
+
+    .topbar{
+      position:sticky;
+      top:12px;
+      z-index:50;
+      max-width:var(--max);
+      margin:12px auto 0;
+      padding:10px 12px 10px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+      border:1px solid rgba(17,24,39,.09);
+      border-radius:18px;
+      background:rgba(255,255,255,.82);
+      box-shadow:0 12px 35px rgba(17,24,39,.08);
+      backdrop-filter:blur(18px);
+      -webkit-backdrop-filter:blur(18px);
+    }
+
+    .brand{text-decoration:none; display:flex; flex-direction:column; line-height:1.15}
+    .brand strong{font-size:13px; letter-spacing:.15px}
+    .brand span{font-size:11px; color:var(--muted); margin-top:4px}
+    .navLinks{display:flex; align-items:center; gap:4px}
+    .navLinks a{padding:9px 11px; border-radius:10px; text-decoration:none; font-size:12.5px; font-weight:750; color:#475569}
+    .navLinks a:hover{background:#f3eee5; color:var(--text)}
+    .navCta{background:var(--accent)!important; color:#fff!important; padding-inline:15px!important}
+    .menuBtn{display:none; width:42px; height:42px; border:1px solid var(--line); border-radius:12px; background:#fff; font-size:20px; cursor:pointer}
 
     .wrap{
       max-width:var(--max);
@@ -219,18 +249,23 @@
       color:rgba(17,24,39,.55);
       font-weight:900;
       text-align:center;
-      padding:16px;
+      padding:0;
       white-space:pre-line;
     }
 
     @media (max-width:920px){
-      .photo{min-height:260px;}
+      .photo{
+        min-height:0;
+        height:auto;
+        aspect-ratio:4 / 3;
+      }
     }
 
     .photo img{
       width:100%;
       height:100%;
       object-fit:cover;
+      object-position:center 28%;
       display:block;
     }
 
@@ -244,8 +279,14 @@
     /* Sections */
     .section{
       margin-top:26px;
-      padding:0 6px;
+      padding:28px 26px;
+      border-radius:26px;
     }
+
+    #calisma{background:rgba(255,255,255,.32); border:1px solid rgba(17,24,39,.06)}
+    #hakkimda{background:linear-gradient(135deg, #e9e2d5 0%, #f4efe7 68%, #ece4d8 100%); border:1px solid rgba(17,24,39,.07)}
+    #blog{background:rgba(244,239,230,.65); border:1px solid rgba(17,24,39,.06)}
+    #sss{padding-left:6px; padding-right:6px}
 
     .sectionTitle{
       display:flex;
@@ -309,6 +350,24 @@
       grid-template-columns:1fr;
       gap:12px;
     }
+
+    .aboutCard{padding:0; overflow:hidden; background:rgba(255,255,255,.74)}
+    .aboutGrid{display:grid; grid-template-columns:1.25fr .75fr; gap:0}
+    .aboutCopy{padding:28px}
+    .aboutCopy h3{font-family:Georgia, 'Times New Roman', serif; font-size:clamp(25px,3vw,36px); font-weight:500; letter-spacing:-.5px; color:#334155; margin-bottom:18px}
+    .aboutCopy p + p{margin-top:13px}
+    .aboutAside{padding:28px; background:#26352f; color:#fff; display:flex; flex-direction:column; justify-content:center}
+    .aboutAside h4{margin:0 0 14px; font-size:13px; letter-spacing:.12em; text-transform:uppercase; color:#d9e4dc}
+    .credentialList{display:flex; flex-wrap:wrap; gap:8px}
+    .credential{padding:9px 11px; border:1px solid rgba(255,255,255,.16); border-radius:999px; background:rgba(255,255,255,.08); font-size:12px; line-height:1.2}
+    .approachNote{margin-top:20px; padding-top:18px; border-top:1px solid rgba(255,255,255,.14); font-size:13px; line-height:1.65; color:#e5ece7}
+
+    .contactBand{margin:26px 6px 0; padding:28px; border-radius:24px; color:#fff; background:linear-gradient(135deg,#26352f,#33483f); box-shadow:0 18px 38px rgba(38,53,47,.18); display:grid; grid-template-columns:1.15fr .85fr; gap:28px; align-items:center}
+    .contactBand h2{margin:0; font-family:Georgia, 'Times New Roman', serif; font-size:clamp(25px,3vw,37px); font-weight:500; letter-spacing:-.4px}
+    .contactBand p{margin:10px 0 0; color:#dce7df; font-size:14px; line-height:1.7; max-width:58ch}
+    .contactActions{display:flex; flex-direction:column; gap:10px}
+    .contactActions .btn{width:100%; min-width:0; background:#fff; color:#26352f}
+    .contactActions .secondaryContact{background:transparent; color:#fff; border-color:rgba(255,255,255,.28); box-shadow:none}
 
     /* Buttons */
     .btn{
@@ -504,6 +563,11 @@
     .footer a{color:inherit}
 
     @media (max-width:920px){
+      .topbar{margin:10px 12px 0; flex-wrap:wrap; padding:10px 12px}
+      .menuBtn{display:block}
+      .navLinks{display:none; width:100%; flex-direction:column; align-items:stretch; padding-top:4px}
+      .topbar.open .navLinks{display:flex}
+      .navLinks a{text-align:center; padding:12px}
       .sliderWrap{
         min-height:220px;
       }
@@ -522,9 +586,15 @@
         font-size:clamp(24px, 4.8vw, 34px);
         max-width:14ch;
       }
+      .aboutGrid,.contactBand{grid-template-columns:1fr}
     }
 
     @media (max-width:640px){
+      .wrap{padding-left:12px; padding-right:12px}
+      .section{padding:22px 16px; border-radius:22px}
+      #sss{padding-left:0; padding-right:0}
+      .aboutCopy,.aboutAside{padding:22px 18px}
+      .contactBand{margin-left:0; margin-right:0; padding:24px 18px; gap:20px}
       .heroCard{
         min-height:auto;
       }
@@ -591,15 +661,29 @@
 </head>
 
 <body>
+  <nav class="topbar" aria-label="Ana menü">
+    <a class="brand" href="#top">
+      <strong>Psikolog Umut Göveçliklioğlu</strong>
+      <span>Online Psikolojik Danışmanlık</span>
+    </a>
+    <button class="menuBtn" id="menuBtn" aria-label="Menüyü aç" aria-expanded="false">☰</button>
+    <div class="navLinks" id="navLinks">
+      <a href="#calisma">Çalışma Alanlarım</a>
+      <a href="#hakkimda">Hakkımda</a>
+      <a href="#blog">Blog</a>
+      <a href="#sss">SSS</a>
+      <a class="navCta" href="#iletisim">Randevu ve İletişim</a>
+    </div>
+  </nav>
   <div class="wrap">
 
     <!-- HERO -->
-    <div class="hero">
+    <div class="hero" id="top">
       <div class="panel heroCard">
 
         <div style="display:flex; flex-direction:column; gap:4px; margin-bottom:2px;">
           <b style="font-size:13px; letter-spacing:.25px;">Psikolog Umut Göveçliklioğlu</b>
-          <span style="font-size:12px; color:var(--muted);">Bakü – İstanbul • Online Terapi</span>
+          <span style="font-size:12px; color:var(--muted);">Bakü – İstanbul • Online Psikolojik Danışmanlık</span>
         </div>
 
         <div class="sliderRow" aria-label="Öne çıkan mesajlar">
@@ -635,9 +719,21 @@
           <img
             src="profile.jpg.png"
             alt="Psikolog Umut Göveçliklioğlu"
-            onerror="this.remove(); this.parentElement.textContent='(Fotoğrafı en son ekleriz)\n\nprofile.jpg yükleyince burada görünecek.';"
+            onerror="this.remove(); this.parentElement.textContent='Fotoğraf yüklenemedi.';"
           />
         </div>
+      </div>
+    </div>
+
+    <!-- STRATEJİK İLETİŞİM -->
+    <div class="contactBand" id="iletisim">
+      <div>
+        <h2>İlk adımı birlikte netleştirebiliriz.</h2>
+        <p>Randevu oluşturmak ya da süreç hakkında bilgi almak için yaşadığınız durumu kısaca yazmanız yeterlidir. Uygun gün ve saat seçeneklerini birlikte belirleyebiliriz.</p>
+      </div>
+      <div class="contactActions">
+        <a class="btn" href="https://wa.me/905467114426?text=Merhaba%2C%20web%20siteniz%20%C3%BCzerinden%20yaz%C4%B1yorum.%20Online%20psikolojik%20dan%C4%B1%C5%9Fmanl%C4%B1k%20s%C3%BCreci%20ve%20uygun%20randevu%20saatleri%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener">WhatsApp’tan Randevu ve Bilgi Al</a>
+        <a class="btn secondaryContact" href="mailto:pskumutgovecliklioglu@gmail.com?subject=Online%20Psikolojik%20Dan%C4%B1%C5%9Fmanl%C4%B1k%20Randevu%20Talebi">E-posta ile İletişime Geç</a>
       </div>
     </div>
 
@@ -691,23 +787,27 @@
       </div>
 
       <div class="aboutSingle">
-        <div class="card">
-          <h3>Psikolog Umut Göveçliklioğlu</h3>
-          <p>
-            Merhaba, ben Psikolog Umut Göveçliklioğlu. Sakarya Üniversitesi Psikoloji Bölümü mezunuyum. Ergen ve yetişkinlerle çalışıyorum.
-          </p>
-          <p style="margin-top:10px;">
-            Terapötik yetkinliğimi güçlendirmek amacıyla Bilişsel Davranışçı Psikoterapiler Derneği bünyesinde,
-            Prof. Dr. Hakan Türkçapar koordinatörlüğünde Bilişsel Davranışçı Terapi eğitimimi tamamladım.
-            Aynı kurumda Cinsel Terapi eğitimimi de aldım. Bunun yanında terapilerimde mindfulness temelli yaklaşımları ve
-            Kısa Süreli Çözüm Odaklı Terapi tekniklerini eklektik bir çerçevede kullanıyorum.
-          </p>
-          <p style="margin-top:10px;">
-            Türk Psikologlar Derneği’nden MMPI uygulayıcı eğitimimi tamamladım ve aktif olarak test uygulamaları yapıyorum.
-            Bu alandaki çalışmalarım ulusal düzeyde bir kongrede bildiri olarak sunulmuştur.
-          </p>
-          <div class="note" style="margin-top:10px;">
-            <b>Seans sürecinde amacım yalnızca konuşmak değil; düşünce, duygu ve davranış sisteminizi birlikte anlamlandırarak kalıcı değişim sağlamaktır.</b>
+        <div class="card aboutCard">
+          <div class="aboutGrid">
+            <div class="aboutCopy">
+              <h3>Psikolog Umut Göveçliklioğlu</h3>
+              <p>Merhaba, ben Psikolog Umut Göveçliklioğlu. Sakarya Üniversitesi Psikoloji Bölümü’nden onur öğrencisi olarak mezun oldum. Ergen ve yetişkinlerle; kaygı, depresif duygu durum, yoğun düşünme döngüleri, özgüven sorunları, romantik ilişkiler ve cinsel yaşamla ilgili güçlükler üzerine çalışıyorum.</p>
+              <p>Mesleki çalışmalarımı ağırlıklı olarak Bilişsel Davranışçı Terapi yaklaşımıyla yürütüyorum. Bilişsel Davranışçı Psikoterapiler Derneği bünyesinde, Prof. Dr. Hakan Türkçapar koordinatörlüğündeki Bilişsel Davranışçı Terapi eğitimimi tamamladım. Danışanın ihtiyacına göre mindfulness temelli uygulamalardan ve çözüm odaklı tekniklerden de yararlanıyorum.</p>
+              <p>Aynı kurum bünyesinde Cinsel Terapi eğitimimi; Türk Psikologlar Derneği bünyesinde ise MMPI uygulayıcı eğitimimi tamamladım. Aktif olarak MMPI uygulamaları gerçekleştiriyor, değerlendirme sonuçlarını klinik görüşme ve profesyonel geri bildirimle birlikte ele alıyorum.</p>
+              <p>Akademik çalışmalarım romantik ilişkilerde ilişki travması, duygusal manipülasyon ve terk edilme deneyimleri üzerine yoğunlaşmaktadır. Bu alandaki araştırmam ulusal düzeyde düzenlenen TURKCESS 2025 Kongresi’nde bildiri olarak sunulmuştur.</p>
+            </div>
+            <aside class="aboutAside" aria-label="Eğitim ve çalışma yaklaşımı">
+              <h4>Eğitim ve Yetkinlikler</h4>
+              <div class="credentialList">
+                <span class="credential">Bilişsel Davranışçı Terapi</span>
+                <span class="credential">Cinsel Terapi</span>
+                <span class="credential">MMPI Uygulayıcısı</span>
+                <span class="credential">Aile Danışmanlığı</span>
+                <span class="credential">Çözüm Odaklı Teknikler</span>
+                <span class="credential">Mindfulness Temelli Yaklaşımlar</span>
+              </div>
+              <p class="approachNote"><strong>Çalışma yaklaşımım:</strong><br>Amacım yalnızca yaşadığınız sorunu konuşmak değil; düşünce, duygu ve davranışlarınız arasındaki örüntüyü birlikte anlamlandırarak günlük yaşamda sürdürülebilir bir değişim alanı oluşturmaktır.</p>
+            </aside>
           </div>
         </div>
       </div>
@@ -854,24 +954,6 @@
       </div>
     </div>
 
-    <!-- İLETİŞİM -->
-    <div class="section" id="iletisim">
-      <div class="sectionTitle">
-        <h2>İletişim</h2>
-      </div>
-
-      <div class="card">
-        <p style="margin:0; color:var(--muted); line-height:1.7;">
-          Randevu almak veya süreç hakkında bilgi edinmek için WhatsApp üzerinden mesaj gönderebilir ya da e-posta ile iletişime geçebilirsiniz.
-        </p>
-
-        <div class="ctaRow">
-          <a class="btn contact whatsapp" href="https://wa.me/905467114426?text=Merhaba%2C%20web%20siteniz%20%C3%BCzerinden%20yaz%C4%B1yorum.%20Terapi%20s%C3%BCreci%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener">WhatsApp’tan Mesaj Gönder</a>
-          <a class="btn contact email" href="mailto:pskumutgovecliklioglu@gmail.com?subject=Online%20Terapi%20Randevu%20Talebi">E-posta Gönder</a>
-        </div>
-      </div>
-    </div>
-
     <div class="footer">
       <span>© 2026 Psikolog Umut Göveçliklioğlu</span>
       <span>
@@ -883,6 +965,26 @@
 
   <script>
     (function () {
+      const topbar = document.querySelector(".topbar");
+      const menuBtn = document.getElementById("menuBtn");
+      const navLinks = document.getElementById("navLinks");
+
+      if (topbar && menuBtn && navLinks) {
+        menuBtn.addEventListener("click", () => {
+          const isOpen = topbar.classList.toggle("open");
+          menuBtn.setAttribute("aria-expanded", String(isOpen));
+          menuBtn.textContent = isOpen ? "×" : "☰";
+        });
+
+        navLinks.querySelectorAll("a").forEach((link) => {
+          link.addEventListener("click", () => {
+            topbar.classList.remove("open");
+            menuBtn.setAttribute("aria-expanded", "false");
+            menuBtn.textContent = "☰";
+          });
+        });
+      }
+
       const slides = Array.from(document.querySelectorAll(".slide"));
       const prevBtn = document.getElementById("prevBtn");
       const nextBtn = document.getElementById("nextBtn");
