@@ -570,6 +570,92 @@
 
     .footer a{color:inherit}
 
+    .footerLinks{display:flex; align-items:center; gap:9px; flex-wrap:wrap}
+    .footerLink{
+      padding:0;
+      border:0;
+      background:none;
+      color:inherit;
+      font:inherit;
+      text-decoration:underline;
+      text-underline-offset:3px;
+      cursor:pointer;
+    }
+
+    .privacyHint{
+      margin:10px 0 0;
+      color:#dce7df;
+      font-size:11.5px;
+      line-height:1.55;
+    }
+
+    .privacyHint button{
+      padding:0;
+      border:0;
+      background:none;
+      color:#fff;
+      font:inherit;
+      font-weight:750;
+      text-decoration:underline;
+      text-underline-offset:3px;
+      cursor:pointer;
+    }
+
+    .legalModal{
+      position:fixed;
+      inset:0;
+      z-index:100;
+      display:none;
+      align-items:center;
+      justify-content:center;
+      padding:22px;
+      background:rgba(16,24,20,.68);
+      backdrop-filter:blur(8px);
+      -webkit-backdrop-filter:blur(8px);
+    }
+
+    .legalModal.open{display:flex}
+
+    .legalDialog{
+      width:min(820px,100%);
+      max-height:min(86vh,900px);
+      overflow:auto;
+      border:1px solid rgba(255,255,255,.22);
+      border-radius:24px;
+      background:#f7f3ed;
+      box-shadow:0 28px 80px rgba(0,0,0,.28);
+    }
+
+    .legalHeader{
+      position:sticky;
+      top:0;
+      z-index:2;
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:18px;
+      padding:22px 24px 18px;
+      border-bottom:1px solid var(--line);
+      background:rgba(247,243,237,.97);
+      backdrop-filter:blur(12px);
+      -webkit-backdrop-filter:blur(12px);
+    }
+
+    .legalHeader h2{margin:0; font-family:Georgia,'Times New Roman',serif; font-size:clamp(22px,3vw,30px); font-weight:500; color:#334155}
+    .legalHeader p{margin:6px 0 0; color:var(--muted); font-size:12px}
+    .legalClose{flex:0 0 auto; width:40px; height:40px; border:1px solid var(--line); border-radius:12px; background:#fff; color:#26352f; font-size:23px; line-height:1; cursor:pointer}
+    .legalBody{padding:24px}
+    .legalLead{margin:0 0 20px; padding:15px 17px; border-left:4px solid var(--accent); border-radius:12px; background:#edf4ef; color:#334155; font-size:13.5px; line-height:1.7}
+    .legalSection + .legalSection{margin-top:22px}
+    .legalSection h3{margin:0 0 8px; color:#26352f; font-size:15px}
+    .legalSection p{margin:0; color:#4b5563; font-size:13.5px; line-height:1.75}
+    .legalSection p + p{margin-top:8px}
+    .legalSection ul{margin:8px 0 0; padding-left:20px; color:#4b5563; font-size:13.5px; line-height:1.7}
+    .legalSection a{color:#26352f; font-weight:750}
+    .emergencyBox{margin-top:24px; padding:17px; border-radius:14px; background:#26352f; color:#edf4ef}
+    .emergencyBox strong{display:block; margin-bottom:6px}
+    .emergencyBox p{margin:0; color:#edf4ef; font-size:13.5px; line-height:1.7}
+
     @media (max-width:920px){
       .topbar{margin:10px 12px 0; flex-wrap:wrap; padding:10px 12px}
       .menuBtn{display:block}
@@ -664,6 +750,11 @@
         font-size:14px;
         max-width:100%;
       }
+
+      .legalModal{padding:10px}
+      .legalDialog{max-height:92vh; border-radius:19px}
+      .legalHeader{padding:18px 16px 14px}
+      .legalBody{padding:18px 16px}
     }
   </style>
 </head>
@@ -742,6 +833,7 @@
       <div class="contactActions">
         <a class="btn" href="https://wa.me/905467114426?text=Merhaba%2C%20web%20siteniz%20%C3%BCzerinden%20yaz%C4%B1yorum.%20Online%20psikolojik%20dan%C4%B1%C5%9Fmanl%C4%B1k%20s%C3%BCreci%20ve%20uygun%20randevu%20saatleri%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener">WhatsApp’tan Randevu ve Bilgi Al</a>
         <a class="btn secondaryContact" href="mailto:pskumutgovecliklioglu@gmail.com?subject=Online%20Psikolojik%20Dan%C4%B1%C5%9Fmanl%C4%B1k%20Randevu%20Talebi">E-posta ile İletişime Geç</a>
+        <p class="privacyHint">Mahremiyetiniz için ilk WhatsApp mesajınızda ayrıntılı kişisel bilgi paylaşmanız gerekmez. Görüşmek istediğiniz konunun ayrıntıları seans sırasında ele alınabilir. <button type="button" data-open-legal>Gizlilik metnini inceleyin.</button></p>
       </div>
     </div>
 
@@ -964,10 +1056,76 @@
 
     <div class="footer">
       <span>© 2026 Psikolog Umut Göveçliklioğlu</span>
-      <span>
+      <span class="footerLinks">
+        <button class="footerLink" type="button" data-open-legal>Gizlilik ve Kişisel Veriler</button>
+        <span aria-hidden="true">•</span>
         <a href="https://wa.me/905467114426" target="_blank" rel="noopener">WhatsApp</a> •
         <a href="mailto:pskumutgovecliklioglu@gmail.com">E-posta</a>
       </span>
+    </div>
+  </div>
+
+  <div class="legalModal" id="legalModal" role="dialog" aria-modal="true" aria-labelledby="legalTitle" aria-hidden="true">
+    <div class="legalDialog" role="document">
+      <div class="legalHeader">
+        <div>
+          <h2 id="legalTitle">Gizlilik ve Kişisel Veriler Aydınlatma Metni</h2>
+          <p>Son güncelleme: 9 Ağustos 2026</p>
+        </div>
+        <button class="legalClose" id="legalClose" type="button" aria-label="Metni kapat">×</button>
+      </div>
+
+      <div class="legalBody">
+        <p class="legalLead">Bu metin, web sitesi üzerinden iletişim kurmanız hâlinde kişisel verilerinizin nasıl ele alındığı konusunda sizi bilgilendirmek amacıyla hazırlanmıştır. Aydınlatma metni bir açık rıza veya terapi onam formu değildir.</p>
+
+        <section class="legalSection">
+          <h3>1. Veri sorumlusu</h3>
+          <p>Kişisel verileriniz bakımından veri sorumlusu Psikolog Umut Göveçliklioğlu’dur. Sorularınız ve kişisel verilerinize ilişkin başvurularınız için <a href="mailto:pskumutgovecliklioglu@gmail.com">pskumutgovecliklioglu@gmail.com</a> adresinden iletişime geçebilirsiniz.</p>
+        </section>
+
+        <section class="legalSection">
+          <h3>2. Hangi veriler işlenebilir?</h3>
+          <p>İletişimi sizin başlatmanız hâlinde ad-soyad, telefon numarası, e-posta adresi, randevu tercihleri ve mesaj içeriğinde kendinizin paylaştığı bilgiler işlenebilir. Sağlık veya cinsel yaşama ilişkin bilgiler özel nitelikli kişisel veridir; ilk iletişimde bu tür ayrıntıları paylaşmamanız önerilir.</p>
+          <p>Bu internet sitesinde üyelik, iletişim formu, çevrim içi ödeme sistemi veya tarafımızca kullanılan reklam ve ziyaretçi analiz aracı bulunmamaktadır.</p>
+        </section>
+
+        <section class="legalSection">
+          <h3>3. Verilerin işlenme amaçları ve hukuki sebepleri</h3>
+          <p>Verileriniz; talebinizi yanıtlamak, uygunluk ve randevu planlaması yapmak, psikolojik danışmanlık sürecini yürütmek, iletişim kayıtlarını ve mesleki kayıtları yönetmek, hukuki yükümlülükleri yerine getirmek ve olası bir uyuşmazlıkta hakları korumak amaçlarıyla; 6698 sayılı Kişisel Verilerin Korunması Kanunu’nun 5. ve ilgili olması hâlinde 6. maddelerinde yer alan hukuki sebepler kapsamında işlenebilir. Özel nitelikli kişisel veriler yalnızca ilgili mevzuatta öngörülen işleme şartlarının bulunması veya gerektiğinde ayrı bir açık rıza alınması hâlinde işlenir.</p>
+        </section>
+
+        <section class="legalSection">
+          <h3>4. Toplama yöntemi</h3>
+          <p>Veriler, sizin WhatsApp, telefon veya e-posta yoluyla doğrudan iletişime geçmeniz; randevu oluşturmanız ya da danışmanlık sürecinde bilgi paylaşmanız yoluyla elektronik veya sözlü olarak elde edilebilir.</p>
+        </section>
+
+        <section class="legalSection">
+          <h3>5. Verilerin aktarılması</h3>
+          <p>Kişisel verileriniz kural olarak gizli tutulur. Yalnızca hizmetin yürütülmesi için zorunlu olduğu ölçüde iletişim ve teknoloji hizmeti sağlayıcılarına; hukuki, mali veya mesleki yükümlülükler kapsamında yetkili danışmanlara, kamu kurumlarına ya da adli mercilere aktarım söz konusu olabilir.</p>
+          <p>WhatsApp ve e-posta gibi üçüncü taraf hizmetlerin kullanılması, verilerin bu sağlayıcıların altyapıları üzerinden işlenmesine ve yurt dışında bulunan sistemlere aktarılmasına yol açabilir. Bu kanalların kullanım koşulları ve gizlilik politikaları ayrıca geçerlidir.</p>
+        </section>
+
+        <section class="legalSection">
+          <h3>6. Saklama ve güvenlik</h3>
+          <p>Veriler, işleme amacı için gerekli süreyle ve uygulanabilir yasal veya mesleki saklama yükümlülükleri boyunca muhafaza edilir; işleme sebebi ortadan kalktığında mevzuata uygun biçimde silinir, yok edilir veya anonim hâle getirilir. Verilerin yetkisiz erişime, kayba ve hukuka aykırı kullanıma karşı korunması için uygun idari ve teknik tedbirler alınır.</p>
+        </section>
+
+        <section class="legalSection">
+          <h3>7. Gizliliğin sınırları</h3>
+          <p>Danışmanlık görüşmelerinde paylaşılan bilgiler mesleki gizlilik ilkeleri çerçevesinde korunur. Bununla birlikte kişinin kendisine veya başkasına zarar verme riskinin bulunması, istismar şüphesi, kanunen bildirim zorunluluğu veya yetkili makam talebi gibi durumlarda bilgiler, yalnızca gerekli ölçüde ilgili kişi veya kurumlarla paylaşılabilir.</p>
+        </section>
+
+        <section class="legalSection">
+          <h3>8. Haklarınız</h3>
+          <p>6698 sayılı Kanun’un 11. maddesi kapsamında kişisel verilerinizin işlenip işlenmediğini öğrenme; işlenmişse bilgi talep etme; işleme amacını ve amaca uygun kullanılıp kullanılmadığını öğrenme; aktarılan kişileri bilme; eksik veya yanlış verilerin düzeltilmesini, şartları oluşmuşsa silinmesini ya da yok edilmesini isteme ve kanunda belirtilen diğer haklarınızı kullanma hakkınız vardır.</p>
+          <p>Bu haklarınıza ilişkin başvurunuzu kimliğinizi doğrulamaya elverişli bilgilerle birlikte <a href="mailto:pskumutgovecliklioglu@gmail.com">pskumutgovecliklioglu@gmail.com</a> adresine iletebilirsiniz.</p>
+        </section>
+
+        <div class="emergencyBox">
+          <strong>Acil durum bilgilendirmesi</strong>
+          <p>Bu internet sitesi, WhatsApp hattı ve e-posta adresi acil müdahale kanalı değildir. Kendinize veya bir başkasına zarar verme riski bulunan acil bir durumda bulunduğunuz ülkedeki acil yardım birimlerine başvurunuz.</p>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -1082,6 +1240,39 @@
         btn.addEventListener("click", () => {
           item.classList.toggle("active");
         });
+      });
+
+      const legalModal = document.getElementById("legalModal");
+      const legalClose = document.getElementById("legalClose");
+      const legalOpeners = document.querySelectorAll("[data-open-legal]");
+      let lastFocused = null;
+
+      function openLegal() {
+        if (!legalModal) return;
+        lastFocused = document.activeElement;
+        legalModal.classList.add("open");
+        legalModal.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+        if (legalClose) legalClose.focus();
+      }
+
+      function closeLegal() {
+        if (!legalModal) return;
+        legalModal.classList.remove("open");
+        legalModal.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+        if (lastFocused) lastFocused.focus();
+      }
+
+      legalOpeners.forEach((button) => button.addEventListener("click", openLegal));
+      if (legalClose) legalClose.addEventListener("click", closeLegal);
+      if (legalModal) {
+        legalModal.addEventListener("click", (event) => {
+          if (event.target === legalModal) closeLegal();
+        });
+      }
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && legalModal && legalModal.classList.contains("open")) closeLegal();
       });
     })();
   </script>
